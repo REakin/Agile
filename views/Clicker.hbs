@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Node Clicker</title>
+    <link rel="stylesheet" href="ClickerStyles.css">
+</head>
+<body>
+{{> Navbar}}
+<!--Initializes sent variables-->
+
+<div class="grid-container" style="width: 100vw; height: 80vh">
+        <div style="grid-column: 1; grid-row: 1; border: solid black 2px">
+            <div onclick="clicker.lvlUp()" id="clickerarea">
+                Clicker<br>
+                lvl: <span id="clickerLvl"></span><br>
+                LvlUp price: <span id="lvlprice"></span><br>
+                <hr>
+            </div>
+            <span id="autoclickarea"></span>
+        </div>
+
+        <div class="ClickerTextArea">
+            <br><br><br><br><br>
+            clicks: <span id="clicks"></span><br><br>
+            total clicks: <span id="totalClicks"></span>
+            <div onclick="clicker.click()" class="Clickarea">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="Clicker.js" type="application/javascript" charset="UTF-8"></script>
+
+</html>

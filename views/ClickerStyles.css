@@ -1,0 +1,53 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(102, 255, 102);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+    grid-template-rows: 75vh;
+}
+
+
+.ClickerTextArea{
+    font-family: "Comic Sans MS", sans-serif ;
+    grid-column: 2/ span 4;
+    grid-row: 1;
+    background: url('Background pattern.jpg');
+    background-size: 100% 100%;
+    text-align: center;
+    color: white;
+}
+#clickerarea{
+    background-color: #75bbc4;
+}
+#clickerarea:hover {
+    background-color: #b6ced4;
+}
+
+#autoclickarea div{
+    background-color: #75bbc4;
+}
+#autoclickarea div:hover{
+    background-color: #b6ced4;
+}
+.Clickarea{
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 25vh;
+    background: url('soccer-ball.png');
+    background-size: cover;
+    width:200px;
+    height: 200px;
+}
+
+.Clickarea:hover{
+    background: url("Soccerball.gif");
+    background-size: cover;
+}
+
+.Clickarea:active{
+    -webkit-transform: scale(0.7);
+}
