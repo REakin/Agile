@@ -15,7 +15,7 @@ body{
     font-family: "Comic Sans MS", sans-serif ;
     grid-column: 2/ span 4;
     grid-row: 1;
-    background: url('Background pattern.jpg');
+    background: url('../Photos/Background pattern.jpg');
     background-size: 100% 100%;
     text-align: center;
     color: white;
@@ -37,14 +37,14 @@ body{
     border-radius: 50%;
     margin: auto;
     margin-top: 25vh;
-    background: url('soccer-ball.png');
+    background: url('../Photos/soccer-ball.png');
     background-size: cover;
     width:200px;
     height: 200px;
 }
 
 .Clickarea:hover{
-    background: url("Soccerball.gif");
+    background: url("../Photos/Soccerball.gif");
     background-size: cover;
 }
 
