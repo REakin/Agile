@@ -13,7 +13,7 @@
     "cookie-parser": "^1.4.4",
     "dont-sniff-mimetype": "^1.0.0",
     "express": "^4.16.4",
-    "hbs": "^4.0.3",
+    "hbs": "^4.0.4",
     "helmet": "^3.16.0",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.19",
