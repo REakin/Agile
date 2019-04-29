@@ -25,7 +25,9 @@ class Player{
 
     die(){
         clearInterval(enemy.attackint);
-        alert('You have died!');
+        //alert('You have died!');
+        ReactDOM.render(e(gameover),document.getElementById('root'));
+        window.av = player.av;
         delete window.player;
     }
 }
@@ -33,7 +35,6 @@ class Player{
 class Enemy{
     constructor(hp,av,i,){
         this.hp = parseInt(hp);
-        enemyhp.innerHTML = this.hp;
         this.av = parseInt(av);
         this.interval = i;
         this.attackint = setInterval(this.attack.bind(this),this.interval)
@@ -45,7 +46,6 @@ class Enemy{
 
     takedamage(damage){
         this.hp -= damage;
-        enemyhp.innerHTML = this.hp;
         if(this.hp <= 0){
             this.die()
         }
@@ -135,22 +135,78 @@ class game extends React.Component{
     }
 }*/
 
-function createGame(){
-    window.enemyhp = document.getElementById('enemy_health');
-    window.player = new Player('GAYGAY', 100, 0, 10);
-    window.enemy = new Enemy(100,10,1000);
-    ReactDOM.render(e(test),document.getElementById('root'));
-};
-
-
 class test extends React.Component{
+    constructor(props){
+        super(props);
+        this.state ={
+            maxhp: window.player.maxhp,
+            playerhp: window.player.hp,
+            gold: window.player.gold,
+            ehp: window.enemy.hp
+        }
+    }
+    update(){
+        console.log('test');
+        this.setState({
+            maxhp: window.player.maxhp,
+            playerhp: window.player.hp,
+            gold: window.player.gold,
+            ehp: window.enemy.hp
+        })
+    }
+    componentDidMount(){
+        this.interval = setInterval(this.update.bind(this),100)
+    }
+    componentWillUnmount(){
+        clearInterval(this.interval)
+    }
     render(){
         return(
             <div className="test">
-                <h1>player area</h1>
-                <div>health: {window.player.hp}</div>
-                <div>gold: {window.player.gold}</div>
+                <h1>Player Area</h1>
+                <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
+                <div>gold: {this.state.gold}</div>
+                <h1>Enemy Area</h1>
+                <div>Enemy hp: {this.state.ehp}</div>
+                <button onClick={window.player.attack.bind(window.player)}>ATTACK!</button>
             </div>
         )
     }
 }
+class gameover extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            gold: player.gold,
+            av: player.av
+        }
+    }
+    upgrade(){
+        if(this.state.gold>=10){
+            this.setState({
+                gold: this.state.gold-10,
+                av: this.state.av+2
+            });
+            console.log(this.state.gold);
+            console.log(this.state.av)
+        }
+    }
+    render(){
+        return(
+            <div>
+                <h1>You have died</h1>
+                <div>gold: {this.state.gold}</div>
+                <div onClick={this.upgrade.bind(this)}>Upgrade: {this.state.av+2}</div>
+                <button onClick={createGame.bind(this.state.gold,this.state.av)}>Play Again</button>
+            </div>
+        )
+    }
+}
+
+function createGame(gold, av){
+    console.log(gold);
+    console.log(av);
+    window.player = new Player('GAYGAY', 100, gold, av);
+    window.enemy = new Enemy(100,10,1000);
+    ReactDOM.render(e(test),document.getElementById('root'));
+};

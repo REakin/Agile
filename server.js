@@ -151,6 +151,10 @@ app.post('/update',(req,res)=> {
     }
 });
 
+app.get('/test',(req,res)=>{
+    res.sendfile('views/Testing.html')
+});
+
 app.listen(port,() =>{
    console.log((`server is up and listing on port ${port}`))
 });

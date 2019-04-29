@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/testing.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/testing.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/Testing.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,7 +96,7 @@
           <entry key="css" value="2" />
           <entry key="hbs" value="2" />
           <entry key="html" value="1" />
-          <entry key="js" value="14" />
+          <entry key="js" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -102,45 +104,45 @@
           <entry key="CSS" value="2" />
           <entry key="HTML" value="1" />
           <entry key="Handlebars/Mustache" value="2" />
-          <entry key="JavaScript" value="14" />
+          <entry key="JavaScript" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="41" />
+          <entry key="css" value="67" />
           <entry key="hbs" value="23" />
-          <entry key="html" value="550" />
-          <entry key="js" value="3259" />
-          <entry key="txt" value="157" />
+          <entry key="html" value="577" />
+          <entry key="js" value="5835" />
+          <entry key="txt" value="239" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="41" />
-          <entry key="HTML" value="550" />
+          <entry key="CSS" value="67" />
+          <entry key="HTML" value="577" />
           <entry key="Handlebars/Mustache" value="23" />
-          <entry key="JavaScript" value="3259" />
-          <entry key="PLAIN_TEXT" value="157" />
+          <entry key="JavaScript" value="5835" />
+          <entry key="PLAIN_TEXT" value="239" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="3473">
+              <caret line="154" column="24" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/Testing.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+            <state relative-caret-position="368">
+              <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -151,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="198" column="24" lean-forward="true" selection-start-line="198" selection-start-column="24" selection-end-line="198" selection-end-column="24" />
+            <state relative-caret-position="184">
+              <caret line="137" column="5" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -160,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/CSS/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="184">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -171,9 +173,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -205,9 +207,11 @@
         <option value="$PROJECT_DIR$/views/JS/AJAX.js" />
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
         <option value="$PROJECT_DIR$/Clicker.js" />
+        <option value="$PROJECT_DIR$/views/CSS/testing.css" />
+        <option value="$PROJECT_DIR$/Redux/Store.js" />
+        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/views/Testing.html" />
         <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
-        <option value="$PROJECT_DIR$/views/CSS/testing.css" />
       </list>
     </option>
   </component>
@@ -226,7 +230,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
+    <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
@@ -253,12 +257,6 @@
               <item name="Agile" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Agile" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -354,7 +352,7 @@
       <workItem from="1556131309340" duration="7259000" />
       <workItem from="1556208131575" duration="10922000" />
       <workItem from="1556293703076" duration="3183000" />
-      <workItem from="1556487323247" duration="7362000" />
+      <workItem from="1556487323247" duration="21258000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -503,11 +501,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556063745687</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Working on adding REACT to files">
+      <created>1556557896784</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556557896784</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changing to babel">
+      <created>1556562531275</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556562531275</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138170000" />
+    <option name="totallyTimeSpent" value="152066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,14 +531,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22649573" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32925472" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13681869" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -612,7 +625,9 @@
     <MESSAGE value="Added pictures" />
     <MESSAGE value="Somechanges to Leaderboard,css" />
     <MESSAGE value="Fixed the file structure&#10;Added Photos, CSS, JS files&#10;Added appropriate files to folders&#10;Split Clicker.js into two files (AJAX.js &amp; Clicker.js)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the file structure&#10;Added Photos, CSS, JS files&#10;Added appropriate files to folders&#10;Split Clicker.js into two files (AJAX.js &amp; Clicker.js)" />
+    <MESSAGE value="Working on adding REACT to files" />
+    <MESSAGE value="changing to babel" />
+    <option name="LAST_COMMIT_MESSAGE" value="changing to babel" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Node_finalproject/.gitignore" />
@@ -669,34 +684,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/JS/Clicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="161">
+          <caret line="7" column="38" lean-forward="true" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/CSS/testing.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+    <entry file="file://$PROJECT_DIR$/Redux/Store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="198" column="24" lean-forward="true" selection-start-line="198" selection-start-column="24" selection-end-line="198" selection-end-column="24" />
+        <state relative-caret-position="23">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Testing.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
+        <state relative-caret-position="368">
+          <caret line="16" column="6" lean-forward="true" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="137" column="5" selection-start-line="137" selection-start-column="5" selection-end-line="137" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3473">
+          <caret line="154" column="24" selection-start-line="154" selection-start-column="24" selection-end-line="154" selection-end-column="24" />
         </state>
       </provider>
     </entry>
