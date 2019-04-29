@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
     "dont-sniff-mimetype": "^1.0.0",
@@ -17,7 +19,18 @@
     "helmet": "^3.16.0",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.19",
+    "react": "^16.8.6",
     "uuid": "^3.3.2"
   },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REakin/Agile.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/REakin/Agile/issues"
+  },
+  "homepage": "https://github.com/REakin/Agile#readme",
   "description": ""
 }

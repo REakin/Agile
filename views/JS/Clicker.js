@@ -1,46 +1,37 @@
-class Clicker{
+class Player{
     //This will be the actual button that the user clicks on :)
-    constructor(lvl){
-        this.lvl = parseInt(lvl);
-        this.nextPrice = 10*(this.lvl*30);
-        this.lvlDisplay = document.getElementById('clickerLvl');
-        this.priceDisplay = document.getElementById('lvlprice');
-        this.display();
-        this.sender()
+    constructor(username, maxhp, gold, av){
+        this.name = username;
+        this.maxhp = parseInt(maxhp);
+        this.hp = parseInt(maxhp);
+        this.gold = parseInt(gold);
+        this.av = parseInt(av)
     }
 
-    click(){
-        window.clicks += this.lvl;
-        window.total_clicks += this.lvl;
-        this.display();
-    }
-    lvlUp(){
-        if(window.clicks >= this.nextPrice) {
-            window.clicks -= this.nextPrice;
-            this.lvl += 1;
-            this.nextPrice = 10*(this.lvl*30);
-            this.sender();
+    attack(){
+        if  (this.hp > 0) {
+            console.log('i attacked');
+            enemy.takedamage(this.av)
         }
     }
 
-    sender(){
-        this.lvlDisplay.innerHTML = this.lvl;
-        this.priceDisplay.innerHTML = this.nextPrice;
-        this.display()
-
+    takedamage(damage){
+        this.hp -= damage;
+        //playerhealth.innerHTML = this.hp;
+        if(this.hp <= 0){
+            this.die()
+        }
     }
 
-    display(){
-    numclicks.innerHTML = window.clicks;
-    totalclicks.innerHTML= window.total_clicks;
-    }
-    getlvl(){
-        return this.lvl
+    die(){
+        clearInterval(enemy.attackint);
+        alert('You have died!');
+        delete window.player;
     }
 }
 
 
-class AutoClicker{
+/*class AutoClicker{
     //This will be the automated clickers
     constructor(lvl,price,name,value,interval){
         this.lvl = lvl;
@@ -107,10 +98,121 @@ class AutoClicker{
     getlvl(){
         return this.lvl
     }
+}*/
+
+class Enemy{
+    constructor(hp,av,i,){
+        this.hp = parseInt(hp);
+        enemyhp.innerHTML = this.hp;
+        this.av = parseInt(av);
+        this.interval = i;
+        this.attackint = setInterval(this.attack.bind(this),this.interval)
+    }
+
+    attack(){
+        player.takedamage(this.av)
+    }
+
+    takedamage(damage){
+        this.hp -= damage;
+        enemyhp.innerHTML = this.hp;
+        if(this.hp <= 0){
+            this.die()
+        }
+    }
+
+    die(){
+        window.player.gold += this.av;
+        pgold.update();
+        clearInterval(this.attackint);
+        var old_attack = this.av;
+        delete window.enemy;
+        window.enemy = new Enemy(100,old_attack+2,1000)
+    }
 }
 
+//building the game sort of...
+const e = React.createElement;
 
-var autoclickarea = document.getElementById('autoclickarea');
-var numclicks = document.getElementById('clicks');
-var totalclicks = document.getElementById('totalClicks');
+class name extends React.Component{
+    render(){
+        return e(
+            'div',
+            {id:'name'},
+            player.name
+        )
+    }
+}
+class health extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {hp: player.hp}
+    }
+    componentDidMount(){
+        this.timerID = setInterval(()=>
+            this.tick(),500
+        );
+    }
+    componentWillUnmount(){
+        clearInterval(this.timerID)
+    }
+    tick(){
+        this.setState({hp: player.hp})
+    }
+    render(){
+        return e(
+            'div',
+            {id:'health'},
+            player.hp+'/'+player.maxhp
+        )
+    }
+}
+class gold extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {gold: player.gold}
+    }
 
+    render(){
+        return e(
+            'div',
+            {id:'gold'},
+            'Gold:'+player.gold
+        )
+    }
+}
+
+class AttackButton extends React.Component {
+    render() {
+        return e(
+            'button',
+            {onClick: player.attack.bind(window.player), id: 'attackButton'},
+            'Attack'
+        );
+    }
+}
+
+class game extends React.Component{
+    render(){
+        return e(
+            'div',
+            {id:'game'},
+            e(AttackButton),
+            e(name),
+            e(gold),
+            e(health)
+        )
+    }
+}
+function createGame(){
+    window.enemyhp = document.getElementById('enemy_health');
+    window.player = new Player('GAYGAY', 100, 0, 10);
+    window.enemy = new Enemy(100,10,1000);
+    ReactDOM.render(e(game), document.getElementById('root'));
+
+}
+
+/*ReactDOM.render(e(AttackButton), document.getElementById('button'));
+ReactDOM.render(e(name),document.getElementById('player_name'));
+ReactDOM.render(e(health),document.getElementById('player_health'));
+ReactDOM.render(e(gold),document.getElementById('player_gold'));*/
