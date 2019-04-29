@@ -30,76 +30,6 @@ class Player{
     }
 }
 
-
-/*class AutoClicker{
-    //This will be the automated clickers
-    constructor(lvl,price,name,value,interval){
-        this.lvl = lvl;
-        this.value = value;
-        this.price = price;
-        this.nextPrice = price*((1+this.lvl)*30);
-        this.interval = interval;
-
-        this.area = document.createElement("div");
-        this.area.id = name+'autoclick';
-        this.area.onclick = this.lvlUp.bind(this);
-
-        this.lvldisplay = document.createElement("div");
-        this.lvldisplay.id = name+'lvl';
-
-        this.pricedisplay = document.createElement("div");
-        this.pricedisplay.id = name+"displayprice";
-
-        this.button = document.createElement("button");
-        this.button.innerHTML = name+"LvlUp";
-
-        this.area.append(document.createTextNode(name+" Level:"));
-        this.area.append(this.lvldisplay);
-
-        this.area.append(document.createTextNode(name+" LvlUp Price: "));
-        this.area.append(this.pricedisplay);
-        this.area.append(document.createElement("hr"));
-        autoclickarea.append(this.area);
-
-        this.sender();
-        this.autoclicker = setInterval(this.click.bind(this), this.interval/this.lvl)
-    }
-
-    click(){
-        if(this.lvl >= 1){
-            window.clicks += this.value;
-            window.total_clicks += this.value;
-            this.display();
-        }
-    }
-
-    lvlUp(){
-        if(window.clicks >= this.nextPrice) {
-            window.clicks -= this.nextPrice;
-            this.lvl += 1;
-            this.nextPrice = this.price*(this.lvl*30);
-            clearInterval(this.autoclicker);
-            this.interval = this.interval/this.lvl;
-            this.autoclicker = setInterval(this.click.bind(this), this.interval);
-            this.sender();
-        }
-    }
-    sender(){
-        this.lvldisplay.innerHTML = this.lvl;
-        this.pricedisplay.innerHTML = this.nextPrice;
-        this.display()
-
-    }
-    display(){
-        numclicks.innerHTML = clicks;
-        totalclicks.innerHTML= total_clicks;
-    }
-
-    getlvl(){
-        return this.lvl
-    }
-}*/
-
 class Enemy{
     constructor(hp,av,i,){
         this.hp = parseInt(hp);
@@ -123,7 +53,6 @@ class Enemy{
 
     die(){
         window.player.gold += this.av;
-        pgold.update();
         clearInterval(this.attackint);
         var old_attack = this.av;
         delete window.enemy;
@@ -143,6 +72,7 @@ class name extends React.Component{
         )
     }
 }
+/*
 class health extends React.Component{
     constructor(props){
         super(props);
@@ -157,7 +87,8 @@ class health extends React.Component{
         clearInterval(this.timerID)
     }
     tick(){
-        this.setState({hp: player.hp})
+        this.setState({hp: player.hp});
+        this.forceUpdate()
     }
     render(){
         return e(
@@ -170,9 +101,8 @@ class health extends React.Component{
 class gold extends React.Component{
     constructor(props){
         super(props);
-        this.state = {gold: player.gold}
+        this.state = {gold: player.gold};
     }
-
     render(){
         return e(
             'div',
@@ -203,16 +133,24 @@ class game extends React.Component{
             e(health)
         )
     }
-}
+}*/
+
 function createGame(){
     window.enemyhp = document.getElementById('enemy_health');
     window.player = new Player('GAYGAY', 100, 0, 10);
     window.enemy = new Enemy(100,10,1000);
-    ReactDOM.render(e(game), document.getElementById('root'));
+    ReactDOM.render(e(test),document.getElementById('root'));
+};
 
+
+class test extends React.Component{
+    render(){
+        return(
+            <div className="test">
+                <h1>player area</h1>
+                <div>health: {window.player.hp}</div>
+                <div>gold: {window.player.gold}</div>
+            </div>
+        )
+    }
 }
-
-/*ReactDOM.render(e(AttackButton), document.getElementById('button'));
-ReactDOM.render(e(name),document.getElementById('player_name'));
-ReactDOM.render(e(health),document.getElementById('player_health'));
-ReactDOM.render(e(gold),document.getElementById('player_gold'));*/
