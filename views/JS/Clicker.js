@@ -34,6 +34,7 @@ class Player{
 
 class Enemy{
     constructor(hp,av,i,){
+        this.maxhp = parseInt(hp)
         this.hp = parseInt(hp);
         this.av = parseInt(av);
         this.interval = i;
@@ -54,9 +55,9 @@ class Enemy{
     die(){
         window.player.gold += this.av;
         clearInterval(this.attackint);
-        var old_attack = this.av;
+        var old_hp = this.maxhp;
         delete window.enemy;
-        window.enemy = new Enemy(100,old_attack+2,1000)
+        window.enemy = new Enemy(old_hp+10,5,1000)
     }
 }
 
@@ -176,10 +177,18 @@ class test extends React.Component{
 class gameover extends React.Component{
     constructor(props){
         super(props);
+        try{
         this.state = {
             gold: player.gold,
             av: player.av
-        };
+            }
+        }
+        catch(e){
+            this.state ={
+                gold:0,
+                av:5
+            }
+        }
     }
     upgrade(){
         if(this.state.gold>=10){
@@ -194,11 +203,10 @@ class gameover extends React.Component{
 
         return(
             <div>
-                <h1>You have died</h1>
+                <h1>Welcome to the village area place</h1>
                 <div>gold: {this.state.gold}</div>
-                {console.log(this.state.gold)}
-                {console.log(this.state.av)}
-                <div onClick={this.upgrade.bind(this)}>Upgrade: {this.state.av+2}</div>
+                <div onClick={this.upgrade.bind(this)}>Upgrade: 10 gold</div>
+                <div>current attack power: {this.state.av}</div>
                 <button onClick={this.restart}>Play Again</button>
             </div>
         )
@@ -206,9 +214,21 @@ class gameover extends React.Component{
 }
 
 function createGame(gold, av){
-    console.log(gold);
-    console.log(av);
     window.player = new Player('GAY-GANG', 100, gold, av);
     window.enemy = new Enemy(100,10,1000);
     ReactDOM.render(e(test),document.getElementById('root'));
-};
+}
+
+class start_screen extends React.Component{
+    render(){
+        return(
+        <button onClick={start}>Click here to start!</button>
+        )
+    }
+
+}
+ReactDOM.render(e(start_screen),document.getElementById('root'));
+
+function start(){
+    ReactDOM.render(e(gameover),document.getElementById('root'))
+}
