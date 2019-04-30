@@ -146,7 +146,7 @@ class test extends React.Component{
         }
     }
     update(){
-        console.log('test');
+        //console.log('test');
         this.setState({
             maxhp: window.player.maxhp,
             playerhp: window.player.hp,
@@ -179,7 +179,7 @@ class gameover extends React.Component{
         this.state = {
             gold: player.gold,
             av: player.av
-        }
+        };
     }
     upgrade(){
         if(this.state.gold>=10){
@@ -187,17 +187,19 @@ class gameover extends React.Component{
                 gold: this.state.gold-10,
                 av: this.state.av+2
             });
-            console.log(this.state.gold);
-            console.log(this.state.av)
         }
     }
     render(){
+        this.restart = createGame.bind(this, this.state.gold,this.state.av);
+
         return(
             <div>
                 <h1>You have died</h1>
                 <div>gold: {this.state.gold}</div>
+                {console.log(this.state.gold)}
+                {console.log(this.state.av)}
                 <div onClick={this.upgrade.bind(this)}>Upgrade: {this.state.av+2}</div>
-                <button onClick={createGame.bind(this.state.gold,this.state.av)}>Play Again</button>
+                <button onClick={this.restart}>Play Again</button>
             </div>
         )
     }
@@ -206,7 +208,7 @@ class gameover extends React.Component{
 function createGame(gold, av){
     console.log(gold);
     console.log(av);
-    window.player = new Player('GAYGAY', 100, gold, av);
+    window.player = new Player('GAY-GANG', 100, gold, av);
     window.enemy = new Enemy(100,10,1000);
     ReactDOM.render(e(test),document.getElementById('root'));
 };
