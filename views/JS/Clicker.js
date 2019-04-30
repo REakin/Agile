@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom";
+
 class Player{
     //This will be the actual button that the user clicks on :)
     constructor(username, maxhp, gold, av){
