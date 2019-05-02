@@ -4,13 +4,38 @@ const hbs = require('hbs');
 const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser'); //use it the forms for retrieving the data
 const uuid = require('uuid/v1'); //creates unique ID's
+const nodemailer = require('nodemailer');
+
 const port = process.env.PORT || 8080;
+
 
 const uri = "mongodb+srv://RJEakin:xgk6viue@node-cluster-sriig.mongodb.net/test?retryWrites=true";
 
 var app = express();
+///using a mail server to direct emails to a user...
+/*
+var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'DClicker.no.reply@gmail.com',
+        pass: 'Clicker123'
+    }
+});
 
-
+var mailOptions = {
+    from: 'DClicker.no.reply@gmail.com',
+    to: 'recipient',
+    subject: 'Sending Email using Node.js',
+    text: 'That was easy!'
+};
+*/
+transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+});
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 app.use(cookieParser('secret'));
