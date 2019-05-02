@@ -34,7 +34,7 @@ class game extends React.Component{
 
     }
     update(){
-        //console.log('test');
+        try{
         this.setState({
             maxhp: window.player.maxhp,
             playerhp: window.player.hp,
@@ -42,7 +42,9 @@ class game extends React.Component{
             ehp: window.enemy.hp,
             eav: window.enemy.av,
             rdnum: window.rdnum
-        })
+        })}
+        catch(e) {
+        }
     }
     componentDidMount(){
         this.interval = setInterval(this.update.bind(this),100)
@@ -117,7 +119,7 @@ class escapeMessage extends React.Component{
     render(){
         return(
             <div>
-                <div>You escaped the dungeon with {player.gold}</div>
+                <div>You escaped the dungeon with {player.gold} gold</div>
                 <div>You killed {rdnum} monsters</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
@@ -154,6 +156,7 @@ function start(){
 
 
 function createGame(){
+    ReactDOM.unmountComponentAtNode(document.getElementById('messageArea'));
     window.rdnum = 1;
     window.player.hp = player.maxhp;
     window.enemy = new Enemy(100+(10*rdnum),5,1000);

@@ -28,14 +28,14 @@ var mailOptions = {
     subject: 'Sending Email using Node.js',
     text: 'That was easy!'
 };
-*/
+
 transporter.sendMail(mailOptions, function(error, info){
     if (error) {
         console.log(error);
     } else {
         console.log('Email sent: ' + info.response);
     }
-});
+});*/
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 app.use(cookieParser('secret'));
