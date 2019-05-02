@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<body>
+    <div id="content">
+        <h1>Reset Password</h1>
+        <div id="reset_form">
+            <form action="/reset" method="POST">
+                <input name="email" type="email" placeholder="    Email" required="required"> <br>
+                <input type="submit" id="resetBtn" value="Reset">
+            </form>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        background-color: #323232;
+    }
+
+    #content {
+        margin: 100px auto;
+        width: 500px;
+        height: 380px;
+        background-color: #e1e1e1;
+        border-radius: 20px;
+    }
+
+    #reset_form {
+        position: relative;
+        top: 10px;
+        margin: 10px 80px;
+        display: inline-block;
+    }
+
+    input {
+        border-radius: 10px;
+        background-color: #cacaca;
+        padding: 2px;
+        margin: 20px auto;
+        width: 350px;
+        height: 40px;
+        box-shadow: none;
+        border: none;
+    }
+
+    h1 {
+        position: relative;
+        top: 25px;
+        left: 35px;
+        margin: 25px 40px;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+    }
+
+</style>
+
+</html>
