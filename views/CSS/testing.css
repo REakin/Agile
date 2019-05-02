@@ -6,3 +6,20 @@
 #health{
     color: red;
 }
+#root{
+    position: relative;
+    top: 0;
+    left: 0;
+    border: black solid 1px;
+    margin: auto;
+    width: 750px;
+    height: 750px;
+    text-align: center;
+}
+#messageArea{
+    position: absolute;
+    top: 375px;
+    left: 375px
+
+
+}
