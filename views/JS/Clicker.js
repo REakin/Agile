@@ -1,6 +1,9 @@
-class Player{
+// const React = require("react");
+// const ReactDOM = require("react-dom");
+
+class Player {
     //This will be the actual button that the user clicks on :)
-    constructor(username, maxhp, gold, av){
+    constructor(username, maxhp, gold, av) {
         this.name = username;
         this.maxhp = parseInt(maxhp);
         this.hp = parseInt(maxhp);
@@ -9,92 +12,99 @@ class Player{
         this.bonusav = 0
     }
 
-    attack(){
-        if  (this.hp > 0) {
+    attack() {
+        if (this.hp > 0) {
             //console.log('i attacked');
-            enemy.takedamage(this.av+this.bonusav)
+            enemy.takedamage(this.av + this.bonusav);
         }
     }
 
-    takedamage(damage){
+    takedamage(damage) {
         this.hp -= damage;
         //playerhealth.innerHTML = this.hp;
-        if(this.hp <= 0){
+        if (this.hp <= 0) {
             this.die()
         }
     }
-    ability1(){
+    ability1() {
         this.bonusav += 5;
-        setTimeout(function(){
+        setTimeout(function () {
             player.bonusav -= 5;
-        },2000)
+        }, 2000)
     }
 
-    endgame(){
-        ReactDOM.render(e(gameover),document.getElementById('root'));
-        ReactDOM.render(e(escapeMessage),document.getElementById('messageArea'))
+    endgame() {
+        ReactDOM.render(e(gameover), document.getElementById('root'));
+        ReactDOM.render(e(escapeMessage), document.getElementById('messageArea'))
     }
 
-    die(){
+    die() {
         clearInterval(enemy.attackint);
         //alert('You have died!');
         player.gold = 0;
-        ReactDOM.render(e(gameover),document.getElementById('root'));
-        ReactDOM.render(e(deathMessage),document.getElementById('messageArea'))
+        ReactDOM.render(e(gameover), document.getElementById('root'));
+        ReactDOM.render(e(deathMessage), document.getElementById('messageArea'))
     }
 }
 
-class Enemy{
-    constructor(hp,av,i,){
+class Enemy {
+    constructor(hp, av, i) {
         this.maxhp = parseInt(hp);
         this.hp = parseInt(hp);
         this.av = parseInt(av);
-        this.interval = i;
-        this.attackint = setInterval(this.attack.bind(this),this.interval)
+        this.interval = parseInt(i);
+        this.attackint = setInterval(this.attack.bind(this), this.interval)
     }
 
-    attack(){
+    attack() {
         player.takedamage(this.av)
     }
 
-    takedamage(damage){
+    takedamage(damage) {
+        console.log('test')
         this.hp -= damage;
-        if(this.hp <= 0){
+        if (this.hp <= 0) {
             this.die()
         }
     }
 
-    die(){
+    die() {
         window.player.gold += this.av;
         clearInterval(this.attackint);
-        window.rdnum +=1;
-        if (window.rdnum % 5 === 0){
+        window.rdnum += 1;
+        if (window.rdnum % 5 === 0) {
             delete window.enemy;
-            ReactDOM.render(e(continueScreen),document.getElementById('messageArea'))
-        }else{
+            ReactDOM.render(e(continueScreen), document.getElementById('messageArea'))
+        } else {
             delete window.enemy;
-            window.enemy = new Enemy(100+(10*rdnum),5,1000)
+            window.enemy = new Enemy(100 + (10 * rdnum), 5, 1000)
         }
     }
 }
 
-class autochar{
-    constructor(name,av,interval) {
+class Autochar {
+    constructor(name, av, interval) {
         this.name = name;
         this.av = av;
-        this.interval = interval
+        this.interval = parseInt(interval);
     }
-    upgrade(){
-        if (player.gold >= 10){
+    upgrade() {
+        if (player.gold >= 10) {
             this.av += 5
         }
     }
-    attack(){
+    attack() {
         if (player.hp > 0) {
             enemy.takedamage(this.av);
         }
     }
-    startint(){
-        setInterval(this.attack.bind(this),this.interval)
+    startint() {
+        setInterval(this.attack.bind(this), this.interval)
     }
+}
+
+module.exports = {
+    Player,
+    Enemy,
+    Autochar
 }
