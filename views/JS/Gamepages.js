@@ -54,7 +54,7 @@ class game extends React.Component{
     }
     render(){
         return(
-            <div className="test">
+            <div className="gameArea">
                 <h1>Player Area</h1>
                 <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
                 <div>gold: {this.state.gold}</div>
@@ -85,13 +85,14 @@ class gameover extends React.Component{
                 gold: this.state.gold-10,
                 av: this.state.av+2
             });
+            player.av += 2;
         }
     }
     render(){
         this.restart = createGame.bind(this, this.state.gold,this.state.av);
 
         return(
-            <div>
+            <div id={'gameArea'}>
                 <h1>Welcome to the village</h1>
                 <div>Your gold: {this.state.gold}</div>
                 <div onClick={this.upgrade.bind(this)}>Upgrade Weapon cost:10 gold</div>
@@ -106,7 +107,9 @@ class gameover extends React.Component{
 class start_screen extends React.Component{
     render(){
         return(
-            <button onClick={start}>Click here to start!</button>
+            <div id={'gameArea'}>
+                <button onClick={start}>Click here to start!</button>
+            </div>
         )
     }
 }
@@ -142,8 +145,8 @@ class deathMessage extends React.Component{
     }
 }
 
-function hirefollower(){
-    window.follower = new autochar('name', 1, 1000)
+function hirefollower(name,av,interaval){
+    window.follower = new autochar(name, av, interaval)
 }
 
 function start(){

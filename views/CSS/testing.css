@@ -7,6 +7,17 @@
     color: red;
 }
 #root{
+    margin: auto;
+    width: 750px;
+    height: 750px;
+}
+#messageArea{
+    position: absolute;
+    top: 375px;
+    left: 375px;
+    text-align: center;
+}
+#gameArea{
     position: relative;
     top: 0;
     left: 0;
@@ -14,12 +25,6 @@
     margin: auto;
     width: 750px;
     height: 750px;
+    align-content: center;
     text-align: center;
-}
-#messageArea{
-    position: absolute;
-    top: 375px;
-    left: 375px
-
-
 }

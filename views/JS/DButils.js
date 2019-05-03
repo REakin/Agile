@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient;
 
 const uri = "mongodb+srv://RJEakin:xgk6viue@node-cluster-sriig.mongodb.net/test?retryWrites=true";
 
@@ -6,7 +6,7 @@ var _db = null;
 
 module.exports.getDb = function () {
     return _db
-}
+};
 
 module.exports.init =function (callback) {
     MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client) {
