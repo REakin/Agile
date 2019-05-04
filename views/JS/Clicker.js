@@ -32,18 +32,12 @@ class Player {
             player.bonusav -= 5;
         }, 2000)
     }
-
-    endgame() {
-        ReactDOM.render(e(gameover), document.getElementById('root'));
-        ReactDOM.render(e(escapeMessage), document.getElementById('messageArea'))
-    }
-
     die() {
         clearInterval(enemy.attackint);
-        //alert('You have died!');
+        ReactDOM.render(e(village), document.getElementById('root'),function () {
+            ReactDOM.render(e(deathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        });
         player.gold = 0;
-        ReactDOM.render(e(gameover), document.getElementById('root'));
-        ReactDOM.render(e(deathMessage), document.getElementById('messageArea'))
     }
 }
 
@@ -61,7 +55,7 @@ class Enemy {
     }
 
     takedamage(damage) {
-        console.log('test')
+        console.log('test');
         this.hp -= damage;
         if (this.hp <= 0) {
             this.die()
@@ -70,11 +64,13 @@ class Enemy {
 
     die() {
         window.player.gold += this.av;
+        window.kills +=1;
+        console.log(kills);
         clearInterval(this.attackint);
-        window.rdnum += 1;
-        if (window.rdnum % 5 === 0) {
+        if (window.kills % 5 === 0) {
+            window.rdnum += 1;
             delete window.enemy;
-            ReactDOM.render(e(continueScreen), document.getElementById('messageArea'))
+            ReactDOM.render(e(continueScreen), ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
             delete window.enemy;
             window.enemy = new Enemy(100 + (10 * rdnum), 5, 1000)
@@ -102,9 +98,10 @@ class Autochar {
         setInterval(this.attack.bind(this), this.interval)
     }
 }
-
+/*
+This is for unit testing
 module.exports = {
     Player,
     Enemy,
     Autochar
-}
+}*/

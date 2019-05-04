@@ -6,13 +6,19 @@ class continueScreen extends React.Component{
         let element = document.getElementById('messageArea');
         ReactDOM.unmountComponentAtNode(element);
         window.enemy = new Enemy(100+(10*rdnum),5,1000)
+    }
+    escape(){
+        ReactDOM.render(e(village), document.getElementById('root'),function () {
+            ReactDOM.render(e(escapeMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")));
+        });
 
     }
     render(){
         return(
             <div id={'message'}>
+                <br/>
                 <div>would you like to continue?</div>
-                <button onClick={player.endgame}>No</button>
+                <button onClick={this.escape}>No</button>
                 <button onClick={this.removeMessage}>Yes</button>
             </div>
         )
@@ -52,9 +58,10 @@ class game extends React.Component{
     componentWillUnmount(){
         clearInterval(this.interval)
     }
+
     render(){
         return(
-            <div className="gameArea">
+            <div id={'gameArea'}>
                 <h1>Player Area</h1>
                 <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
                 <div>gold: {this.state.gold}</div>
@@ -64,12 +71,13 @@ class game extends React.Component{
                 <div>Round Number: {this.state.rdnum}</div>
                 <button onClick={window.player.ability1.bind(window.player)}>use ability1</button>
                 <button onClick={window.player.attack.bind(window.player)}>ATTACK!</button>
+                <div id={'messageArea'}/>
             </div>
         )
     }
 }
 
-class gameover extends React.Component{
+class village extends React.Component{
     constructor(props){
         super(props);
         try{this.state = {
@@ -82,22 +90,23 @@ class gameover extends React.Component{
     upgrade(){
         if(this.state.gold>=10){
             this.setState({
-                gold: this.state.gold-10,
-                av: this.state.av+2
+                gold: player.gold -10,
+                av: player.av+2
             });
+            player.gold -= 10;
             player.av += 2;
         }
     }
     render(){
-        this.restart = createGame.bind(this, this.state.gold,this.state.av);
+        this.restart = createGame.bind(this);
 
         return(
             <div id={'gameArea'}>
+                <div id={'popupArea'}/>
                 <h1>Welcome to the village</h1>
                 <div>Your gold: {this.state.gold}</div>
                 <div onClick={this.upgrade.bind(this)}>Upgrade Weapon cost:10 gold</div>
                 <div>current attack power: {this.state.av}</div>
-                <button onClick={hirefollower}>Hire a follower</button>
                 <button onClick={this.restart}>Enter the dungeon</button>
             </div>
         )
@@ -109,21 +118,20 @@ class start_screen extends React.Component{
         return(
             <div id={'gameArea'}>
                 <button onClick={start}>Click here to start!</button>
+                <div id={'popupArea'}/>
             </div>
         )
     }
 }
 class escapeMessage extends React.Component{
-
     removeMessage(){
-        let element = document.getElementById('messageArea');
-        ReactDOM.unmountComponentAtNode(element);
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
         return(
-            <div>
+            <div id={'message'}>
                 <div>You escaped the dungeon with {player.gold} gold</div>
-                <div>You killed {rdnum} monsters</div>
+                <div>You killed {kills} monsters</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -131,14 +139,14 @@ class escapeMessage extends React.Component{
 }
 class deathMessage extends React.Component{
     removeMessage(){
-        let element = document.getElementById('messageArea');
-        ReactDOM.unmountComponentAtNode(element);
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
         return(
-            <div>
-                <div>You died in the dungeon with {player.gold}</div>
-                <div>You killed {rdnum} monsters before dying</div>
+            <div id={'message'}>
+                <div>You died in the dungeon</div>
+                <div>you lost {player.gold} gold</div>
+                <div>You killed {kills} monsters before dying</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -147,6 +155,7 @@ class deathMessage extends React.Component{
 
 function hirefollower(name,av,interaval){
     window.follower = new autochar(name, av, interaval)
+
 }
 
 function start(){
@@ -154,12 +163,12 @@ function start(){
     let gold = 0;
     let av = 5;
     window.player = new Player('Coo15', 100, gold, av);
-    ReactDOM.render(e(gameover),document.getElementById('root'))
+    ReactDOM.render(e(village),document.getElementById('root'))
 }
 
 
 function createGame(){
-    ReactDOM.unmountComponentAtNode(document.getElementById('messageArea'));
+    window.kills = 0;
     window.rdnum = 1;
     window.player.hp = player.maxhp;
     window.enemy = new Enemy(100+(10*rdnum),5,1000);
