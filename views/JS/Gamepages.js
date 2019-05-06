@@ -18,6 +18,7 @@ class continueScreen extends React.Component{
             <div id={'message'}>
                 <br/>
                 <div>would you like to continue?</div>
+                <div>WARNING <br/> If you die then you lose all of your gold!</div>
                 <button onClick={this.escape}>No</button>
                 <button onClick={this.removeMessage}>Yes</button>
             </div>
@@ -97,9 +98,11 @@ class village extends React.Component{
             player.av += 2;
         }
     }
+    openFollowerShop(){
+        ReactDOM.render(e(FollowerShop),document.getElementById("popupArea"))
+    }
     render(){
         this.restart = createGame.bind(this);
-
         return(
             <div id={'gameArea'}>
                 <div id={'popupArea'}/>
@@ -107,6 +110,7 @@ class village extends React.Component{
                 <div>Your gold: {this.state.gold}</div>
                 <div onClick={this.upgrade.bind(this)}>Upgrade Weapon cost:10 gold</div>
                 <div>current attack power: {this.state.av}</div>
+                <button onClick={this.openFollowerShop}>Open Follower Shop</button>
                 <button onClick={this.restart}>Enter the dungeon</button>
             </div>
         )
@@ -153,9 +157,37 @@ class deathMessage extends React.Component{
     }
 }
 
-function hirefollower(name,av,interaval){
-    window.follower = new autochar(name, av, interaval)
+class FollowerShop extends React.Component{
+    removeMessage(){
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
+    }
+    render(){
+        return(
+            <div id={'message'}>
+                <div>Welcome to the shop!</div>
+                <div id={'followertext'}>Hire a Warrior</div>
+                <button id={'followerbutton'} onClick={hirefollower.bind(this,AutoWarrior,'Warrior',1,1000)}>HIRE</button>
+                <div id={'followertext'}>Hire a Druid</div>
+                <button id={'followerbutton'} onClick={hirefollower.bind(this,AutoDruid,'Druid',2,1500)}>HIRE</button>
+                <div id={'followertext'}>Hire a Thief</div>
+                <button id={'followerbutton'} onClick={hirefollower.bind(this,AutoThief,'Thief',1,1000)}>HIRE</button>
+                <div id={'followertext'}>Hire a Cleric</div>
+                <button id={'followerbutton'} onClick={hirefollower.bind(this,AutoCleric,'Cleric',1000,1000)}>HIRE</button>
+                <button onClick={this.removeMessage}>Close Shop</button>
+            </div>
+        )
+    }
+}
 
+ReactDOM.render(e(start_screen),document.getElementById('root'));
+
+function hirefollower(type, name,av,interaval){
+    if(Object.keys(player.followers).length < 3){
+        let follower = new type(name,av,interaval);
+        player.followers[name] = follower
+    }else{
+        console.log("can't have more then tree followers")
+    }
 }
 
 function start(){
@@ -171,8 +203,10 @@ function createGame(){
     window.kills = 0;
     window.rdnum = 1;
     window.player.hp = player.maxhp;
-    window.enemy = new Enemy(100+(10*rdnum),5,1000);
+    window.enemy = new Enemy(40+(10*rdnum),5,1000);
+    for(let follower in player.followers){
+        player.followers[follower].action()
+    }
+    window.enemy.startinterval();
     ReactDOM.render(e(game),document.getElementById('root'));
 }
-
-ReactDOM.render(e(start_screen),document.getElementById('root'));

@@ -52,8 +52,13 @@ app.use(express.static(__dirname+'/views'));
 
 
 app.get('/',(request,response)=>{
-    response.render('testing.hbs');
+    response.render('game.hbs');
 });
+//Ajax call
+app.get('/getstats',(req,res)=>{
+
+    res.send(stats)
+})
 
 
 app.listen(port,() =>{
