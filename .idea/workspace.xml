@@ -2,24 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/JS/AJAX.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Background pattern.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/views/Photos/Background pattern.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Clicker.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/Clicker.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/ClickerStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/ClickerStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Leaderboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/Leaderboard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Leaderboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Leaderboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LoginStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/LoginStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/NavbarStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/NavbarStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/SoccerBanner.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/views/Photos/SoccerBanner.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Soccerball.gif" beforeDir="false" afterPath="$PROJECT_DIR$/views/Photos/Soccerball.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/leaderboard.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/leaderboard.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/Navbar.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/Navbar.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/soccer-ball.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Photos/soccer-ball.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/testing.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/testing.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/testing.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,32 +83,52 @@
     <session id="-1044104469">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.37" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="hbs" value="1" />
-          <entry key="js" value="3" />
+          <entry key="css" value="4" />
+          <entry key="gitignore" value="1" />
+          <entry key="hbs" value="3" />
+          <entry key="html" value="5" />
+          <entry key="js" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Handlebars/Mustache" value="1" />
-          <entry key="JavaScript" value="3" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="5" />
+          <entry key="Handlebars/Mustache" value="3" />
+          <entry key="JavaScript" value="21" />
+          <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="hbs" value="23" />
-          <entry key="js" value="6" />
+          <entry key="css" value="352" />
+          <entry key="hbs" value="24" />
+          <entry key="html" value="619" />
+          <entry key="js" value="9435" />
+          <entry key="txt" value="258" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Handlebars/Mustache" value="23" />
-          <entry key="JavaScript" value="6" />
+          <entry key="CSS" value="352" />
+          <entry key="HTML" value="619" />
+          <entry key="Handlebars/Mustache" value="24" />
+          <entry key="JavaScript" value="9435" />
+          <entry key="PLAIN_TEXT" value="258" />
         </counts>
       </usages-collector>
     </session>
@@ -129,26 +138,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/JS/AJAX.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="557">
+              <caret line="60" column="2" lean-forward="true" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/Clicker.hbs">
+        <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+            <state relative-caret-position="-32">
+              <caret line="174" column="96" selection-start-line="174" selection-start-column="96" selection-end-line="174" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -156,8 +156,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            <state relative-caret-position="207">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/testing.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,6 +179,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
       </list>
@@ -176,6 +189,10 @@
     <findStrings>
       <find>body</find>
       <find>clicks</find>
+      <find>village</find>
+      <find>cont</find>
+      <find>popuparea</find>
+      <find>messageArea</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,9 +214,18 @@
         <option value="$PROJECT_DIR$/Node_finalproject/views/Clicker.hbs" />
         <option value="$PROJECT_DIR$/Node_finalproject/server.js" />
         <option value="$PROJECT_DIR$/Node_finalproject/views/ClickerStyles.css" />
-        <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
         <option value="$PROJECT_DIR$/views/JS/AJAX.js" />
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
+        <option value="$PROJECT_DIR$/Clicker.js" />
+        <option value="$PROJECT_DIR$/Redux/Store.js" />
+        <option value="$PROJECT_DIR$/views/Testing.html" />
+        <option value="$PROJECT_DIR$/views/game.hbs" />
+        <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/views/JS/GameLogic.js" />
+        <option value="$PROJECT_DIR$/views/testing.html" />
+        <option value="$PROJECT_DIR$/views/CSS/testing.css" />
+        <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
+        <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
       </list>
     </option>
   </component>
@@ -217,9 +243,12 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
+    <option name="x" value="846" />
+    <option name="width" value="1081" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -227,7 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,13 +278,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/eakin/OneDrive/Documents/GitHub/FinalProject/Node_finalproject/views/leaderboard.hbs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.6.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ACIT 2520 Node.JS/Herokupost" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -335,7 +365,15 @@
       <workItem from="1554760521476" duration="7780000" />
       <workItem from="1554772373510" duration="6878000" />
       <workItem from="1554824294906" duration="16824000" />
-      <workItem from="1556063308561" duration="303000" />
+      <workItem from="1556063308561" duration="556000" />
+      <workItem from="1556131309340" duration="7259000" />
+      <workItem from="1556208131575" duration="10922000" />
+      <workItem from="1556293703076" duration="3183000" />
+      <workItem from="1556487323247" duration="21258000" />
+      <workItem from="1556596012105" duration="282000" />
+      <workItem from="1556644508163" duration="4738000" />
+      <workItem from="1556995066400" duration="2329000" />
+      <workItem from="1557156964758" duration="11379000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -477,11 +515,39 @@
       <option name="project" value="LOCAL" />
       <updated>1554844228932</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed the file structure&#10;Added Photos, CSS, JS files&#10;Added appropriate files to folders&#10;Split Clicker.js into two files (AJAX.js &amp; Clicker.js)">
+      <created>1556063745687</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1556063745687</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Working on adding REACT to files">
+      <created>1556557896784</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1556557896784</updated>
+    </task>
+    <task id="LOCAL-00023" summary="changing to babel">
+      <created>1556562531275</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556562531275</updated>
+    </task>
+    <task id="LOCAL-00024" summary="upgrading works now">
+      <created>1556594501402</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1556594501402</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109191000" />
+    <option name="totallyTimeSpent" value="183185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -493,46 +559,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="846" y="0" width="1081" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22649573" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19846596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32925472" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.189099" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32925472" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3147942" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.2057842" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.21579532" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2275641" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36596218" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32925472" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.3147942" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -586,7 +633,11 @@
     <MESSAGE value="mesgs" />
     <MESSAGE value="Added pictures" />
     <MESSAGE value="Somechanges to Leaderboard,css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Somechanges to Leaderboard,css" />
+    <MESSAGE value="Fixed the file structure&#10;Added Photos, CSS, JS files&#10;Added appropriate files to folders&#10;Split Clicker.js into two files (AJAX.js &amp; Clicker.js)" />
+    <MESSAGE value="Working on adding REACT to files" />
+    <MESSAGE value="changing to babel" />
+    <MESSAGE value="upgrading works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="upgrading works now" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Node_finalproject/.gitignore" />
@@ -614,31 +665,102 @@
     <entry file="file://$PROJECT_DIR$/Node_finalproject/server.js" />
     <entry file="file://$PROJECT_DIR$/Node_finalproject/views/Leaderboard.css" />
     <entry file="file://$PROJECT_DIR$/Node_finalproject/views/ClickerStyles.css" />
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/views/Clicker.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="-130">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+    <entry file="file://$PROJECT_DIR$/views/JS/Leaderboard.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AJAX.js" />
+    <entry file="file://$PROJECT_DIR$/Clicker.js" />
+    <entry file="file://$PROJECT_DIR$/JS/Clicker.js" />
+    <entry file="file://$PROJECT_DIR$/Redux/Store.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        <state relative-caret-position="23">
+          <caret line="1" column="29" lean-forward="true" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/DButils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/appTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="4" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/AJAX.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="902">
+          <caret line="45" column="19" lean-forward="true" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Clicker.hbs">
+    <entry file="file://$PROJECT_DIR$/views/game.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/GameLogic.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/testing.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CSS/testing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="60" column="2" lean-forward="true" selection-start-line="60" selection-start-column="2" selection-end-line="60" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="174" column="96" selection-start-line="174" selection-start-column="96" selection-end-line="174" selection-end-column="96" />
         </state>
       </provider>
     </entry>

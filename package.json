@@ -3,21 +3,40 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
-    "dont-sniff-mimetype": "^1.0.0",
     "express": "^4.16.4",
     "hbs": "^4.0.4",
-    "helmet": "^3.16.0",
+    "mocha": "^6.1.4",
     "mongodb": "^3.2.2",
     "mongoose": "^5.4.19",
+    "nodemailer": "^6.1.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
     "uuid": "^3.3.2"
   },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/REakin/Agile.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/REakin/Agile/issues"
+  },
+  "homepage": "https://github.com/REakin/Agile#readme",
   "description": ""
 }

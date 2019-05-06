@@ -1,0 +1,40 @@
+#attackButton {
+    float: right;
+    background: black;
+}
+
+#health{
+    color: red;
+}
+
+#root{
+    margin: auto;
+    width: 750px;
+    height: 750px;
+}
+#message{
+    border: black 2px solid;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    color: black;
+    height: 550px;
+    width: 550px;
+    background: sandybrown;
+}
+
+#gameArea{
+    position: relative;
+    border: black solid 1px;
+    margin: auto;
+    width: 750px;
+    height: 750px;
+    align-content: center;
+    text-align: center;
+}
+#followerbutton{
+    float: right;
+}
+#followertext{
+    float: right;
+}

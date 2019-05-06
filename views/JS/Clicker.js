@@ -1,116 +1,143 @@
-class Clicker{
+class Player {
     //This will be the actual button that the user clicks on :)
-    constructor(lvl){
-        this.lvl = parseInt(lvl);
-        this.nextPrice = 10*(this.lvl*30);
-        this.lvlDisplay = document.getElementById('clickerLvl');
-        this.priceDisplay = document.getElementById('lvlprice');
-        this.display();
-        this.sender()
+    constructor(username, maxhp, gold, av) {
+        this.name = username;
+        this.maxhp = parseInt(maxhp);
+        this.hp = parseInt(maxhp);
+        this.gold = parseInt(gold);
+        this.av = parseInt(av);
+        this.bonusav = 0;
+        this.followers = {}
     }
 
-    click(){
-        window.clicks += this.lvl;
-        window.total_clicks += this.lvl;
-        this.display();
-    }
-    lvlUp(){
-        if(window.clicks >= this.nextPrice) {
-            window.clicks -= this.nextPrice;
-            this.lvl += 1;
-            this.nextPrice = 10*(this.lvl*30);
-            this.sender();
+    attack() {
+        if (this.hp > 0) {
+            enemy.takedamage(this.av + this.bonusav);
         }
     }
 
-    sender(){
-        this.lvlDisplay.innerHTML = this.lvl;
-        this.priceDisplay.innerHTML = this.nextPrice;
-        this.display()
-
+    takedamage(damage) {
+        this.hp -= damage;
+        //playerhealth.innerHTML = this.hp;
+        if (this.hp <= 0) {
+            this.die()
+        }
     }
-
-    display(){
-    numclicks.innerHTML = window.clicks;
-    totalclicks.innerHTML= window.total_clicks;
+    heal(heal){
+        player.hp += heal
+        if(player.hp >= player.maxhp){
+            player.hp = player.maxhp
+        }
     }
-    getlvl(){
-        return this.lvl
+    ability1() {
+        this.bonusav += 5;
+        setTimeout(function () {
+            player.bonusav -= 5;
+        }, 2000)
+    }
+    die() {
+        clearInterval(enemy.attackint);
+        ReactDOM.render(e(village), document.getElementById('root'),function () {
+            ReactDOM.render(e(deathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        });
+        player.gold = 0;
     }
 }
 
-
-class AutoClicker{
-    //This will be the automated clickers
-    constructor(lvl,price,name,value,interval){
-        this.lvl = lvl;
-        this.value = value;
-        this.price = price;
-        this.nextPrice = price*((1+this.lvl)*30);
-        this.interval = interval;
-
-        this.area = document.createElement("div");
-        this.area.id = name+'autoclick';
-        this.area.onclick = this.lvlUp.bind(this);
-
-        this.lvldisplay = document.createElement("div");
-        this.lvldisplay.id = name+'lvl';
-
-        this.pricedisplay = document.createElement("div");
-        this.pricedisplay.id = name+"displayprice";
-
-        this.button = document.createElement("button");
-        this.button.innerHTML = name+"LvlUp";
-
-        this.area.append(document.createTextNode(name+" Level:"));
-        this.area.append(this.lvldisplay);
-
-        this.area.append(document.createTextNode(name+" LvlUp Price: "));
-        this.area.append(this.pricedisplay);
-        this.area.append(document.createElement("hr"));
-        autoclickarea.append(this.area);
-
-        this.sender();
-        this.autoclicker = setInterval(this.click.bind(this), this.interval/this.lvl)
+class Enemy {
+    constructor(hp, av, i) {
+        this.maxhp = parseInt(hp);
+        this.hp = parseInt(hp);
+        this.av = parseInt(av);
+        this.interval = parseInt(i);
+    }
+    startinterval(){
+        this.attackint = setInterval(this.attack.bind(this), this.interval)
     }
 
-    click(){
-        if(this.lvl >= 1){
-            window.clicks += this.value;
-            window.total_clicks += this.value;
-            this.display();
+    attack() {
+        player.takedamage(this.av)
+    }
+
+    takedamage(damage) {
+        this.hp -= damage;
+        if (this.hp <= 0) {
+            this.die()
         }
     }
 
-    lvlUp(){
-        if(window.clicks >= this.nextPrice) {
-            window.clicks -= this.nextPrice;
-            this.lvl += 1;
-            this.nextPrice = this.price*(this.lvl*30);
-            clearInterval(this.autoclicker);
-            this.interval = this.interval/this.lvl;
-            this.autoclicker = setInterval(this.click.bind(this), this.interval);
-            this.sender();
+    die() {
+        window.player.gold += 1 + window.rdnum;
+        window.kills += 1;
+        console.log(kills);
+        clearInterval(this.attackint);
+        if (window.kills % 5 === 0) {
+            window.rdnum += 1;
+            delete window.enemy;
+            ReactDOM.render(e(continueScreen), ReactDOM.findDOMNode(document.getElementById('messageArea')));
+        } else {
+            delete window.enemy;
+            window.enemy = new Enemy(40 + (10 * rdnum), 5, 1000)
+            window.enemy.startinterval()
         }
-    }
-    sender(){
-        this.lvldisplay.innerHTML = this.lvl;
-        this.pricedisplay.innerHTML = this.nextPrice;
-        this.display()
-
-    }
-    display(){
-        numclicks.innerHTML = clicks;
-        totalclicks.innerHTML= total_clicks;
-    }
-
-    getlvl(){
-        return this.lvl
     }
 }
 
+class AutoWarrior {
+    constructor(name, av, interval) {
+        this.name = name;
+        this.av = av;
+        this.interval =interval;
+    }
+    attack() {
+        if (player.hp > 0) {
+            enemy.takedamage(this.av);
+        }
+    }
+    action() {
+        setInterval(this.attack.bind(this), this.interval)
+    }
+}
+class AutoDruid{
+    constructor(name, heal, interval) {
+        this.name = name;
+        this.heal = heal;
+        this.interval =interval;
+    }
+    healplayer(){
+        player.heal(this.heal)
+    }
+    action(){
+        setInterval(this.healplayer.bind(this), this.interval)
+    }
+}
+class AutoThief{
+    constructor(name, bonus, interval) {
+        this.name = name;
+        this.bonus = bonus
+        this.interval =interval;
+    }
+    findgold(){
+        player.gold += this.bonus
+    }
+    action() {
+        setInterval(this.findgold.bind(this), this.interval)
+    }
+}
+class AutoCleric{
+    constructor(name, debuff) {
+        this.name = name;
+        this.debuff = debuff
+    }
+    action() {
+        enemy.interval += this.debuff
+    }
+}
 
-var autoclickarea = document.getElementById('autoclickarea');
-var numclicks = document.getElementById('clicks');
-var totalclicks = document.getElementById('totalClicks');
-
+/*
+This is for unit testing
+module.exports = {
+    Player,
+    Enemy,
+    Autochar
+}*/
