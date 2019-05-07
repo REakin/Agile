@@ -54,11 +54,19 @@ app.use(express.static(__dirname+'/views'));
 app.get('/',(request,response)=>{
     response.render('game.hbs');
 });
+
+app.post('/register',(req,res)=>{
+
+});
+
+app.post('/login',(req,res)=>{
+
+});
+
 //Ajax call
 app.get('/getstats',(req,res)=>{
-
     res.send(stats)
-})
+});
 
 
 app.listen(port,() =>{
