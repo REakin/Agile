@@ -134,10 +134,11 @@ class AutoCleric{
     }
 }
 
-/*
-This is for unit testing
+
+// This is for unit testing
+// /*
 module.exports = {
     Player,
-    Enemy,
-    Autochar
-}*/
+    Enemy
+}
+// */
