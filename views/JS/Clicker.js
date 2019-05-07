@@ -52,6 +52,7 @@ class Player {
     die() {
         clearInterval(enemy.attackint);
         for (let follower in player.followers){
+            console.log(follower);
             player.followers[follower].teardown()
         }
         ReactDOM.render(e(village), document.getElementById('root'),function () {
@@ -89,7 +90,7 @@ class Enemy {
         console.log(kills);
         clearInterval(this.attackint);
         if (window.kills % 5 === 0) {
-            for (follower in player.followers){
+            for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
             window.rdnum += 1;
