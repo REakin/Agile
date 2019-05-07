@@ -88,18 +88,11 @@ class village extends React.Component{
             gold:0,
             av:5}}
     }
-    upgrade(){
-        if(this.state.gold>=10){
-            this.setState({
-                gold: player.gold -10,
-                av: player.av+2
-            });
-            player.gold -= 10;
-            player.av += 2;
-        }
-    }
     openFollowerShop(){
         ReactDOM.render(e(FollowerShop),document.getElementById("popupArea"))
+    }
+    openPlayerShop(){
+        ReactDOM.render(e(PlayerShop),document.getElementById("popupArea"))
     }
     render(){
         this.restart = createGame.bind(this);
@@ -108,9 +101,8 @@ class village extends React.Component{
                 <div id={'popupArea'}/>
                 <h1>Welcome to the village</h1>
                 <div>Your gold: {this.state.gold}</div>
-                <div onClick={this.upgrade.bind(this)}>Upgrade Weapon cost:10 gold</div>
-                <div>current attack power: {this.state.av}</div>
                 <button onClick={this.openFollowerShop}>Open Follower Shop</button>
+                <button onClick={this.openPlayerShop}>Open Player Shop</button>
                 <button onClick={this.restart}>Enter the dungeon</button>
             </div>
         )
@@ -177,6 +169,7 @@ class FollowerShop extends React.Component{
             console.log("can't have more then tree followers")
         }
     }
+
     fireFollower(name){
         delete player.followers[name];
         this.checkhired()
@@ -193,21 +186,21 @@ class FollowerShop extends React.Component{
         }
         if('Druid' in player.followers){
             this.setState({'druid':true});
-            this.buttonD = <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this,AutoDruid,'Druid',2,1500)}>FIRE</button>
+            this.buttonD = <button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>FIRE</button>
         }else {
             this.setState({'druid': false});
             this.buttonD = <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this,AutoDruid,'Druid',2,1500)}>HIRE</button>
         }
         if('Thief' in player.followers){
             this.setState({'thief':true});
-            this.buttonT = <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',1,1000)}>FIRE</button>
+            this.buttonT = <button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>FIRE</button>
         }else {
             this.setState({'thief': false});
             this.buttonT = <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',1,1000)}>HIRE</button>
         }
         if('Cleric' in player.followers){
             this.setState({'cleric':true});
-            this.buttonC = <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',1000,1000)}>HIRE</button>
+            this.buttonC = <button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>FIRE</button>
         }else {
             this.setState({'thief': false});
             this.buttonC = <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',1000,1000)}>HIRE</button>
@@ -235,6 +228,58 @@ class FollowerShop extends React.Component{
         )
     }
 }
+
+class PlayerShop extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp,
+            avcost: 10+player.av*2,
+            hpcost: 20+player.maxhp
+        }
+    }
+    removeMessage(){
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
+    }
+    avupgrade(){
+        player.upgradeAV();
+        this.setState({
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp,
+            avcost: 10+player.av*2,
+            hpcost: 20+player.maxhp
+        })
+    }
+    hpupgrade(){
+        player.upgradeHP();
+        this.setState({
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp
+        })
+    }
+    render() {
+        return (
+            <div id={'message'}>
+                <div>Welcome to the player Shop</div>
+                <div>Your Gold: {this.state.gold}</div>
+                <div>upgrade weapon</div>
+                <div>Your current Av: {this.state.playerav}</div>
+                <div>cost to upgrade av: {this.state.avcost}</div>
+                <button onClick={this.avupgrade.bind(this)}>Upgrade</button>
+                <div>upgrade Armour</div>
+                <div>Your current MaxHp: {this.state.playermaxhp}</div>
+                <div>cost to upgrade: {this.state.hpcost}</div>
+                <button onClick={this.hpupgrade.bind(this)}>upgrade</button>
+                <button onClick={this.removeMessage}>Close Window</button>
+            </div>
+        );
+    }
+}
+
 
 ReactDOM.render(e(start_screen),document.getElementById('root'));
 
