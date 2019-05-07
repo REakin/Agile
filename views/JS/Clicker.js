@@ -51,7 +51,7 @@ class Player {
     }
     die() {
         clearInterval(enemy.attackint);
-        for (follower in player.followers){
+        for (let follower in player.followers){
             player.followers[follower].teardown()
         }
         ReactDOM.render(e(village), document.getElementById('root'),function () {
