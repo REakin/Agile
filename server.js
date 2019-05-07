@@ -14,8 +14,8 @@ var app = express();
 
 ///using a mail server to direct emails to a user...
 
-/*
-var transporter = nodemailer.createTransport({
+
+/*var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'DClicker.no.reply@gmail.com',
@@ -25,19 +25,19 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
     from: 'DClicker.no.reply@gmail.com',
-    to: 'ferguson.rama@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    to: 'tjpriestley@gmail.com',
+    subject: 'Flair',
+    text: 'Surprising enough?'
 };
-*/
-//
-// transporter.sendMail(mailOptions, function(error, info){
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ' + info.response);
-//     }
-// });
+
+
+transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+});*/
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 

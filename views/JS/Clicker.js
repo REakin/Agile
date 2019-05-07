@@ -9,6 +9,20 @@ class Player {
         this.bonusav = 0;
         this.followers = {}
     }
+    upgradeAV(){
+        if(this.gold>=10+(this.av*2)){
+            player.gold -= 10+(this.av*2);
+            player.av += 5;
+            console.log('upgraded')
+        }
+    }
+    upgradeHP(){
+        if(this.gold>=20+this.maxhp){
+            this.gold -= 20+this.maxhp;
+            this.maxhp += 10;
+            console.log('upgraded')
+        }
+    }
 
     attack() {
         if (this.hp > 0) {
