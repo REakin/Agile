@@ -6,12 +6,15 @@ class continueScreen extends React.Component{
         let element = document.getElementById('messageArea');
         ReactDOM.unmountComponentAtNode(element);
         window.enemy = new Enemy(100+(10*rdnum),5,1000)
+        for(let follower in player.followers){
+            player.followers[follower].action()
+        }
+        enemy.startinterval()
     }
     escape(){
         ReactDOM.render(e(village), document.getElementById('root'),function () {
             ReactDOM.render(e(escapeMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")));
         });
-
     }
     render(){
         return(
