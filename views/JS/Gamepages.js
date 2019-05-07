@@ -6,13 +6,20 @@ class continueScreen extends React.Component{
         let element = document.getElementById('messageArea');
         ReactDOM.unmountComponentAtNode(element);
         window.enemy = new Enemy(100+(10*rdnum),5,1000)
+    }
+    escape(){
+        ReactDOM.render(e(village), document.getElementById('root'),function () {
+            ReactDOM.render(e(escapeMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")));
+        });
 
     }
     render(){
         return(
             <div id={'message'}>
+                <br/>
                 <div>would you like to continue?</div>
-                <button onClick={player.endgame}>No</button>
+                <div>WARNING <br/> If you die then you lose all of your gold!</div>
+                <button onClick={this.escape}>No</button>
                 <button onClick={this.removeMessage}>Yes</button>
             </div>
         )
@@ -52,9 +59,10 @@ class game extends React.Component{
     componentWillUnmount(){
         clearInterval(this.interval)
     }
+
     render(){
         return(
-            <div className="test">
+            <div id={'gameArea'}>
                 <h1>Player Area</h1>
                 <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
                 <div>gold: {this.state.gold}</div>
@@ -64,12 +72,13 @@ class game extends React.Component{
                 <div>Round Number: {this.state.rdnum}</div>
                 <button onClick={window.player.ability1.bind(window.player)}>use ability1</button>
                 <button onClick={window.player.attack.bind(window.player)}>ATTACK!</button>
+                <div id={'messageArea'}/>
             </div>
         )
     }
 }
 
-class gameover extends React.Component{
+class village extends React.Component{
     constructor(props){
         super(props);
         try{this.state = {
@@ -79,24 +88,21 @@ class gameover extends React.Component{
             gold:0,
             av:5}}
     }
-    upgrade(){
-        if(this.state.gold>=10){
-            this.setState({
-                gold: this.state.gold-10,
-                av: this.state.av+2
-            });
-        }
+    openFollowerShop(){
+        ReactDOM.render(e(FollowerShop),document.getElementById("popupArea"))
+    }
+    openPlayerShop(){
+        ReactDOM.render(e(PlayerShop),document.getElementById("popupArea"))
     }
     render(){
-        this.restart = createGame.bind(this, this.state.gold,this.state.av);
-
+        this.restart = createGame.bind(this);
         return(
-            <div>
+            <div id={'gameArea'}>
+                <div id={'popupArea'}/>
                 <h1>Welcome to the village</h1>
                 <div>Your gold: {this.state.gold}</div>
-                <div onClick={this.upgrade.bind(this)}>Upgrade Weapon cost:10 gold</div>
-                <div>current attack power: {this.state.av}</div>
-                <button onClick={hirefollower}>Hire a follower</button>
+                <button onClick={this.openFollowerShop}>Open Follower Shop</button>
+                <button onClick={this.openPlayerShop}>Open Player Shop</button>
                 <button onClick={this.restart}>Enter the dungeon</button>
             </div>
         )
@@ -106,21 +112,22 @@ class gameover extends React.Component{
 class start_screen extends React.Component{
     render(){
         return(
-            <button onClick={start}>Click here to start!</button>
+            <div id={'gameArea'}>
+                <button onClick={start}>Click here to start!</button>
+                <div id={'popupArea'}/>
+            </div>
         )
     }
 }
 class escapeMessage extends React.Component{
-
     removeMessage(){
-        let element = document.getElementById('messageArea');
-        ReactDOM.unmountComponentAtNode(element);
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
         return(
-            <div>
+            <div id={'message'}>
                 <div>You escaped the dungeon with {player.gold} gold</div>
-                <div>You killed {rdnum} monsters</div>
+                <div>You killed {kills} monsters</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -128,39 +135,171 @@ class escapeMessage extends React.Component{
 }
 class deathMessage extends React.Component{
     removeMessage(){
-        let element = document.getElementById('messageArea');
-        ReactDOM.unmountComponentAtNode(element);
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
         return(
-            <div>
-                <div>You died in the dungeon with {player.gold}</div>
-                <div>You killed {rdnum} monsters before dying</div>
+            <div id={'message'}>
+                <div>You died in the dungeon</div>
+                <div>you lost {player.gold} gold</div>
+                <div>You killed {kills} monsters before dying</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
     }
 }
 
-function hirefollower(){
-    window.follower = new autochar('name', 1, 1000)
+class FollowerShop extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            'warrior': false,
+            'druid': false,
+            'thief': false,
+            'cleric': false
+        };
+        this.checkhired()
+    }
+    hirefollower(type, name, av, interaval){
+        if(Object.keys(player.followers).length < 3){
+            let follower = new type(name,av,interaval);
+            player.followers[name] = follower;
+            this.checkhired()
+        }else{
+            console.log("can't have more then tree followers")
+        }
+    }
+
+    fireFollower(name){
+        delete player.followers[name];
+        this.checkhired()
+    }
+
+    checkhired(){
+        if('Warrior' in player.followers){
+            this.setState({'warrior':true});
+            this.buttonW = <button id={'followerbuttonW'} onClick={this.fireFollower.bind(this,'Warrior')}>FIRE</button>
+        }
+        else{
+            this.setState({'warrior': false});
+            this.buttonW = <button id={'followerbuttonW'} onClick={this.hirefollower.bind(this,AutoWarrior,'Warrior',1,1000)}>HIRE</button>
+        }
+        if('Druid' in player.followers){
+            this.setState({'druid':true});
+            this.buttonD = <button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>FIRE</button>
+        }else {
+            this.setState({'druid': false});
+            this.buttonD = <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this,AutoDruid,'Druid',2,1500)}>HIRE</button>
+        }
+        if('Thief' in player.followers){
+            this.setState({'thief':true});
+            this.buttonT = <button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>FIRE</button>
+        }else {
+            this.setState({'thief': false});
+            this.buttonT = <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',1,1000)}>HIRE</button>
+        }
+        if('Cleric' in player.followers){
+            this.setState({'cleric':true});
+            this.buttonC = <button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>FIRE</button>
+        }else {
+            this.setState({'thief': false});
+            this.buttonC = <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',1000,1000)}>HIRE</button>
+        }
+    }
+
+    removeMessage(){
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
+    }
+
+    render(){
+        return(
+            <div id={'message'}>
+                <div>Welcome to the shop!</div>
+                <div id={'followertext'}>Hire a Warrior</div>
+                {this.buttonW}
+                <div id={'followertext'}>Hire a Druid</div>
+                {this.buttonD}
+                <div id={'followertext'}>Hire a Thief</div>
+                {this.buttonT}
+                <div id={'followertext'}>Hire a Cleric</div>
+                {this.buttonC}
+                <button onClick={this.removeMessage}>Close Shop</button>
+            </div>
+        )
+    }
 }
+
+class PlayerShop extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp,
+            avcost: 10+player.av*2,
+            hpcost: 20+player.maxhp
+        }
+    }
+    removeMessage(){
+        ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
+    }
+    avupgrade(){
+        player.upgradeAV();
+        this.setState({
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp,
+            avcost: 10+player.av*2,
+            hpcost: 20+player.maxhp
+        })
+    }
+    hpupgrade(){
+        player.upgradeHP();
+        this.setState({
+            gold: player.gold,
+            playerav: player.av,
+            playermaxhp: player.maxhp
+        })
+    }
+    render() {
+        return (
+            <div id={'message'}>
+                <div>Welcome to the player Shop</div>
+                <div>Your Gold: {this.state.gold}</div>
+                <div>upgrade weapon</div>
+                <div>Your current Av: {this.state.playerav}</div>
+                <div>cost to upgrade av: {this.state.avcost}</div>
+                <button onClick={this.avupgrade.bind(this)}>Upgrade</button>
+                <div>upgrade Armour</div>
+                <div>Your current MaxHp: {this.state.playermaxhp}</div>
+                <div>cost to upgrade: {this.state.hpcost}</div>
+                <button onClick={this.hpupgrade.bind(this)}>upgrade</button>
+                <button onClick={this.removeMessage}>Close Window</button>
+            </div>
+        );
+    }
+}
+
+
+ReactDOM.render(e(start_screen),document.getElementById('root'));
 
 function start(){
     //this will be turned into a AJAX call
     let gold = 0;
     let av = 5;
     window.player = new Player('Coo15', 100, gold, av);
-    ReactDOM.render(e(gameover),document.getElementById('root'))
+    ReactDOM.render(e(village),document.getElementById('root'))
 }
 
 
 function createGame(){
-    ReactDOM.unmountComponentAtNode(document.getElementById('messageArea'));
+    window.kills = 0;
     window.rdnum = 1;
     window.player.hp = player.maxhp;
-    window.enemy = new Enemy(100+(10*rdnum),5,1000);
+    window.enemy = new Enemy(40+(10*rdnum),5,1000);
+    for(let follower in player.followers){
+        player.followers[follower].action()
+    }
+    window.enemy.startinterval();
     ReactDOM.render(e(game),document.getElementById('root'));
 }
-
-ReactDOM.render(e(start_screen),document.getElementById('root'));
