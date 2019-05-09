@@ -33,5 +33,6 @@ getscores = getxhr.onreadystatechange = function () {
 
 function getStats() {
     getxhr.open(getmethod, geturl, true);
+    getxhr.setRequestHeader('Content-Type', 'JSON');
     getxhr.send();
 }
