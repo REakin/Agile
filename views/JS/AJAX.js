@@ -8,7 +8,7 @@ var getxhr = new window.XMLHttpRequest(),
 
 function xhrsend(){
     xhr.open(method,url,true);
-    xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+    xhr.setRequestHeader('Content-Type', 'JSON');
     let data =
         {
             playername: player.name,
