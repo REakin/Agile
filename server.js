@@ -72,9 +72,10 @@ app.get('/game',(req,res)=>{
 
 //Ajax call
 app.get('/getState',(req,res)=>{
+    console.log('hshl')
     let db = mydb.getDb();
     db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
-      if (err) throw err
+      if (err) throw err;
       res.send(result,undefined,2)
     })
 });

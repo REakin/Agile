@@ -1,13 +1,8 @@
-var xhr = new window.XMLHttpRequest(),
-    method = "post",
-    url = "http://localhost:8080/saveState";
-
-var getxhr = new window.XMLHttpRequest(),
-    getmethod = "get",
-    geturl = "http://localhost:8080/getState";
+var xhr = new window.XMLHttpRequest()
+var getxhr = new window.XMLHttpRequest();
 
 function xhrsend(){
-    xhr.open(method,url,true)
+    xhr.open('post',`/saveState`);
     let data =
         {
             playername: player.name,
@@ -20,7 +15,7 @@ function xhrsend(){
 
 getscores = getxhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200){
-        stats = JSON.parse(this.response);
+        let stats = JSON.parse(this.response);
         console.log(stats);
         let playername = stats[0].name;
         let hp = stats[0].php;
@@ -31,6 +26,6 @@ getscores = getxhr.onreadystatechange = function () {
 };
 
 function getStats() {
-    getxhr.open(getmethod, geturl, true);
+    getxhr.open("get", `/getState`);
     getxhr.send();
 }
