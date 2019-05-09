@@ -7,8 +7,7 @@ var getxhr = new window.XMLHttpRequest(),
     geturl = "http://localhost:8080/getState";
 
 function xhrsend(){
-    xhr.open(method,url,true);
-    xhr.setRequestHeader('Content-Type', 'JSON');
+    xhr.open(method,url,true)
     let data =
         {
             playername: player.name,
@@ -33,6 +32,5 @@ getscores = getxhr.onreadystatechange = function () {
 
 function getStats() {
     getxhr.open(getmethod, geturl, true);
-    getxhr.setRequestHeader('Content-Type', 'JSON');
     getxhr.send();
 }
