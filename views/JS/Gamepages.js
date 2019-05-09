@@ -1,37 +1,7 @@
 //building the game sort of...
 const e = React.createElement;
 
-class continueScreen extends React.Component{
-    removeMessage(){
-        let element = document.getElementById('messageArea');
-        ReactDOM.unmountComponentAtNode(element);
-        window.enemy = new Enemy(100+(10*rdnum),5,1000)
-        for(let follower in player.followers){
-            player.followers[follower].action()
-        }
-        enemy.startinterval()
-    }
-    escape(){
-        ReactDOM.render(e(village), document.getElementById('root'),function () {
-            ReactDOM.render(e(escapeMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")));
-        });
-    }
-    render(){
-        return(
-            <div id={'message'}>
-                <br/>
-                <div>would you like to continue?</div>
-                <div>WARNING <br/> If you die then you lose all of your gold!</div>
-                <button onClick={this.escape}>No</button>
-                <button onClick={this.removeMessage}>Yes</button>
-            </div>
-        )
-    }
-}
-
-
-
-class game extends React.Component{
+class Game extends React.Component{
     constructor(props){
         super(props);
         this.state ={
@@ -41,7 +11,6 @@ class game extends React.Component{
             ehp: window.enemy.hp,
             kills: window.rdnum
         }
-
     }
     update(){
         try{
@@ -81,7 +50,7 @@ class game extends React.Component{
     }
 }
 
-class village extends React.Component{
+class Village extends React.Component{
     constructor(props){
         super(props);
         try{this.state = {
@@ -112,17 +81,17 @@ class village extends React.Component{
     }
 }
 
-class start_screen extends React.Component{
+class Start_screen extends React.Component{
     render(){
         return(
             <div id={'gameArea'}>
-                <button onClick={start}>Click here to start!</button>
+                <button onClick={getStats}>Click here to start!</button>
                 <div id={'popupArea'}/>
             </div>
         )
     }
 }
-class escapeMessage extends React.Component{
+class EscapeMessage extends React.Component{
     removeMessage(){
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
@@ -136,7 +105,7 @@ class escapeMessage extends React.Component{
         )
     }
 }
-class deathMessage extends React.Component{
+class DeathMessage extends React.Component{
     removeMessage(){
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
@@ -284,25 +253,52 @@ class PlayerShop extends React.Component{
 }
 
 
-ReactDOM.render(e(start_screen),document.getElementById('root'));
-
-function start(){
-    //this will be turned into a AJAX call
-    let gold = 0;
-    let av = 5;
-    window.player = new Player('Coo15', 100, gold, av);
-    ReactDOM.render(e(village),document.getElementById('root'))
+class ContinueScreen extends React.Component{
+    removeMessage(){
+        let element = document.getElementById('messageArea');
+        ReactDOM.unmountComponentAtNode(element);
+        window.enemy = new Enemy(100+(10*rdnum),5,1000);
+        for(let follower in player.followers){
+            player.followers[follower].action()
+        }
+        enemy.startinterval()
+    }
+    escape(){
+        ReactDOM.render(e(Village), document.getElementById('root'),function () {
+            xhrsend();
+            ReactDOM.render(e(EscapeMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")));
+        });
+    }
+    render(){
+        return(
+            <div id={'message'}>
+                <br/>
+                <div>would you like to continue?</div>
+                <div>WARNING <br/> If you die then you lose all of your gold!</div>
+                <button onClick={this.escape}>No</button>
+                <button onClick={this.removeMessage}>Yes</button>
+            </div>
+        )
+    }
 }
 
 
-function createGame(){
+function start(name,hp,gold,av){
+    //this will be turned into a AJAX call
+    window.player = new Player(name, hp, gold, av);
+    ReactDOM.render(React.createElement(Village),document.getElementById('root'))
+}
+
+function createGame() {
     window.kills = 0;
     window.rdnum = 1;
     window.player.hp = player.maxhp;
-    window.enemy = new Enemy(40+(10*rdnum),5,1000);
-    for(let follower in player.followers){
+    window.enemy = new Enemy(40 + (10 * rdnum), 5, 1000);
+    for (let follower in player.followers) {
         player.followers[follower].action()
     }
     window.enemy.startinterval();
-    ReactDOM.render(e(game),document.getElementById('root'));
+    ReactDOM.render(React.createElement(Game), document.getElementById('root'));
 }
+
+ReactDOM.render(React.createElement(Start_screen),document.getElementById('root'));

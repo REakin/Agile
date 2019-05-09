@@ -52,23 +52,43 @@ app.use(express.static(__dirname+'/views'));
 
 
 app.get('/',(request,response)=>{
-    response.render('game.hbs');
+    response.render('login.hbs');
 });
 
 app.post('/register',(req,res)=>{
-
+    console.log(req.body);
+    res.redirect('/game')
 });
 
 app.post('/login',(req,res)=>{
+    console.log(req.body.Username);
+    console.log(req.body.Password);
+    res.redirect('/game')
+});
 
+app.get('/game',(req,res)=>{
+    res.render('game.hbs')
 });
 
 //Ajax call
-app.get('/getstats',(req,res)=>{
-    res.send(stats)
+app.get('/getState',(req,res)=>{
+    let db = mydb.getDb();
+    db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
+      if (err) throw err
+      res.send(result,undefined,2)
+    })
+});
+
+app.post('/saveState',(req,res)=>{
+    let db = mydb.getDb();
+    let data = {$set:req.body};
+    db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
+        if(err) throw err
+    })
 });
 
 
 app.listen(port,() =>{
-    console.log((`server is up and listing on port ${port}`))
- });
+    console.log((`server is up and listing on port ${port}`));
+    mydb.init();
+});
