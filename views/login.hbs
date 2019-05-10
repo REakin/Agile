@@ -2,31 +2,25 @@
 <html>
 <head>
     <title>Node Clicker</title>
-    <link rel="stylesheet" href="CSS/LoginStyles.css">
+    <script src="JS/Login.js" type="application/javascript"></script>
 </head>
 <body>
-{{>Navbar}}
 <div id="Login">
-<form method="post" action="/login">
-    <input type="text" name="Username" placeholder="Username" required>
-    <input type="password" name="Password" placeholder="Password" required>
-    <input type="submit" value="Login">
-</form>
-    <br>
-    <div style="color: red; text-align:center; margin:auto">{{loginmsg}}</div>
-    <div class="shadow2"></div>
+    Login
+    <form method="post">
+        <input type="text" id="lusername" name="Username" placeholder="Username">
+        <input type="password" id="lpassword" name="Password" placeholder="Password">
+    </form>
+    <button onclick="sendlogin()">test</button>
 </div>
 <hr>
 <div>
+    Register
     <form method="post" action="/register">
         <input type="text" name="Username" placeholder="Username" required>
         <input type="password" name="Password" placeholder="Password" required>
         <input type="submit" value="Register">
     </form>
-    <br>
-    <div style="color: red; text-align:center;margin:auto">{{Registermsg}}</div>
-    <div class="shadow"></div>
-    
 </div>
 
 </body>

@@ -12,6 +12,7 @@
     width: 750px;
     height: 750px;
 }
+
 #message{
     border: black 2px solid;
     position: absolute;
@@ -27,14 +28,11 @@
     position: relative;
     border: black solid 1px;
     margin: auto;
-    width: 750px;
-    height: 750px;
+    width: 100%;
+    height: 100%;
     align-content: center;
     text-align: center;
 }
-#followerbutton{
-    float: right;
-}
 #followertext{
-    float: right;
+    float: left;
 }

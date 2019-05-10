@@ -14,8 +14,7 @@ var app = express();
 
 ///using a mail server to direct emails to a user...
 
-/*
-var transporter = nodemailer.createTransport({
+/*var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'DClicker.no.reply@gmail.com',
@@ -25,23 +24,24 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
     from: 'DClicker.no.reply@gmail.com',
-    to: 'ferguson.rama@gmail.com',
-    subject: 'Sending Email using Node.js',
-    text: 'That was easy!'
+    to: 'tjpriestley@gmail.com',
+    subject: 'Flair',
+    text: 'Surprising enough?'
 };
 */
-//
-// transporter.sendMail(mailOptions, function(error, info){
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ' + info.response);
-//     }
-// });
+
+/*
+transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+});*/
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 
-app.use(cookieParser('secret'));
+app.use(cookieParser('hjlk2dasfd3qw1wdd'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 hbs.registerPartials(__dirname+'/views/partials');
@@ -52,15 +52,51 @@ app.use(express.static(__dirname+'/views'));
 
 
 app.get('/',(request,response)=>{
-    response.render('game.hbs');
+    response.render('login.hbs');
 });
-//Ajax call
-app.get('/getstats',(req,res)=>{
 
-    res.send(stats)
+app.post('/register',(req,res)=>{
+    console.log(req.body);
+    res.redirect('/game')
+});
+
+app.get('/login',(req,res)=>{
+    let db = mydb.getDb();
+    username = req.query.username;
+    password = req.query.password;
+    db.collection('Users').find({'username':username,'password':password}).toArray((err,result)=>{
+        if (err) throw err;
+        if (result.length !== 0){
+            res.send({'auth':true})
+        }
+        else{
+            res.send({'auth':false})
+        }
+    });
 })
 
+app.get('/game',(req,res)=>{
+    res.render('game.hbs')
+});
+
+//Ajax call
+app.get('/getState',(req,res)=>{
+    let db = mydb.getDb();
+    db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
+      if (err) throw err;
+      res.send(result,undefined,2)
+    })
+});
+
+app.post('/saveState',(req,res)=>{
+    let db = mydb.getDb();
+    let data = {$set:req.body};
+    db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
+        if(err) throw err
+    })
+});
 
 app.listen(port,() =>{
-    console.log((`server is up and listing on port ${port}`))
- });
+    console.log((`server is up and listing on port ${port}`));
+    mydb.init();
+});
