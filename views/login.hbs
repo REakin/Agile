@@ -5,21 +5,22 @@
     <script src="JS/Login.js" type="application/javascript"></script>
 </head>
 <body>
-<div id="Login">
+<div>
     Login
-    <form method="post">
+    <form id="login" method="post" action="/login" onsubmit="return handlesubmit()">
         <input type="text" id="lusername" name="Username" placeholder="Username">
         <input type="password" id="lpassword" name="Password" placeholder="Password">
+        <input type="submit" value="Sign In">
     </form>
-    <button onclick="sendlogin()">test</button>
 </div>
 <hr>
 <div>
     Register
-    <form method="post" action="/register">
-        <input type="text" name="Username" placeholder="Username" required>
-        <input type="password" name="Password" placeholder="Password" required>
-        <input type="submit" value="Register">
+    <form onsubmit="return sendRegister()">
+        <input type="email" id="remail" name="remail" placeholder="Email" required>
+        <input type="text" id="rusername" name="rusername" placeholder="Username" required>
+        <input type="password" id="rpassword" name="rpassword" placeholder="Password" required>
+        <input type="submit" name="Submit" value="Register"/>
     </form>
 </div>
 

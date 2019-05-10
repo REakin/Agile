@@ -56,14 +56,22 @@ app.get('/',(request,response)=>{
 });
 
 app.post('/register',(req,res)=>{
-    console.log(req.body);
+    console.log(req.query.email);
+    console.log(req.query.username);
+    console.log(req.query.password);
+    res.send({'body':req.query.email})
+});
+
+app.post('/login',(req,res)=>{
     res.redirect('/game')
 });
 
-app.get('/login',(req,res)=>{
+app.post('/logincheck',(req,res)=>{
     let db = mydb.getDb();
-    username = req.query.username;
-    password = req.query.password;
+    console.log(req.body);
+    let username = req.body.username;
+    let password = req.body.password;
+    console.log(username);
     db.collection('Users').find({'username':username,'password':password}).toArray((err,result)=>{
         if (err) throw err;
         if (result.length !== 0){
@@ -73,7 +81,7 @@ app.get('/login',(req,res)=>{
             res.send({'auth':false})
         }
     });
-})
+});
 
 app.get('/game',(req,res)=>{
     res.render('game.hbs')
