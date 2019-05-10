@@ -14,7 +14,6 @@ var app = express();
 
 ///using a mail server to direct emails to a user...
 
-
 /*var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -29,8 +28,9 @@ var mailOptions = {
     subject: 'Flair',
     text: 'Surprising enough?'
 };
+*/
 
-
+/*
 transporter.sendMail(mailOptions, function(error, info){
     if (error) {
         console.log(error);
@@ -41,7 +41,7 @@ transporter.sendMail(mailOptions, function(error, info){
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 
-app.use(cookieParser('secret'));
+app.use(cookieParser('hjlk2dasfd3qw1wdd'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 hbs.registerPartials(__dirname+'/views/partials');
@@ -60,11 +60,20 @@ app.post('/register',(req,res)=>{
     res.redirect('/game')
 });
 
-app.post('/login',(req,res)=>{
-    console.log(req.body.Username);
-    console.log(req.body.Password);
-    res.redirect('/game')
-});
+app.get('/login',(req,res)=>{
+    let db = mydb.getDb();
+    username = req.query.username;
+    password = req.query.password;
+    db.collection('Users').find({'username':username,'password':password}).toArray((err,result)=>{
+        if (err) throw err;
+        if (result.length !== 0){
+            res.send({'auth':true})
+        }
+        else{
+            res.send({'auth':false})
+        }
+    });
+})
 
 app.get('/game',(req,res)=>{
     res.render('game.hbs')
@@ -72,7 +81,6 @@ app.get('/game',(req,res)=>{
 
 //Ajax call
 app.get('/getState',(req,res)=>{
-    console.log('hshl')
     let db = mydb.getDb();
     db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
       if (err) throw err;
@@ -87,7 +95,6 @@ app.post('/saveState',(req,res)=>{
         if(err) throw err
     })
 });
-
 
 app.listen(port,() =>{
     console.log((`server is up and listing on port ${port}`));

@@ -2,15 +2,16 @@
 <html>
 <head>
     <title>Node Clicker</title>
+    <script src="JS/Login.js" type="application/javascript"></script>
 </head>
 <body>
 <div id="Login">
     Login
-    <form method="post" action="/login">
-        <input type="text" name="Username" placeholder="Username" required>
-        <input type="password" name="Password" placeholder="Password" required>
-        <input type="submit" value="Login">
+    <form method="post">
+        <input type="text" id="lusername" name="Username" placeholder="Username">
+        <input type="password" id="lpassword" name="Password" placeholder="Password">
     </form>
+    <button onclick="sendlogin()">test</button>
 </div>
 <hr>
 <div>

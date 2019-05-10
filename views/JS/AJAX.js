@@ -1,4 +1,4 @@
-var xhr = new window.XMLHttpRequest()
+var xhr = new window.XMLHttpRequest();
 var getxhr = new window.XMLHttpRequest();
 
 function xhrsend(){
@@ -16,7 +16,6 @@ function xhrsend(){
 getscores = getxhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200){
         let stats = JSON.parse(this.response);
-        console.log(stats);
         let playername = stats[0].name;
         let hp = stats[0].php;
         let gold = stats[0].pgold;
