@@ -1,0 +1,85 @@
+body, html {
+    margin-top: 45px;
+    padding:0;
+
+}
+.bg {
+    background-image: url("../Images/875.jpg");
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.bg1 {
+    background-image: url("../../../41QlFvElJ3L._SX425_.jpg");
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.bg2 {
+    background-image: url("../Images/Lava2.png");
+    height: 750px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.nav-item {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+.nav-item1 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+.nav-item2 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+.nav-item3 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+.nav-item4 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+}
+a {
+    font-size: 70px;
+    color: 	#DA5350;
+    font-family: 'VT323', monospace;
+    margin-right: 1000px;
+}
+.soldier {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    margin-top: 300px;
+    margin-left: 130px;
+}
+.enemy {
+    float: right;
+    width: 33.33%;
+    padding: 5px;
+    margin-top: 340px;
+    margin-right: 100px;
+}
+p {
+    font-size: 70px;
+    color: 	#DA5350;
+    font-family: 'VT323', monospace;
+    text-align: left;
+
+}
