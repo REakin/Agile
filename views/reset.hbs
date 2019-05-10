@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>Reset Password</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+<body>
+    <div id="content">
+        <h1>Enter Your New Password Below</h1>
+        <div id="reset_form">
+            <form method="POST">
+                <input name="password" type="password" placeholder="    New Password" required="required"> <br>
+                <input type="submit" id="resetBtn" value="Reset">
+            </form>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        background-color: #323232;
+    }
+
+    #content {
+        margin: 100px auto;
+        width: 500px;
+        height: 380px;
+        background-color: #e1e1e1;
+        border-radius: 20px;
+    }
+
+    #reset_form {
+        position: relative;
+        top: 10px;
+        margin: 10px 80px;
+        display: inline-block;
+    }
+
+    input {
+        border-radius: 10px;
+        background-color: #cacaca;
+        padding: 2px;
+        margin: 20px auto;
+        width: 350px;
+        height: 40px;
+        box-shadow: none;
+        border: none;
+    }
+
+    #loginBtn {
+        position: relative;
+        background-color: #a099a83d;
+        width: 80px;
+        height: 40px;
+        color: #e1e1e1;
+        left: 70%;
+    }
+
+    h1 {
+        position: relative;
+        top: 25px;
+        left: 35px;
+        margin: 25px 40px;
+        font-family: 'Roboto', sans-serif;
+        color: black;
+    }
+
+    #reg_note {
+        position: relative;
+        height: 50px;
+        top: 10px;
+        line-height: 48px;
+        background-color: #a099a83d;
+        color: #e1e1e1;
+        text-align: center;
+        border-radius: 0px 0px 20px 20px;
+        font-size: 20px;
+    }
+</style>
+
+</html>
