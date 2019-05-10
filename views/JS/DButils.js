@@ -11,9 +11,9 @@ module.exports.getDb = function () {
 module.exports.init =function (callback) {
     MongoClient.connect(uri,{ useNewUrlParser: true }, function (err, client) {
         if (err){
-            return console.log('unable to connect')
+            return console.log('unable to connect');
         }
         _db = client.db('Clicker');
-        console.log('Connected to DB')
+        console.log('Connected to DB');
     })
 };

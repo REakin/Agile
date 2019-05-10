@@ -1,12 +1,27 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
-const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser'); //use it the forms for retrieving the data
 const uuid = require('uuid/v1'); //creates unique ID's
 const nodemailer = require('nodemailer');
 
-const mydb = require('./views/JS/DButils');
+//db instantiation
+const dbUtils = require('./views/JS/DButils');
+dbUtils.init();
+
+//mongo db
+const myDB = dbUtils.getDb();
+
+//session creation
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
+app.use(session({
+    secret: 'dabOnEm',
+    store: new MongoStore({ db: myDB })
+}));
+
+
 
 const port = process.env.PORT || 8080;
 
