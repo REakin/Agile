@@ -17,6 +17,7 @@ body {
     border-width : 5px;
     color:red;
     background: rgba(7, 8, 7, 0.34);
+    text-align: center;
 }
 h1 {
     position: relative;

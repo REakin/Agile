@@ -12,8 +12,6 @@ function sendlogin(){
     if (response.auth == true){
         return true
     }else{return false}
-
-
 }
 
 function sendRegister(){
