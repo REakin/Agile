@@ -1,36 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Node Clicker</title>
-    <link rel="stylesheet" href="CSS/LoginStyles.css">
+<head><meta charset="UTF-8">
+    <title>Sign in</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="CSS/Login.css" rel="stylesheet">
 </head>
-<body>
-{{>Navbar}}
-<div id="Login">
-<form method="post" action="/login">
-    <input type="text" name="Username" placeholder="Username" required>
-    <input type="password" name="Password" placeholder="Password" required>
-    <input type="submit" value="Login">
-</form>
-    <br>
-    <div style="color: red; text-align:center; margin:auto">{{loginmsg}}</div>
-    <div class="shadow2"></div>
-</div>
-<hr>
-<div>
-    <form method="post" action="/register">
-        <input type="text" name="Username" placeholder="Username" required>
-        <input type="password" name="Password" placeholder="Password" required>
-        <input type="submit" value="Register">
-    </form>
-    <br>
-    <div style="color: red; text-align:center;margin:auto">{{Registermsg}}</div>
-    <div class="shadow"></div>
-    
-</div>
 
+<body>
+<div id="root"></div>
 </body>
 
-{{>footer}}
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
+<script src="JS/LoginPages.js" type="text/babel"></script>
 </html>
