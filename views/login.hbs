@@ -1,5 +1,50 @@
 <!DOCTYPE html>
 <html>
+<head><meta charset="UTF-8">
+    <title>Sign in</title>
+    <script src="JS/Login.js" type="application/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="CSS/Login.css" rel="stylesheet">
+</head>
+
+<script>
+    document.getElementById("loginBtn").addEventListener("mouseover", mouseOver);
+    document.getElementById("loginBtn").addEventListener("mouseout", mouseOut);
+
+    function mouseOver() {
+        document.getElementById("loginBtn").style.color = "red";
+    }
+
+    function mouseOut() {
+        document.getElementById("loginBtn").style.color = "black";
+    }
+</script>
+
+<body>
+<div id='content' style = 'text-align: center;'>
+    <h1>CLICK DUNGEON</h1>
+    <h2>Sign in</h2>
+    <div id="login_form">
+        <form action="/login" method="POST">
+            <input name="username" type="text" placeholder="Username" required="required">
+            <input name="password" type="password" placeholder="Password" required="required">
+        </form>
+    </div>
+    <p id="forgot_note"><a href="/reset-password">Forgot password</a></p>
+    <div id="login_form">
+        <form action="/login" method="POST">
+            <input type="submit" id="loginBtn" value="Login">
+        </form>
+    </div>
+    <p id="reg_note">Don't have an account?&nbsp;&nbsp; <a href="/register">Sign up here.</a></p>
+</div>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+<html>
 <head>
     <title>Node Clicker</title>
     <script src="JS/Login.js" type="application/javascript"></script>
@@ -28,4 +73,6 @@
 
 {{>footer}}
 
-</html>
+</html>&ndash;&gt;
+&ndash;&gt;
+-->

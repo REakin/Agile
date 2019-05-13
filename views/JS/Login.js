@@ -1,7 +1,7 @@
-// var login = new window.XMLHttpRequest();
-// var register = new window.XMLHttpRequest();
+var login = new window.XMLHttpRequest();
+var register = new window.XMLHttpRequest();
 
-/*function handlesubmit() {
+function handlesubmit() {
     sendlogin((res) => {
         console.log(res);
         return res
@@ -41,4 +41,4 @@ function sendRegister(){
     };
     register.open("post",`/register?email=${uemail}&username=${uname}&password=${password}`);
     register.send();
-}*/
+}
