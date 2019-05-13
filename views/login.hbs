@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Node Clicker</title>
-    <script src="JS/Login.js" type="application/javascript"></script>
+<head><meta charset="UTF-8">
+    <title>Sign in</title>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="CSS/Login.css" rel="stylesheet">
 </head>
+
 <body>
-<div>
-    Login
-    <form id="login" method="post" action="/login" onsubmit="return sendlogin()">
-        <input type="text" id="lusername" name="Username" placeholder="Username">
-        <input type="password" id="lpassword" name="Password" placeholder="Password">
-        <input type="submit" value="Sign In">
-    </form>
-</div>
-<hr>
-<div>
-    Register
-    <form onsubmit="return sendRegister()">
-        <input type="email" id="remail" name="remail" placeholder="Email" required>
-        <input type="text" id="rusername" name="rusername" placeholder="Username" required>
-        <input type="password" id="rpassword" name="rpassword" placeholder="Password" required>
-        <input type="submit" name="Submit" value="Register"/>
-    </form>
-</div>
+<div id="root"></div>
 </body>
-{{>footer}}
+
+<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+<script src="JS/LoginPages.js" type="text/babel"></script>
 </html>
