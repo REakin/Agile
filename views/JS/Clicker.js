@@ -54,8 +54,9 @@ class Player {
         for (let follower in player.followers){
             player.followers[follower].teardown()
         }
-        ReactDOM.render(e(village), document.getElementById('root'),function () {
-            ReactDOM.render(e(deathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        xhrsend();
+        ReactDOM.render(e(Village), document.getElementById('root'),function () {
+            ReactDOM.render(e(DeathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
         });
         player.gold = 0;
     }
@@ -89,12 +90,12 @@ class Enemy {
         console.log(kills);
         clearInterval(this.attackint);
         if (window.kills % 5 === 0) {
-            for (follower in player.followers){
+            for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
             window.rdnum += 1;
             delete window.enemy;
-            ReactDOM.render(e(continueScreen), ReactDOM.findDOMNode(document.getElementById('messageArea')));
+            ReactDOM.render(e(ContinueScreen), ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
             delete window.enemy;
             window.enemy = new Enemy(40 + (10 * rdnum), 5, 1000);
@@ -165,13 +166,14 @@ class AutoCleric{
         enemy.interval += this.debuff
     }
     teardown(){
+        //pass
     }
 }
 
-/*
-This is for unit testing
+
+//This is for unit testing
 module.exports = {
     Player,
     Enemy,
     Autochar
-}*/
+}
