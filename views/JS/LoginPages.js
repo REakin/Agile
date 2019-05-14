@@ -109,20 +109,20 @@ class Registerform extends React.Component{
         register.setRequestHeader('Content-Type','application/json');
         register.send(JSON.stringify(data));
         let response = JSON.parse(register.response);
-        console.log(response);
+        //console.log(response)
         if (response.email === true){
+            alert('Email is already in use');
             event.preventDefault()
         }
         else if(response.username === true){
+            alert('Username is already in use');
             event.preventDefault()
         }
         else if(upassword.search(re) === -1){
+            alert('Password must contain a uppercase letter, lowercase letter, a number and a special character(!@#\\$%\\^&\\*)')
             event.preventDefault()
         }
         else{
-            console.log(upassword);
-            console.log('I PASSED!');
-            event.preventDefault()
         }
     }
 

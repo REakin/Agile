@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/views/CSS/testing.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/Clicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Clicker.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/Clicker.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/game.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/testing.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/testing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/LoginPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/LoginPages.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,36 +14,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="DockManager">
-    <window id="3">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1323">
-                    <caret line="125" selection-start-line="125" selection-end-line="125" />
-                    <folding>
-                      <element signature="n#Game#0" />
-                      <element signature="n#Village#0" />
-                      <element signature="n#Start_screen#0" />
-                      <element signature="n#EscapeMessage#0" />
-                      <element signature="n#DeathMessage#0" />
-                      <element signature="n#PlayerShop#0" />
-                      <element signature="n#ContinueScreen#0" />
-                      <element signature="n#!!block;n#start#0" />
-                      <element signature="n#!!block;n#createGame#0" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="492741494">
@@ -119,14 +86,14 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="14" />
+          <entry key="project.opened" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -158,7 +125,7 @@
           <entry key="css" value="657" />
           <entry key="hbs" value="684" />
           <entry key="html" value="662" />
-          <entry key="js" value="20734" />
+          <entry key="js" value="20962" />
           <entry key="txt" value="419" />
           <entry key="yml" value="37" />
         </counts>
@@ -168,7 +135,7 @@
           <entry key="CSS" value="657" />
           <entry key="HTML" value="662" />
           <entry key="Handlebars/Mustache" value="684" />
-          <entry key="JavaScript" value="20734" />
+          <entry key="JavaScript" value="20962" />
           <entry key="PLAIN_TEXT" value="419" />
           <entry key="YAML" value="37" />
         </counts>
@@ -177,20 +144,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="79" selection-end-column="25" />
+            <state relative-caret-position="92">
+              <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+              <folding>
+                <element signature="n#Player#0" />
+                <element signature="n#Enemy#0" />
+                <element signature="n#AutoWarrior#0" />
+                <element signature="n#AutoDruid#0" />
+                <element signature="n#AutoThief#0" />
+                <element signature="n#AutoCleric#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+        <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
+            <state>
+              <caret line="203" column="5" lean-forward="true" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
+              <folding>
+                <element signature="n#Game#0" />
+                <element signature="n#Village#0" />
+                <element signature="n#Start_screen#0" />
+                <element signature="n#EscapeMessage#0" />
+                <element signature="n#DeathMessage#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/JS/AJAX.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="152" column="21" lean-forward="true" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -248,12 +257,12 @@
         <option value="$PROJECT_DIR$/views/CSS/Login.css" />
         <option value="$PROJECT_DIR$/views/login.hbs" />
         <option value="$PROJECT_DIR$/views/JS/Login.js" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
         <option value="$PROJECT_DIR$/views/CSS/Clicker.css" />
         <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
         <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
+        <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -274,7 +283,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -295,6 +304,12 @@
               <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
               <item name="Agile" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Agile" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -402,6 +417,7 @@
       <workItem from="1557502963371" duration="16024000" />
       <workItem from="1557523289619" duration="1464000" />
       <workItem from="1557717909526" duration="743000" />
+      <workItem from="1557865948632" duration="2766000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -610,7 +626,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265717000" />
+    <option name="totallyTimeSpent" value="270852000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -622,7 +638,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
+    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18482906" />
@@ -630,7 +646,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.29477197" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.1134594" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -830,9 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -887,13 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="168" column="18" lean-forward="true" selection-start-line="168" selection-start-column="18" selection-end-line="168" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/CSS/LoginStyles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -915,51 +921,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/AJAX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="15" column="53" lean-forward="true" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/Clicker.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+    <entry file="file://$PROJECT_DIR$/views/JS/AJAX.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="96" column="32" lean-forward="true" selection-start-line="96" selection-start-column="32" selection-end-line="96" selection-end-column="32" />
+        <state relative-caret-position="23">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="152" column="21" lean-forward="true" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="79" selection-end-column="25" />
+        <state relative-caret-position="92">
+          <caret line="22" column="3" lean-forward="true" selection-start-line="22" selection-start-column="3" selection-end-line="22" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1323">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
+        <state>
+          <caret line="203" column="5" lean-forward="true" selection-start-line="203" selection-start-column="5" selection-end-line="203" selection-end-column="5" />
           <folding>
             <element signature="n#Game#0" />
             <element signature="n#Village#0" />
             <element signature="n#Start_screen#0" />
             <element signature="n#EscapeMessage#0" />
             <element signature="n#DeathMessage#0" />
-            <element signature="n#PlayerShop#0" />
-            <element signature="n#ContinueScreen#0" />
-            <element signature="n#!!block;n#start#0" />
-            <element signature="n#!!block;n#createGame#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="158" lean-forward="true" selection-start-line="158" selection-end-line="158" />
+          <folding>
+            <element signature="n#Player#0" />
+            <element signature="n#Enemy#0" />
+            <element signature="n#AutoWarrior#0" />
+            <element signature="n#AutoDruid#0" />
+            <element signature="n#AutoThief#0" />
+            <element signature="n#AutoCleric#0" />
           </folding>
         </state>
       </provider>

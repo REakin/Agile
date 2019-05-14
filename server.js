@@ -66,7 +66,7 @@ app.post('/checkreg',(req,res)=>{
     let db = mydb.getDb();
     let servercheck = {};
     db.collection('Users').find({'email': req.body.email}).toArray((err,result)=>{
-        if (err) throw err
+        if (err) throw err;
         servercheck['email'] = result.length !== 0;
         db.collection('Users').find({'username':req.body.name}).toArray((err,result)=>{
             if (err) throw err
