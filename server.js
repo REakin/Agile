@@ -1,31 +1,27 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
 const bodyParser = require('body-parser'); //use it the forms for retrieving the data
-const uuid = require('uuid/v1'); //creates unique ID's
 const nodemailer = require('nodemailer');
 
 //db instantiation
-const dbUtils = require('./views/JS/DButils');
-dbUtils.init();
-
-//mongo db
-const myDB = dbUtils.getDb();
+const mydb = require('./views/JS/DButils');
 
 //session creation
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
-app.use(session({
-    secret: 'dabOnEm',
-    store: new MongoStore({ db: myDB })
-}));
-
-
 
 const port = process.env.PORT || 8080;
 
 var app = express();
+
+app.use(session({
+    secret: 'dabOnEm',
+    // store: new MongoStore({ db: myDB })
+    resave: false,
+    saveUninitialized: true,
+    cookie:{httpOnly: false}
+}));
 
 ///using a mail server to direct emails to a user...
 
@@ -56,7 +52,6 @@ transporter.sendMail(mailOptions, function(error, info){
 
 //secret is used for signing cookies. Its used to parse and match cookie sessions
 
-app.use(cookieParser('hjlk2dasfd3qw1wdd'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 hbs.registerPartials(__dirname+'/views/partials');
@@ -79,6 +74,7 @@ app.post('/register',(req,res)=>{
 });
 
 app.post('/checkreg',(req,res)=>{
+
     let db = mydb.getDb();
     let servercheck = {};
     db.collection('Users').find({'email': req.body.email}).toArray((err,result)=>{
@@ -87,17 +83,18 @@ app.post('/checkreg',(req,res)=>{
         db.collection('Users').find({'username':req.body.name}).toArray((err,result)=>{
             if (err) throw err
             servercheck['username'] = result.length !== 0;
-            res.send(servercheck)
+            res.send(servercheck);
         })
     });
 
 });
 
 app.post('/login',(req,res)=>{
-    res.redirect('/game')
+    res.redirect('/game');
 });
 
 app.post('/logincheck',(req,res)=>{
+
     let db = mydb.getDb();
     console.log(req.body);
     let username = req.body.username;
@@ -116,6 +113,7 @@ app.post('/logincheck',(req,res)=>{
 
 app.get('/game',(req,res)=>{
     res.render('game.hbs')
+    console.log(req.session.gay)
 });
 
 //Ajax call
@@ -130,8 +128,9 @@ app.get('/getState',(req,res)=>{
 app.post('/saveState',(req,res)=>{
     let db = mydb.getDb();
     let data = {$set:req.body};
+    
     db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
-        if(err) throw err
+        if(err) throw err;
     })
 });
 
