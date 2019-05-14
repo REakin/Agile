@@ -50,6 +50,7 @@ app.set('view engine','hbs');
 app.use(express.static(__dirname+'/views/public'));
 app.use(express.static(__dirname+'/views'));
 
+//added follow
 
 app.get('/',(request,response)=>{
     response.render('login.hbs');
@@ -74,6 +75,7 @@ app.post('/checkreg',(req,res)=>{
             res.send(servercheck)
         })
     });
+
 });
 
 app.post('/login',(req,res)=>{
@@ -117,6 +119,7 @@ app.post('/saveState',(req,res)=>{
         if(err) throw err
     })
 });
+
 
 app.listen(port,() =>{
     console.log((`server is up and listing on port ${port}`));
