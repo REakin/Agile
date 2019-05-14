@@ -172,8 +172,9 @@ class AutoCleric{
 
 
 //This is for unit testing
+/*
 module.exports = {
     Player,
     Enemy,
     Autochar
-}
+}*/

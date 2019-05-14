@@ -62,6 +62,20 @@ app.post('/register',(req,res)=>{
     res.send({'body':req.query.email})
 });
 
+app.post('/checkreg',(req,res)=>{
+    let db = mydb.getDb();
+    let servercheck = {};
+    db.collection('Users').find({'email': req.body.email}).toArray((err,result)=>{
+        if (err) throw err
+        servercheck['email'] = result.length !== 0;
+        db.collection('Users').find({'username':req.body.name}).toArray((err,result)=>{
+            if (err) throw err
+            servercheck['username'] = result.length !== 0;
+            res.send(servercheck)
+        })
+    });
+});
+
 app.post('/login',(req,res)=>{
     res.redirect('/game')
 });
