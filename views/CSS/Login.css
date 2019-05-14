@@ -48,6 +48,13 @@ h2 {
     margin: 10px 80px;
     display: inline-block;
 }
+#register_form{
+    position: relative;
+    text-align: center;
+    top: 5px;
+    margin: 10px 80px;
+    display: inline-block;
+}
 #forgot_form {
     position: relative;
     text-align: center;
@@ -85,6 +92,7 @@ input {
 #loginBtn:hover{
     background-color: red;
 }
+
 #forgot_note {
     position: relative;
     text-align: center;

@@ -1,5 +1,4 @@
 var login = new window.XMLHttpRequest();
-var register = new window.XMLHttpRequest();
 
 function sendlogin(){
     let uname = document.getElementById('lusername').value;
@@ -8,22 +7,26 @@ function sendlogin(){
     login.open("post",`/logincheck`,false);
     login.setRequestHeader('Content-Type','application/json');
     login.send(JSON.stringify(data));
-    let response = JSON.parse(login.response)
+    let response = JSON.parse(login.response);
     if (response.auth == true){
         return true
     }else{return false}
 }
 
 function sendRegister(){
+    var register = new window.XMLHttpRequest();
     let uemail = document.getElementById('remail').value;
     let uname = document.getElementById('rusername').value;
-    let password = document.getElementById('rpassword').value;
-
-    register.onreadystatechange = function() {
-        if (this.readyState === 4 && this.status === 200) {
-            console.log('idk');
-        }
+    let upassword = document.getElementById('rpassword').value;
+    let data ={
+        email: uemail,
+        name:uname,
+        password:upassword
     };
-    register.open("post",`/register?email=${uemail}&username=${uname}&password=${password}`);
-    register.send();
+    register.open('post',"/checkreg",false);
+    register.setRequestHeader('Content-Type','application/json');
+    register.send(JSON.stringify(data));
+    let response = JSON.parse(register.response);
+    console.log(response);
+    event.preventDefault()
 }

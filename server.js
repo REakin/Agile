@@ -65,6 +65,7 @@ app.set('view engine','hbs');
 app.use(express.static(__dirname+'/views/public'));
 app.use(express.static(__dirname+'/views'));
 
+//added follow
 
 app.get('/',(request,response)=>{
     response.render('login.hbs');
@@ -75,6 +76,21 @@ app.post('/register',(req,res)=>{
     console.log(req.query.username);
     console.log(req.query.password);
     res.send({'body':req.query.email})
+});
+
+app.post('/checkreg',(req,res)=>{
+    let db = mydb.getDb();
+    let servercheck = {};
+    db.collection('Users').find({'email': req.body.email}).toArray((err,result)=>{
+        if (err) throw err;
+        servercheck['email'] = result.length !== 0;
+        db.collection('Users').find({'username':req.body.name}).toArray((err,result)=>{
+            if (err) throw err
+            servercheck['username'] = result.length !== 0;
+            res.send(servercheck)
+        })
+    });
+
 });
 
 app.post('/login',(req,res)=>{
@@ -118,6 +134,7 @@ app.post('/saveState',(req,res)=>{
         if(err) throw err
     })
 });
+
 
 app.listen(port,() =>{
     console.log((`server is up and listing on port ${port}`));

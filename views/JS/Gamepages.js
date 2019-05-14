@@ -91,6 +91,7 @@ class Start_screen extends React.Component{
         )
     }
 }
+
 class EscapeMessage extends React.Component{
     removeMessage(){
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
@@ -105,6 +106,7 @@ class EscapeMessage extends React.Component{
         )
     }
 }
+
 class DeathMessage extends React.Component{
     removeMessage(){
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
@@ -126,15 +128,19 @@ class FollowerShop extends React.Component{
         super(props);
         this.state={
             'warrior': false,
+            'wlvl':1,
             'druid': false,
+            'dlvl':1,
             'thief': false,
-            'cleric': false
+            'tlvl':1,
+            'cleric': false,
+            'clvl':1
         };
         this.checkhired()
     }
-    hirefollower(type, name, av, interaval){
+    hirefollower(type, name, lvl, interaval){
         if(Object.keys(player.followers).length < 3){
-            let follower = new type(name,av,interaval);
+            let follower = new type(name,lvl,interaval);
             player.followers[name] = follower;
             this.checkhired()
         }else{
@@ -146,36 +152,54 @@ class FollowerShop extends React.Component{
         delete player.followers[name];
         this.checkhired()
     }
+    upgradeFollower(type,lvl){
+        if (player.gold>= 20*lvl){
+            player.gold -= 20*lvl;
+            this.setState({[type]:lvl+1})
+        }
+    }
 
     checkhired(){
         if('Warrior' in player.followers){
             this.setState({'warrior':true});
-            this.buttonW = <button id={'followerbuttonW'} onClick={this.fireFollower.bind(this,'Warrior')}>FIRE</button>
+            this.buttonW = <div><button id={'followerbuttonW'} onClick={this.fireFollower.bind(this,'Warrior')}>FIRE</button></div>
         }
         else{
             this.setState({'warrior': false});
-            this.buttonW = <button id={'followerbuttonW'} onClick={this.hirefollower.bind(this,AutoWarrior,'Warrior',1,1000)}>HIRE</button>
+            this.buttonW = <div>
+                    <button id={'upgradefollowerW'} onClick={this.upgradeFollower.bind(this,'wlvl',this.state.wlvl)}>Upgrade Warrior</button>
+                    <button id={'followerbuttonW'} onClick={this.hirefollower.bind(this,AutoWarrior,'Warrior',this.state.wlvl,1000)}>HIRE</button>
+                </div>
         }
         if('Druid' in player.followers){
             this.setState({'druid':true});
-            this.buttonD = <button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>FIRE</button>
+            this.buttonD = <div><button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>FIRE</button></div>
         }else {
             this.setState({'druid': false});
-            this.buttonD = <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this,AutoDruid,'Druid',2,1500)}>HIRE</button>
+            this.buttonD = <div>
+                <button id={'upgradefollowerD'} onClick={this.upgradeFollower.bind(this, 'dlvl', this.state.dlvl)}>Upgrade Druid</button>
+                <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this, AutoDruid, 'Druid', this.state.dlvl, 1500)}>HIRE</button>
+            </div>;
         }
         if('Thief' in player.followers){
             this.setState({'thief':true});
-            this.buttonT = <button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>FIRE</button>
+            this.buttonT = <div><button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>FIRE</button></div>
         }else {
             this.setState({'thief': false});
-            this.buttonT = <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',1,1000)}>HIRE</button>
+            this.buttonT = <div>
+                <button id={'upgradefollowerT'} onClick={this.upgradeFollower.bind(this,'tlvl',this.state.tlvl)}>Upgrade Thief</button>
+                <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',this.state.tlvl,1000)}>HIRE</button>
+            </div>
         }
         if('Cleric' in player.followers){
             this.setState({'cleric':true});
-            this.buttonC = <button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>FIRE</button>
+            this.buttonC = <div><button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>FIRE</button></div>
         }else {
-            this.setState({'thief': false});
-            this.buttonC = <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',1000,1000)}>HIRE</button>
+            this.setState({'cleric': false});
+            this.buttonC = <div>
+                <button id={'upgradefollowerC'} onClick={this.upgradeFollower.bind(this,'clvl',this.state.clvl)}>Upgrade Cleric</button>
+                <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',this.state.clvl,1000)}>HIRE</button>
+            </div>
         }
     }
 
@@ -252,7 +276,6 @@ class PlayerShop extends React.Component{
     }
 }
 
-
 class ContinueScreen extends React.Component{
     removeMessage(){
         let element = document.getElementById('messageArea');
@@ -284,7 +307,6 @@ class ContinueScreen extends React.Component{
 
 
 function start(name,hp,gold,av){
-    //this will be turned into a AJAX call
     window.player = new Player(name, hp, gold, av);
     ReactDOM.render(React.createElement(Village),document.getElementById('root'))
 }

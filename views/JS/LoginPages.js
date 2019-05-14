@@ -46,6 +46,25 @@ class Loginform extends React.Component{
     constructor(props){
         super(props)
     }
+
+    sendlogin(){
+        var login = new window.XMLHttpRequest();
+        let uname = document.getElementById('lusername').value;
+        let password = document.getElementById('lpassword').value;
+        let data = {username:uname,password:password};
+        login.open("post",`/logincheck`,false);
+        login.setRequestHeader('Content-Type','application/json');
+        login.send(JSON.stringify(data));
+        let response = JSON.parse(login.response);
+        if (response.auth == true){
+            return true
+        }else{
+            alert('Login Failed');
+            event.preventDefault()
+        }
+
+    }
+
     render(){
         return(
             <div id={'content'}>
@@ -53,13 +72,13 @@ class Loginform extends React.Component{
                 <h2>Sign in</h2>
                 <div id={"login_form"}>
                     <form method={"POST"}>
-                        <input name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
-                            <input name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
+                        <input id={'lusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
+                            <input id={'lpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
                     </form>
                 </div>
                 <p id={"forgot_note"}><a onClick={this.props.changeForgot}>Forgot password</a></p>
                 <div id={"login_form"}>
-                    <form action={"/login"} method={"POST"} onSubmit={this.sendlogin}>
+                    <form action={"/login"} method={"POST"} onSubmit={this.sendlogin.bind(this)}>
                         <input type={'submit'} id={'loginBtn'} value={"Login"}/>
                     </form>
                 </div>
@@ -73,21 +92,53 @@ class Loginform extends React.Component{
 }
 
 class Registerform extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    sendRegister(){
+        let re = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})');
+        var register = new window.XMLHttpRequest();
+        let uemail = document.getElementById('remail').value;
+        let uname = document.getElementById('rusername').value;
+        let upassword = document.getElementById('rpassword').value;
+        let data ={
+            email: uemail,
+            name:uname
+        };
+        register.open('post',"/checkreg",false);
+        register.setRequestHeader('Content-Type','application/json');
+        register.send(JSON.stringify(data));
+        let response = JSON.parse(register.response);
+        //console.log(response)
+        if (response.email === true){
+            alert('Email is already in use');
+            event.preventDefault()
+        }
+        else if(response.username === true){
+            alert('Username is already in use');
+            event.preventDefault()
+        }
+        else if(upassword.search(re) === -1){
+            alert('Password must contain a uppercase letter, lowercase letter, a number and a special character(!@#\\$%\\^&\\*)')
+            event.preventDefault()
+        }
+        else{
+        }
+    }
+
     render(){
         return(
             <div id={'content'}>
                 <h1>CLICK DUNGEON</h1>
                 <h2>Sign Up</h2>
-                <div id={"login_form"}>
-                    <form action={"/register"} method={"POST"} onSubmit={this.sendRegister}>
-                        <input name={'Email'} type={'email'} placeholder={'Email'} required={"required"}/>
-                        <input name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
-                        <input name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
-                    </form>
-                </div>
-                <div id={"login_form"}>
-                    <form action={"/login-user"} method={"POST"}>
-                        <input type={'submit'} id={'loginBtn'} value={"Login"}/>
+                <div id={"register_form"}>
+                    <form action={"/login-user"} method={"POST"} onSubmit={this.sendRegister.bind(this)}>
+                        <input id={'remail'} name={'Email'} type={'email'} placeholder={'Email'} required={"required"}/>
+                        <input id={'rusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
+                        <input id={'rpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
+                        <br/>Password MUST contain an Upper case letter, Lower case letter,
+                        a number, a special character and must be larger then 8 characters
+                        <input type={'submit'} id={'loginBtn'} value={"Register"}/>
                     </form>
                     <a onClick={this.props.changeLogin}>Return to login</a>
                 </div>
@@ -112,7 +163,7 @@ class Forgotform extends React.Component{
                     </form>
                 </div>
                 <form action={"/login"} method={"POST"} onSubmit={'sendlogin'}>
-                    <input type={'submit'} id={'loginBtn'} value={"Login"}/>
+                    <input type={'submit'} id={'loginBtn'} value={"Submit"}/>
                 </form>
                 <a onClick={this.props.changeLogin}>Return to login</a>
             </div>
