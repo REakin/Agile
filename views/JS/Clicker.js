@@ -6,8 +6,7 @@ class Player {
         this.hp = parseInt(maxhp);
         this.gold = parseInt(gold);
         this.av = parseInt(av);
-        this.bonusav = 0;
-        this.followers = {}
+        this.followers = {};
     }
     upgradeAV(){
         if(this.gold>=10+(this.av*2)){
@@ -24,82 +23,78 @@ class Player {
         }
     }
 
-    attack() {
+    attack(target,container) {
+        //console.log(target);
         if (this.hp > 0) {
-            enemy.takedamage(this.av + this.bonusav);
+            //console.log(target);
+            target.takedamage(this.av,this,container);
         }
     }
-
-    takedamage(damage) {
+    takedamage(damage,enemy) {
         this.hp -= damage;
-        //playerhealth.innerHTML = this.hp;
+        enemy.container.Stateupdate();
         if (this.hp <= 0) {
-            this.die()
+            this.die(enemy)
         }
     }
     heal(heal){
-        player.hp += heal
-        if(player.hp >= player.maxhp){
-            player.hp = player.maxhp
+        this.hp += heal;
+        if(this.hp >= this.maxhp){
+            this.hp = this.maxhp
         }
     }
-    ability1() {
-        this.bonusav += 5;
-        setTimeout(function () {
-            player.bonusav -= 5;
-        }, 2000)
-    }
-    die() {
+    die(enemy) {
+        this.gold = 0;
         clearInterval(enemy.attackint);
-        for (let follower in player.followers){
-            player.followers[follower].teardown()
+        for (let follower in this.followers){
+            this.followers[follower].teardown()
         }
-        xhrsend();
-        ReactDOM.render(e(Village), document.getElementById('root'),function () {
-            ReactDOM.render(e(DeathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
-        });
-        player.gold = 0;
+        // ReactDOM.render(e(Village), document.getElementById('root'),function () {
+        //     ReactDOM.render(e(DeathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        //});
     }
 }
 
 class Enemy {
-    constructor(hp, av, i) {
+    constructor(hp, av, i, container) {
         this.maxhp = parseInt(hp);
         this.hp = parseInt(hp);
         this.av = parseInt(av);
         this.interval = parseInt(i);
+        this.container = container
     }
-    startinterval(){
-        this.attackint = setInterval(this.attack.bind(this), this.interval)
-    }
-
-    attack() {
-        player.takedamage(this.av)
+    startinterval(player){
+        this.attackint = setInterval(this.attack.bind(this,player), this.interval)
     }
 
-    takedamage(damage) {
+    attack(target) {
+        target.takedamage(this.av,this);
+        this.container.Stateupdate()
+    }
+
+    takedamage(damage,player) {
         this.hp -= damage;
+        this.container.Stateupdate();
         if (this.hp <= 0) {
-            this.die()
+            this.die(player)
         }
     }
-
-    die() {
-        window.player.gold += 1 + window.rdnum;
-        window.kills += 1;
-        console.log(kills);
+    die(player) {
+        player.gold += 1;
+        this.container.setState({kills:this.container.state.kills+1});
         clearInterval(this.attackint);
-        if (window.kills % 5 === 0) {
+        this.container.Stateupdate();
+        if (this.container.state.kills % 5 === 0) {
             for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
-            window.rdnum += 1;
-            delete window.enemy;
-            ReactDOM.render(e(ContinueScreen), ReactDOM.findDOMNode(document.getElementById('messageArea')));
+            this.container.setState({rdnum:this.container.state.rdnum+1});
+            console.log('continue?');
+            ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
-            delete window.enemy;
-            window.enemy = new Enemy(40 + (10 * rdnum), 5, 1000);
-            window.enemy.startinterval()
+            this.hp = (this.maxhp+=10);
+            this.startinterval(player);
+            this.container.Stateupdate();
         }
     }
 }

@@ -1,19 +1,18 @@
 body, html {
     margin-top: 45px;
     padding:0;
-
 }
 
 .bg {
     background-image: url("../Images/875.jpg");
-    height: 750px;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 100%;
     margin-top: 60px;
 
 }
