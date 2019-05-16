@@ -4,12 +4,12 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="agile.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../CSS/agile1.css">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
 </head>
 <body>
-
 <div class="bg">
     <p>
         Village
@@ -38,62 +38,90 @@
     </div>
     </div>
     <div class="nav-item2">
-        <button type="button" class="btn btn-danger btn-rounded btn-lg" data-toggle="modal" data-target="#myModal">Upgrade</button>
-        <div class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="nav-item2">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times</button>
-                        <h4 class="modal-title">Upgrade</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>hello</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onclick="upgrade()">Upgrade</button>
+    </div>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="upgradeweapons">
+                <h1>Upgrade Weapons</h1>
             </div>
+            <div class="hello">
+                <img src="../Images/5071.jpg" alt="sword">
+                +20 ATT, 300 coins
+                <img src="../Images/5072.jpg" alt="armor">
+                +40 ATT, 500 coins
+                <br>
+                <br>
+                <img src="../Images/5073.jpg" alt="armor">
+                +100 HP, 300 coins
+                <img src="../Images/5074.jpg" alt="armor">
+                +200 HP, 500 coins
+            </div>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+            <a href="" class="button"><h3>Purchase</h3></a>
+            <div class = 'points'>
+                Points:
+            </div>
+            <label class="texty">
+                <input type="text" value="500" size="4">
+            </label>
         </div>
     </div>
     <div class="nav-item3">
-        <button type="button" class="btn btn-danger btn-rounded btn-lg" data-toggle="modal" data-target="#myModal">Leaderboard</button>
-        <div class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="nav-item3">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Leaderboard</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Hello</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-            </div>
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade3" onclick="upgrade2()">Leaderboard</button>
+    </div>
+    <div class="bg-modal2">
+        <div class="modal-content">
+                <h4>Leaderboard</h4>
+            <table>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Peter</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lois</td>
+                    <td>18000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Andy</td>
+                    <td>14500</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Andrew</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chris</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Kris</td>
+                    <td>9000</td>
+                </tr>
+            </table>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
         </div>
     </div>
     <div class="nav-item4">
-        <button type="button" class="btn btn-danger btn-rounded btn-lg" data-toggle="modal" data-target="#myModal">Recruit</button>
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <div class="nav-item4">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Recruit</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onclick="upgrade3()">Recruit</button>
+    </div>
+    <div class="bg-modal3">
+        <div class="modal-content">
+            <h2>Recruit</h2>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+            <div class="user">
+                <img src="../Images/pipo-enemy018a.png" alt="user">
             </div>
         </div>
     </div>

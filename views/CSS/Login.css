@@ -49,6 +49,14 @@ h2 {
     display: inline-block;
 }
 
+#register_form{
+    position: relative;
+    text-align: center;
+    top: 5px;
+    margin: 10px 80px;
+    display: inline-block;
+}
+
 #forgot_form {
     position: relative;
     text-align: center;

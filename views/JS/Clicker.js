@@ -105,14 +105,14 @@ class Enemy {
 }
 
 class AutoWarrior {
-    constructor(name, av, interval) {
+    constructor(name, lvl, interval,) {
         this.name = name;
-        this.av = av;
         this.interval =interval;
+        this.lvl = lvl
     }
     attack() {
         if (player.hp > 0) {
-            enemy.takedamage(this.av);
+            enemy.takedamage(this.lvl);
         }
     }
     action() {
@@ -124,13 +124,13 @@ class AutoWarrior {
 }
 
 class AutoDruid{
-    constructor(name, heal, interval) {
+    constructor(name, lvl, interval) {
         this.name = name;
-        this.heal = heal;
         this.interval =interval;
+        this.lvl = lvl
     }
     healplayer(){
-        player.heal(this.heal)
+        player.heal(this.lvl)
     }
     action(){
         this.actiontime = setInterval(this.healplayer.bind(this), this.interval)
@@ -141,13 +141,13 @@ class AutoDruid{
 }
 
 class AutoThief{
-    constructor(name, bonus, interval) {
+    constructor(name, lvl, interval) {
         this.name = name;
-        this.bonus = bonus
         this.interval =interval;
+        this.lvl = lvl;
     }
     findgold(){
-        player.gold += this.bonus
+        player.gold += this.lvl
     }
     action() {
        this.actiontime = setInterval(this.findgold.bind(this), this.interval)
@@ -158,20 +158,21 @@ class AutoThief{
 }
 
 class AutoCleric{
-    constructor(name, debuff) {
+    constructor(name,lvl) {
         this.name = name;
-        this.debuff = debuff
+        this.lvl = lvl
     }
     action() {
-        enemy.interval += this.debuff
+        enemy.interval += this.lvl*1000
     }
     teardown(){
         //pass
     }
 }
 
+
+//This is for unit testing
 /*
-This is for unit testing
 module.exports = {
     Player,
     Enemy,
