@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/NavbarStyle.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/Navbar.hbs" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,35 +22,35 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="PNG" value="1" />
-          <entry key="css" value="1" />
+          <entry key="css" value="6" />
           <entry key="hbs" value="4" />
-          <entry key="html" value="3" />
+          <entry key="html" value="4" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="4" />
+          <entry key="js" value="6" />
           <entry key="png" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="3" />
+          <entry key="CSS" value="6" />
+          <entry key="HTML" value="4" />
           <entry key="Handlebars/Mustache" value="4" />
           <entry key="Image" value="5" />
-          <entry key="JavaScript" value="4" />
+          <entry key="JavaScript" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="19" />
+          <entry key="css" value="20" />
           <entry key="hbs" value="41" />
-          <entry key="js" value="3822" />
+          <entry key="js" value="3995" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="19" />
+          <entry key="CSS" value="20" />
           <entry key="Handlebars/Mustache" value="41" />
-          <entry key="JavaScript" value="3822" />
+          <entry key="JavaScript" value="3995" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -65,7 +68,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1058">
+            <state>
               <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
             </state>
           </provider>
@@ -74,16 +77,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="158" column="78" selection-start-line="158" selection-start-column="78" selection-end-line="158" selection-end-column="78" />
+            <state relative-caret-position="414">
+              <caret line="292" column="40" selection-start-line="292" selection-start-column="40" selection-end-line="292" selection-end-column="40" />
               <folding>
                 <element signature="n#Game#0" />
                 <element signature="n#Dungeon#0" />
                 <element signature="n#Village#0" />
-                <element signature="n#Start_screen#0" />
                 <element signature="n#EscapeMessage#0" />
+                <element signature="n#DeathMessage#0" />
                 <element signature="n#FollowerShop#0" />
-                <element signature="n#PlayerShop#0" />
+                <element signature="n#ContinueScreen#0" />
               </folding>
             </state>
           </provider>
@@ -92,23 +95,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+            <state relative-caret-position="-1">
+              <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
               <folding>
+                <element signature="n#Enemy#0" />
                 <element signature="n#AutoWarrior#0" />
                 <element signature="n#AutoDruid#0" />
                 <element signature="n#AutoThief#0" />
                 <element signature="n#AutoCleric#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/game.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -169,8 +164,8 @@
         <option value="$PROJECT_DIR$/views/CSS/Clicker.css" />
         <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/views/CSS/agile1.css" />
         <option value="$PROJECT_DIR$/views/game.hbs" />
+        <option value="$PROJECT_DIR$/views/CSS/agile1.css" />
         <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
         <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
       </list>
@@ -195,7 +190,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="width" value="1073" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -318,7 +313,7 @@
       <workItem from="1556811184462" duration="6812000" />
       <workItem from="1557787094639" duration="112000" />
       <workItem from="1557890624540" duration="8303000" />
-      <workItem from="1557935388198" duration="12229000" />
+      <workItem from="1557935388198" duration="16961000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -527,7 +522,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202569000" />
+    <option name="totallyTimeSpent" value="207301000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -539,15 +534,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="0" />
+    <frame x="-7" y="0" width="1073" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" weight="0.32905984" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.29758453" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22914349" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22914349" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -561,12 +556,12 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18589744" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.32905984" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.13125695" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22914349" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933258" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -641,9 +636,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed AJAX hopefully..." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Node_finalproject/package-lock.json" />
-    <entry file="file://$PROJECT_DIR$/Node_finalproject/package.json" />
-    <entry file="file://$PROJECT_DIR$/Node_finalproject/views/partials/Navbar.hbs" />
     <entry file="file://$PROJECT_DIR$/Node_finalproject/views/partials/footer.hbs" />
     <entry file="file://$PROJECT_DIR$/Node_finalproject/views/Clicker.js" />
     <entry file="file://$PROJECT_DIR$/Node_finalproject/views/Leaderboard.js" />
@@ -726,13 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -764,13 +749,6 @@
     <entry file="file://$PROJECT_DIR$/views/register_succeed.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/HTML/agile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/bg.PNG" />
     <entry file="file://$PROJECT_DIR$/views/bgb.png" />
     <entry file="file://$PROJECT_DIR$/views/login_background.jpg">
@@ -781,13 +759,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy025.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/CSS/agile1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/HTML/agile.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -808,7 +779,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
+        <state>
           <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
         </state>
       </provider>
@@ -820,27 +791,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CSS/NavbarStyle.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CSS/LoginStyles.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CSS/agile1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-828">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/HTML/agile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="158" column="78" selection-start-line="158" selection-start-column="78" selection-end-line="158" selection-end-column="78" />
+        <state relative-caret-position="414">
+          <caret line="292" column="40" selection-start-line="292" selection-start-column="40" selection-end-line="292" selection-end-column="40" />
           <folding>
             <element signature="n#Game#0" />
             <element signature="n#Dungeon#0" />
             <element signature="n#Village#0" />
-            <element signature="n#Start_screen#0" />
             <element signature="n#EscapeMessage#0" />
+            <element signature="n#DeathMessage#0" />
             <element signature="n#FollowerShop#0" />
-            <element signature="n#PlayerShop#0" />
+            <element signature="n#ContinueScreen#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="87" column="33" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+        <state relative-caret-position="-1">
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
           <folding>
+            <element signature="n#Enemy#0" />
             <element signature="n#AutoWarrior#0" />
             <element signature="n#AutoDruid#0" />
             <element signature="n#AutoThief#0" />

@@ -103,12 +103,12 @@ class Village extends React.Component{
         return(
             <div className="bg" id={'gameArea'}>
                 <div id={'popupArea'}/>
-                <div style={{'float':'left'}}>
+                <div>
                     <div>
-                        <a className="btn btn-danger btn-rounded btn-lg" onClick={this.props.changeDungeon.bind(this)}>Play</a>
+                        <a className="nav-item1 btn btn-danger btn-rounded btn-lg" onClick={this.props.changeDungeon.bind(this)}>Play</a>
                     </div>
                     <div>
-                        <button type="button" className="btn btn-danger btn-rounded btn-lg">Graveyard</button>
+                        <button type="button" className="nav-item1 btn btn-danger btn-rounded btn-lg">Graveyard</button>
                     </div>
                     <div>
                         <button className="btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onClick={this.openPlayerShop.bind(this)}>Smithy</button>
@@ -125,17 +125,6 @@ class Village extends React.Component{
     }
 }
 
-class Start_screen extends React.Component{
-    render(){
-        return(
-            <div id={'gameArea'}>
-                <button onClick={getStats}>Click here to start!</button>
-                <div id={'popupArea'}/>
-            </div>
-        )
-    }
-}
-
 class EscapeMessage extends React.Component{
     removeMessage(){
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
@@ -144,7 +133,6 @@ class EscapeMessage extends React.Component{
         return(
             <div id={'message'}>
                 <div>You escaped the dungeon with {this.props.player.gold} gold</div>
-                <div>You killed {this.props.kills} monsters</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -163,7 +151,6 @@ class DeathMessage extends React.Component{
             <div id={'message'}>
                 <div>You died in the dungeon</div>
                 <div>you lost {this.props.player.gold} gold</div>
-                <div>You killed {this.props.kills} monsters before dying</div>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -210,7 +197,7 @@ class FollowerShop extends React.Component{
     checkhired(){
         if('Warrior' in this.props.player.followers){
             this.setState({'warrior':true});
-            this.buttonW = <div><button id={'followerbuttonW'} onClick={this.fireFollower.bind(this,'Warrior')}>FIRE</button></div>
+            this.buttonW = <div><button id={'followerbuttonW'} onClick={this.fireFollower.bind(this,'Warrior')}>Dismiss</button></div>
         }
         else{
             this.setState({'warrior': false});
@@ -221,7 +208,7 @@ class FollowerShop extends React.Component{
         }
         if('Druid' in this.props.player.followers){
             this.setState({'druid':true});
-            this.buttonD = <div><button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>FIRE</button></div>
+            this.buttonD = <div><button id={'followerbuttonD'} onClick={this.fireFollower.bind(this,'Druid')}>Dismiss</button></div>
         }else {
             this.setState({'druid': false});
             this.buttonD = <div>
@@ -231,7 +218,7 @@ class FollowerShop extends React.Component{
         }
         if('Thief' in this.props.player.followers){
             this.setState({'thief':true});
-            this.buttonT = <div><button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>FIRE</button></div>
+            this.buttonT = <div><button id={'followerbuttonT'} onClick={this.fireFollower.bind(this,'Thief')}>Dismiss</button></div>
         }else {
             this.setState({'thief': false});
             this.buttonT = <div>
@@ -241,7 +228,7 @@ class FollowerShop extends React.Component{
         }
         if('Cleric' in this.props.player.followers){
             this.setState({'cleric':true});
-            this.buttonC = <div><button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>FIRE</button></div>
+            this.buttonC = <div><button id={'followerbuttonC'} onClick={this.fireFollower.bind(this,'Cleric')}>Dismiss</button></div>
         }else {
             this.setState({'cleric': false});
             this.buttonC = <div>
@@ -294,7 +281,7 @@ class PlayerShop extends React.Component{
             playerav: this.props.player.av,
             playermaxhp: this.props.player.maxhp,
             avcost: 10+this.props.player.av*2,
-            hpcost: 20+this.props.player.maxhp
+            hpcost: this.props.player.maxhp
         })
     }
     hpupgrade(){
@@ -303,7 +290,7 @@ class PlayerShop extends React.Component{
             gold: this.props.player.gold,
             playerav: this.props.player.av,
             playermaxhp: this.props.player.maxhp,
-            avcost: 10+this.props.player.av*2,
+            avcost: this.props.player.av,
             hpcost: 20+this.props.player.maxhp
         })
     }
@@ -330,8 +317,6 @@ class ContinueScreen extends React.Component{
     removeMessage(){
         let element = document.getElementById('messageArea');
         ReactDOM.unmountComponentAtNode(element);
-        // todo I don't think this part will work
-        //
     }
     continue(){
         for(let follower in this.props.Container.props.player.followers){
@@ -344,7 +329,8 @@ class ContinueScreen extends React.Component{
     }
     escape(){
         this.removeMessage();
-        this.props.ChangeVillage(this)
+        this.props.ChangeVillage(this);
+        ReactDOM.render(<EscapeMessage player={this.props.Container.player}/>,ReactDOM.findDOMNode(document.getElementById("popupArea")));
     }
     render(){
         return(

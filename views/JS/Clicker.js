@@ -10,8 +10,8 @@ class Player {
     }
     upgradeAV(){
         if(this.gold>=10+(this.av*2)){
-            player.gold -= 10+(this.av*2);
-            player.av += 5;
+            this.gold -= 10+(this.av*2);
+            this.av += 5;
             console.log('upgraded')
         }
     }
@@ -79,16 +79,16 @@ class Enemy {
         }
     }
     die(player) {
-        player.gold += 1;
         this.container.setState({kills:this.container.state.kills+1});
+        player.gold += 1;
         clearInterval(this.attackint);
         this.container.Stateupdate();
-        if (this.container.state.kills % 5 === 0) {
+        if (this.container.state.kills % 5 === 0 && this.container.state.kills !== 0) {
             for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
             this.container.setState({rdnum:this.container.state.rdnum+1});
-            console.log('continue?');
+            //console.log('continue?');
             ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
             this.hp = (this.maxhp+=10);
