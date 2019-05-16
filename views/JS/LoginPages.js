@@ -121,4 +121,18 @@ class Forgotform extends React.Component{
 }
 
 
+function getCurrentTime() {
+    var date = new Date();
+    var timeInfo = date.getFullYear() + "_" + (date.getMonth() + 1) + "_" + date.getDate() + "  " +
+        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+    var spanObj = document.getElementById("time");
+
+    spanObj.innerHTML = timeInfo.fontcolor("blue");
+}
+
+getCurrentTime();
+
+window.setInterval("getCurrentTime()", 1000);
+
 ReactDOM.render(React.createElement(loginpage),document.getElementById('root'));
