@@ -7,7 +7,7 @@ class Game extends React.Component{
         this.state={
             village:true,
             dungeon: false,
-            player: new Player('GamePlayer',100,5,25)}
+            player: new Player('GamePlayer',20,5,25)}
     }
     ChangeVillage(){
         console.log('change to village');

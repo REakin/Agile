@@ -23,11 +23,11 @@ class Player {
         }
     }
 
-    attack(target,container) {
+    attack(target) {
         //console.log(target);
         if (this.hp > 0) {
             //console.log(target);
-            target.takedamage(this.av,this,container);
+            target.takedamage(this.av,this);
         }
     }
     takedamage(damage,enemy) {
@@ -44,14 +44,13 @@ class Player {
         }
     }
     die(enemy) {
-        this.gold = 0;
         clearInterval(enemy.attackint);
         for (let follower in this.followers){
             this.followers[follower].teardown()
         }
-        // ReactDOM.render(e(Village), document.getElementById('root'),function () {
-        //     ReactDOM.render(e(DeathMessage), ReactDOM.findDOMNode(document.getElementById("popupArea")))
-        //});
+        enemy.container.props.changeVillage();
+        ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        this.gold = 0;
     }
 }
 
