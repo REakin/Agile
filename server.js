@@ -128,11 +128,13 @@ app.post('/logincheck',(req,res)=>{
             let hashedPass = result[0].password;
             bcrypt.compare(password, hashedPass, function(error, result){
                 if (error) {throw error;}
-                else if (result === false) {console.log('Password bad')}
+                else if (result === false) {
+                    console.log('Password bad');
+                    res.send({'auth':false})}
                 else if (result === true) {
+                    res.send({'auth':true})
                 }
             })
-            res.send({'auth':true})
         }
         else{
             res.send({'auth':false})

@@ -97,8 +97,8 @@ class Dungeon extends React.Component{
                 </div>
                 <div className={'enemyArea'}>
                     <div className={"health-bar1"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
-                        <div className={"bar"}>
-                            <div className={"hit"}/>
+                        <div className={"Ebar"}>
+                            <div className={"Ehit"}/>
                         </div>
                     </div>
                     <img src={"../Images/pipo-enemy001.png"} id={"enemyPhoto"} alt={"enemyimage"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
