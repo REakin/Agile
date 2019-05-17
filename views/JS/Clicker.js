@@ -44,7 +44,6 @@ class Player {
             console.log('upgraded')
         }
     }
-
     attack(target) {
         //console.log(target);
         if (this.hp > 0) {

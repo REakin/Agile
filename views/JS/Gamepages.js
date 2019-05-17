@@ -66,7 +66,9 @@ class Dungeon extends React.Component{
             rdnum: 0
         };
     }
+    updateHPbar(){
 
+    }
     Stateupdate(){
         this.setState({
             enemy: this.enemy,

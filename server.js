@@ -150,7 +150,7 @@ app.get('/game',(req,res)=>{
 //Ajax call
 app.get('/getState',(req,res)=>{
     let db = mydb.getDb();
-    db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
+    db.collection('Scores').find({name:"test"}).toArray((err,result)=>{
       if (err) throw err;
       res.send(result,undefined,2)
     })
