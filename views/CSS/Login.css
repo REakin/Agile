@@ -126,12 +126,13 @@ input {
     font-size: 20px;
 }
 
+
 #current{
     position: relative;
     text-align: center;
-    top: 10px;
+    top: 750px;
     font-family:'VT323', monospace;
     font-size: 25px;
     font-weight: bold;
-    color:red;
+    color: red;
 }
