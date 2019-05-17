@@ -142,7 +142,7 @@ app.post('/logincheck',(req,res)=>{
 
 app.get('/game',(req,res)=>{
     res.render('game.hbs');
-    console.log(req.session.gay)
+    //console.log(req.session.gay)
 });
 
 //Ajax call

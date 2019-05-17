@@ -85,14 +85,35 @@ class Dungeon extends React.Component{
         this.enemy.startinterval(this.props.player);
         return this.enemy
     }
-/*    componentDidMount(){
-        this.interval = setInterval(this.update.bind(this),100)
-    }
-    componentWillUnmount(){
-        clearInterval(this.interval)
-    }*/
     render(){
         return(
+            <div id={'gameArea'} className={"bg2"}>
+                <div className={'statsArea'}>
+                    <div>Kills: {this.state.kills}</div>
+                    <div>Round: {this.state.rdnum}</div>
+                    <div>gold: {this.state.gold}</div>
+                    <div>Enemy hp: {this.state.ehp}</div>
+                    <div>Enemy av: {this.state.eav}</div>
+                </div>
+                <div className={'enemyArea'}>
+                    <div className={"health-bar1"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
+                        <div className={"bar"}>
+                            <div className={"hit"}/>
+                        </div>
+                    </div>
+                    <img src={"../Images/pipo-enemy001.png"} id={"enemyPhoto"} alt={"enemyimage"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
+                </div>
+                <div className={'PlayerArea'}>
+                    <img className={'PlayerPhoto'} src={"../Images/pipo-enemy018.png"}/>
+                    <div className={"playerHealthBar health-bar1"} data-total={this.state.maxhp} data-value={this.state.playerhp}>
+                        <div className={"bar"}>
+                            <div className={"hit"}/>
+                        </div>
+                    </div>
+                </div>
+                <div id={'messageArea'}/>
+            </div>
+            /*
             <div id={'gameArea'}>
                 <h1>Player Area</h1>
                 <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
@@ -102,8 +123,8 @@ class Dungeon extends React.Component{
                 <div>Enemy av: {this.state.eav}</div>
                 <div>Round Number: {this.state.rdnum}</div>
                 <button onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}>ATTACK!</button>
-                <div id={'messageArea'}/>
-            </div>
+            <div id={'messageArea'}/>
+            </div>*/
         )
     }
 }
