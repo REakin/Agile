@@ -67,26 +67,31 @@ body{
 .nav-item {
     padding: 20px;
     font-family: 'VT323', monospace;
+    width: 30%;
 }
 
 .nav-item1 {
     padding: 20px;
     font-family: 'VT323', monospace;
+    width: 30%;
 }
 
 .nav-item2 {
     padding: 20px;
     font-family: 'VT323', monospace;
+    width: 30%;
 }
 
 .nav-item3 {
     padding: 20px;
     font-family: 'VT323', monospace;
+    width: 30%;
 }
 
 .nav-item4 {
     padding: 20px;
     font-family: 'VT323', monospace;
+    width: 30%;
 }
 
 a {
@@ -251,7 +256,7 @@ h3 {
     font-weight: bold;
     cursor: pointer;
 }
-.hello {
+.value {
     color: white;
     font-family: 'VT323', monospace;
     font-size: 20px;
@@ -269,11 +274,27 @@ h3 {
     margin-right: 300px;
 }
 h5 {
+    position: fixed;
     color: white;
     font-size: 30px;
     font-family: 'VT323', monospace;
+    margin-top: -200px;
 }
 .bg-modal2 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.bg-modal1 {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -329,15 +350,74 @@ table, td, th {
     transition: visibility 0s, opacity 0.5s;
 }
 h2 {
+    position: absolute;
     text-align: center;
     top: 0;
     color: white;
     font-size: 30px;
     font-family: 'VT323', monospace;
-    margin-bottom: 100px;
-    position: relative;
+    margin-top: 30px;
 }
-.user {
-    margin-right: 300px;
-    margin-bottom: 200px;
+.warrior {
+    float: left;
+    position: absolute;
+    margin-top: -120px;
+    margin-left: -200px;
+}
+.warrior-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    margin-top: -120px;
+    float: right;
+    margin-right: 50px;
+}
+.warrior-button {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 200px;
+}
+.cleric {
+    float: left;
+    position: absolute;
+    margin-left: -200px;
+}
+.cleric-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    float: right;
+    margin-right: 50px;
+}
+.cleric-button {
+    position: absolute;
+    margin-left: 200px;
+}
+.druid {
+    float: left;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: 120px;
+}
+.druid-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    float: right;
+    margin-right: 50px;
+    margin-top: 120px;
+}
+.druid-button {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 120px;
+}
+.graveyard {
+    font-size: 20px;
+    color: skyblue;
+    font-family: 'VT323', monospace;
+    margin-top: 150px;
 }
