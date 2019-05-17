@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="agile.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/agile1.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+<body>
+<div class="bg2">
+    <a href="agile.html" class="village">
+        Village
+    </a>
+    <div class="health-bar" data-total="1000" data-value="1000">
+        <div class="bar">
+            <div class="hit"></div>
+        </div>
+    </div>
+    <!--Soldier and Enemy-->
+    <div class="row">
+        <div class="column">
+          <img src="../Images/pipo-enemy018.png"/>
+        </div>
+        <div class="column">
+          <img src="../Images/pipo-enemy001.png" id="myImage" alt="enemyimage" onclick="changeImage()"/>
+        </div>
+    </div>
+    <div class="health-bar1" data-total="1000" data-value="1000">
+        <div class="bar">
+            <div class="hit"></div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</html>
