@@ -18,24 +18,17 @@
         <a class="btn btn-danger btn-rounded btn-lg" href="agile2.html">Play</a>
     </div>
     <div class="nav-item1">
-    <button type="button" class="btn btn-danger btn-rounded btn-lg" data-toggle="modal" data-target="#myModal">Graveyard</button>
-    <div class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="nav-item1">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Graveyard</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade1" onclick="upgrade1()">Graveyard</button>
     </div>
+    <div class="bg-modal1">
+        <div class="modal-content">
+                <h5>Graveyyard</h5>
+            <div class="graveyard">
+                Username: <input type="text" name="usrname">
+                <input type="submit" value="Submit">
+            </div>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+        </div>
     </div>
     <div class="nav-item2">
         <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onclick="upgrade()">Upgrade</button>
@@ -45,7 +38,7 @@
             <div class="upgradeweapons">
                 <h1>Upgrade Weapons</h1>
             </div>
-            <div class="hello">
+            <div class="value">
                 <img src="../Images/5071.jpg" alt="sword">
                 +20 ATT, 300 coins
                 <img src="../Images/5072.jpg" alt="armor">
@@ -118,10 +111,36 @@
     </div>
     <div class="bg-modal3">
         <div class="modal-content">
-            <h2>Recruit</h2>
-            <a class="x" href=""><span class="modal-close button">X</span></a>
-            <div class="user">
-                <img src="../Images/pipo-enemy018a.png" alt="user">
+            <h2>Recruit</h2><a class="x" href=""><span class="modal-close button">X</span></a>
+            <div class="warrior-desc">
+                Job: Warrior<br>
+                Description: Swords
+            </div>
+            <div class="warrior-button">
+                <button type="button" onclick="alert('Warrior Hired!')">Hire!</button>
+            </div>
+            <div class="warrior">
+                <img src="../Images/pipo-enemy018a.png" alt="warrior">
+            </div>
+            <div class="cleric-desc">
+                Job: Cleric<br>
+                Description: Clerics
+            </div>
+            <div class="cleric-button">
+                <button type="button" onclick="alert('Cleric Hired!')">Hire!</button>
+            </div>
+            <div class="cleric">
+                <img src="../Images/kisspng-bloodborne-skeletor-pathfinder-roleplaying-game-du-rpg-5abee557685de4.5654561315224599914275.png" alt="cleric">
+            </div>
+            <div class="druid-desc">
+                Job: Druid<br>
+                Description: Druids
+            </div>
+            <div class="druid-button">
+                <button type="button" onclick="alert('Druid Hired!')">Hire!</button>
+            </div>
+            <div class="druid">
+                <img src="../Images/kisspng-druid-pathfinder-roleplaying-game-dungeons-drago-druid-5b3ac413da9ae3.8089144315305779398954.png" alt="cleric">
             </div>
         </div>
     </div>

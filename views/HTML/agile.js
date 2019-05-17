@@ -58,6 +58,11 @@ function upgrade() {
     mymodal.style.visibility = 'visible';
     mymodal.style.opacity = '1';
 }
+function upgrade1() {
+    var mymodal = document.querySelector('.bg-modal1');
+    mymodal.style.visibility = 'visible';
+    mymodal.style.opacity = '1';
+}
 function upgrade2() {
     var mymodal = document.querySelector('.bg-modal2');
     mymodal.style.visibility = 'visible';
