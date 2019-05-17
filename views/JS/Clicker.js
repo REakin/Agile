@@ -73,6 +73,7 @@ class Player {
         enemy.container.props.changeVillage();
         ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")))
         this.gold = 0;
+        this.SavePlayerState()
     }
 }
 

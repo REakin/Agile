@@ -148,6 +148,7 @@ class Village extends React.Component{
 
 class EscapeMessage extends React.Component{
     removeMessage(){
+        this.props.player.SavePlayerState();
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
@@ -260,6 +261,7 @@ class FollowerShop extends React.Component{
     }
 
     removeMessage(){
+        this.props.player.SavePlayerState();
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
 
@@ -275,7 +277,7 @@ class FollowerShop extends React.Component{
                 {this.buttonT}
                 <div id={'followertext'}>Hire a Cleric</div>
                 {this.buttonC}
-                <button onClick={this.removeMessage}>Close Shop</button>
+                <button onClick={this.removeMessage.bind(this)}>Close Shop</button>
             </div>
         )
     }
@@ -351,7 +353,7 @@ class ContinueScreen extends React.Component{
     }
     escape(){
         this.removeMessage();
-        this.props.ChangeVillage(this);
+        this.props.ChangeVillage(this)
         ReactDOM.render(<EscapeMessage player={this.props.Container.player}/>,ReactDOM.findDOMNode(document.getElementById("popupArea")));
     }
     render(){
