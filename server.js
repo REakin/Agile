@@ -98,7 +98,6 @@ app.post('/register', async function (req,res){
 });
 
 app.post('/checkreg',(req,res)=>{
-
     let db = mydb.getDb();
     let servercheck = {};
     db.collection('Users').find({'email': req.body.email}).toArray((err,result)=>{
@@ -110,21 +109,17 @@ app.post('/checkreg',(req,res)=>{
             res.send(servercheck);
         })
     });
-
 });
 
 app.post('/login',(req,res)=>{
-    
     res.redirect('/game');
 });
 
 app.post('/logincheck',(req,res)=>{
-
     let db = mydb.getDb();
     console.log(req.body);
     let username = req.body.username;
     let password = req.body.password;
-
     console.log(username);
     db.collection('Users').find({'username':username}).toArray((err,result)=>{
         if (err) throw err;
@@ -135,7 +130,6 @@ app.post('/logincheck',(req,res)=>{
                 if (error) {throw error;}
                 else if (result === false) {console.log('Password bad')}
                 else if (result === true) {
-
                 }
             })
             res.send({'auth':true})
@@ -147,7 +141,7 @@ app.post('/logincheck',(req,res)=>{
 });
 
 app.get('/game',(req,res)=>{
-    res.render('game.hbs')
+    res.render('game.hbs');
     console.log(req.session.gay)
 });
 
@@ -161,9 +155,10 @@ app.get('/getState',(req,res)=>{
 });
 
 app.post('/saveState',(req,res)=>{
+    console.log(req.body);
     let db = mydb.getDb();
     let data = {$set:req.body};
-    
+
     db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
         if(err) throw err;
     })

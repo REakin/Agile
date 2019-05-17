@@ -4,10 +4,28 @@ const e = React.createElement;
 class Game extends React.Component{
     constructor(props){
         super(props);
+        let playerState = this.GetPlayerState();
         this.state={
             village:true,
             dungeon: false,
-            player: new Player('GamePlayer',20,5,25)}
+            player: this.GetPlayerState()
+        }
+    }
+    GetPlayerState(){
+        //Creates the player object from the Database...
+        let getChar = new XMLHttpRequest();
+        getChar.open("get",'/getState',false);
+        getChar.send();
+        let stats = JSON.parse(getChar.response);
+        let playername = stats[0].name;
+        let hp = stats[0].php;
+        let gold = stats[0].pgold;
+        let av = stats[0].pav;
+        let wlvl = stats[0].Wlvl;
+        let dlvl = stats[0].Dlvl;
+        let tlvl = stats[0].Tlvl;
+        let clvl = stats[0].Clvl;
+        return new Player(playername,hp,gold,av,wlvl,dlvl,tlvl,clvl)
     }
     ChangeVillage(){
         console.log('change to village');
@@ -16,6 +34,9 @@ class Game extends React.Component{
     ChangeDungeon(){
         console.log('change to dungeon');
         this.setState({village:false,dungeon:true})
+    }
+    updatePlayer(newplayer){
+        this.setState({player:newplayer})
     }
     render(){
         if (this.state.village==true){
@@ -94,10 +115,10 @@ class Village extends React.Component{
             gold: this.props.player.gold,
             av: this.props.player.av}}
     openFollowerShop(){
-        ReactDOM.render(<FollowerShop player={this.props.player}/>,document.getElementById("popupArea"))
+        ReactDOM.render(<FollowerShop updatePlayer={this.props.updatePlayer} player={this.props.player}/>,document.getElementById("popupArea"))
     }
     openPlayerShop(){
-        ReactDOM.render(<PlayerShop player={this.props.player}/>,document.getElementById("popupArea"))
+        ReactDOM.render(<PlayerShop updatePlayer={this.props.updatePlayer} player={this.props.player}/>,document.getElementById("popupArea"))
     }
     render(){
         return(
@@ -272,6 +293,7 @@ class PlayerShop extends React.Component{
         }
     }
     removeMessage(){
+        this.props.player.SavePlayerState();
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     avupgrade(){
@@ -281,7 +303,7 @@ class PlayerShop extends React.Component{
             playerav: this.props.player.av,
             playermaxhp: this.props.player.maxhp,
             avcost: 10+this.props.player.av*2,
-            hpcost: this.props.player.maxhp
+            hpcost: 20+this.props.player.maxhp
         })
     }
     hpupgrade(){
@@ -290,7 +312,7 @@ class PlayerShop extends React.Component{
             gold: this.props.player.gold,
             playerav: this.props.player.av,
             playermaxhp: this.props.player.maxhp,
-            avcost: this.props.player.av,
+            avcost: 10+this.props.player.av*2,
             hpcost: 20+this.props.player.maxhp
         })
     }
@@ -307,7 +329,7 @@ class PlayerShop extends React.Component{
                 <div>Your current MaxHp: {this.state.playermaxhp}</div>
                 <div>cost to upgrade: {this.state.hpcost}</div>
                 <button onClick={this.hpupgrade.bind(this)}>upgrade</button>
-                <button onClick={this.removeMessage}>Close Window</button>
+                <button onClick={this.removeMessage.bind(this)}>Close Window</button>
             </div>
         );
     }

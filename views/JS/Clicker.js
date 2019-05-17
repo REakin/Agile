@@ -1,12 +1,34 @@
 class Player {
     //This will be the actual button that the user clicks on :)
-    constructor(username, maxhp, gold, av) {
+    constructor(username, maxhp, gold, av, Wlvl, Dlvl, Tlvl, Clvl) {
         this.name = username;
         this.maxhp = parseInt(maxhp);
         this.hp = parseInt(maxhp);
         this.gold = parseInt(gold);
         this.av = parseInt(av);
+        this.Wlvl=Wlvl;
+        this.Dlvl=Dlvl;
+        this.Tlvl=Tlvl;
+        this.Clvl=Clvl;
         this.followers = {};
+    }
+    SavePlayerState(){
+        console.log('idk')
+        let Save= new XMLHttpRequest();
+        Save.open('post',`/saveState`);
+        Save.setRequestHeader('Content-Type','application/json');
+        let data =
+            {
+                php:this.hp,
+                pav:this.av,
+                pgold:this.gold,
+                name:this.name,
+                Wlvl:this.Wlvl,
+                Dlvl:this.Dlvl,
+                Tlvl:this.Tlvl,
+                Clvl:this.Clvl
+            };
+        Save.send(JSON.stringify(data));
     }
     upgradeAV(){
         if(this.gold>=10+(this.av*2)){
