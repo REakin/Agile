@@ -13,7 +13,6 @@ class Player {
         this.followers = {};
     }
     SavePlayerState(){
-        console.log('idk')
         let Save= new XMLHttpRequest();
         Save.open('post',`/saveState`);
         Save.setRequestHeader('Content-Type','application/json');
@@ -83,8 +82,8 @@ class Enemy {
         this.hp = parseInt(hp);
         this.av = parseInt(av);
         this.interval = parseInt(i);
-        this.container = container
-    }
+        this.container = container}
+
     startinterval(player){
         this.attackint = setInterval(this.attack.bind(this,player), this.interval)
     }
@@ -103,7 +102,7 @@ class Enemy {
     }
     die(player) {
         this.container.setState({kills:this.container.state.kills+1});
-        player.gold += 1;
+        player.gold += this.container.state.rdnum;
         clearInterval(this.attackint);
         this.container.Stateupdate();
         if (this.container.state.kills % 5 === 0 && this.container.state.kills !== 0) {
@@ -111,9 +110,9 @@ class Enemy {
                 player.followers[follower].teardown()
             }
             this.container.setState({rdnum:this.container.state.rdnum+1});
-            //console.log('continue?');
             ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
+
             this.hp = (this.maxhp+=10);
             this.startinterval(player);
             this.container.Stateupdate();

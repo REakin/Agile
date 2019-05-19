@@ -72,14 +72,12 @@ class Dungeon extends React.Component{
         Ehit.css('width',(1-this.state.ehp/this.state.enemy.maxhp)*100+'%');
         EBar.data('value',this.state.ehp);
     }
-
     updateHHPbar(){
         let HBar = $('.health-bar1');
         let Hhit = HBar.find('.hit');
         Hhit.css('width',(1-this.state.playerhp/this.state.maxhp)*100+'%');
         HBar.data('value',this.state.playerhp);
     }
-
     Stateupdate(){
         this.setState({
             enemy: this.enemy,
@@ -102,21 +100,16 @@ class Dungeon extends React.Component{
     }
     render(){
         return(
-            <div id={'gameArea'} className={"bg2"}>
-                <div className={'statsArea'}>
-                    <div>Kills: {this.state.kills}</div>
-                    <div>Round: {this.state.rdnum}</div>
-                    <div>gold: {this.state.gold}</div>
-                    <div>Enemy hp: {this.state.ehp}</div>
-                    <div>Enemy av: {this.state.eav}</div>
-                </div>
-                <div className={'enemyArea'}>
-                    <div className={"health-bar1"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
-                        <div id={'EBar'} className={"Ebar"}>
-                            <div id={'EHit'} className={"Ehit"}/>
+            <div id={'gameArea'}>
+                <div className={'bg2'}>
+                    <div className={'enemyArea'}>
+                        <div className={"health-bar1 enemyHealthBar"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
+                            <div id={'EBar'} className={"Ebar"}>
+                                <div id={'EHit'} className={"Ehit"}/>
+                            </div>
                         </div>
+                        <img src={'../Game Assets/Enemys/enemy'+this.state.kills+'.png'} className={"enemyPhoto"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
                     </div>
-                    <img src={'../Game Assets/Enemys/pipo-enemy036b.png'} id={"enemyPhoto"} alt={"enemyimage"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
                 </div>
                 <div className={'PlayerArea'}>
                     <img className={'PlayerPhoto'} src={"../Images/pipo-enemy018.png"}/>
@@ -124,6 +117,11 @@ class Dungeon extends React.Component{
                         <div className={"bar"}>
                             <div className={"hit"}/>
                         </div>
+                    </div>
+                    <div className={'PlayerStats'}>
+                        Kills: {this.state.kills}  {'\u00A0 \u00A0 \u00A0'}
+                        Round: {this.state.rdnum}  {'\u00A0 \u00A0 \u00A0'}
+                        gold: {this.state.gold}
                     </div>
                 </div>
                 <div id={'messageArea'}/>

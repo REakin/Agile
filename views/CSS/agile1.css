@@ -18,39 +18,37 @@ body{
 
 .bg2 {
     background-image: url("../Game Assets/backgrounds/Meadow.png");
-    height: 750px;
+    height: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-}
-.statsArea{
-    position: absolute;
-    top:0px;
-    left:0px;
-    background: rgba(7, 8, 7, 0.34);
-    float: left;
-    width: 20%;
-    height: 80%;
+    width: 100%;
 }
 .enemyArea{
     position: absolute;
     top:0;
-    left:20%;
+    left:0;
     background: rgba(20, 30, 7, 0.50);
     float: right;
-    width: 80%;
+    width: 100%;
     height: 80%;
 }
 .PlayerArea{
+    background-color: black;
     position: absolute;
     top: 80%;
     height: 20%;
     width:100%;
-    background: rgba(50, 30, 100, 0.70);
+}
+.PlayerStats{
+    position: absolute;
+    font-size: 28px;
+    color: gold;
+    top: 50%;
+    left: 30%;
 }
 .PlayerPhoto{
     position: absolute;
@@ -59,10 +57,88 @@ body{
     height: 150px;
     width: 150px;
 }
+.enemyPhoto{
+    position: absolute;
+    top: 5%;
+    left: 17%;
+}
 .playerHealthBar{
     position: absolute;
-    top:10%;
+    top:5%;
     left:25%;
+}
+.enemyHealthBar{
+    position: absolute;
+    top:2%;
+    left: 15%;
+}
+
+.health-bar {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    background: #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    margin-top: 300px;
+    margin-left: 150px;
+}
+
+
+.Ebar {
+    position: relative;
+    background: #c54;
+    border-radius: 5px;
+    width: 100%;
+    height: 30px;
+    transition: width .5s linear;
+}
+
+.Ehit {
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    transition: width .5s linear;
+}
+
+.bar {
+    position: absolute;
+    background: #c54;
+    border-radius: 5px;
+    width: 98%;
+    height: 30px;
+    transition: width .5s linear;
+}
+
+.hit {
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    transition: width .5s linear;
+}
+
+.health-bar1 {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 500px;
+    height: 40px;
+    padding: 5px;
+    background: #ddd;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 .nav-item {
     padding: 20px;
@@ -111,72 +187,6 @@ h1 {
     text-align: center;
     font-family: 'VT323', monospace;
     color: 	white;
-}
-
-.health-bar {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 200px;
-    height: 20px;
-    padding: 5px;
-    background: #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    margin-top: 300px;
-    margin-left: 150px;
-}
-
-
-.Ebar {
-    position: relative;
-    background: #c54;
-    width: 100%;
-    height: 30px;
-    transition: width .5s linear;
-}
-
-.Ehit {
-    background: rgba(255,255,255,0.6);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 0;
-    transition: width .5s linear;
-}
-
-.bar {
-    position: absolute;
-    background: #c54;
-    width: 100%;
-    height: 30px;
-    transition: width .5s linear;
-}
-
-.hit {
-    background: rgba(255,255,255,0.6);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 0px;
-    transition: width .5s linear;
-}
-
-.health-bar1 {
-    position: relative;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 500px;
-    height: 50px;
-    padding: 5px;
-    background: #ddd;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
 }
 
 .items {
