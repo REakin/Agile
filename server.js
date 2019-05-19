@@ -161,7 +161,7 @@ app.post('/saveState',(req,res)=>{
     let db = mydb.getDb();
     let data = {$set:req.body};
 
-    db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
+    db.collection('Scores').updateOne({name:'test'},data,function (err,res) {
         if(err) throw err;
     })
 });
