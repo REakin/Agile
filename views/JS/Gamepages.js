@@ -66,7 +66,18 @@ class Dungeon extends React.Component{
             rdnum: 0
         };
     }
-
+    updateEHPbar(){
+        let EBar = $('.health-bar1');
+        let Ehit = EBar.find('.Ehit');
+        Ehit.css('width',(1-this.state.ehp/this.state.enemy.maxhp)*100+'%');
+        EBar.data('value',this.state.ehp);
+    }
+    updateHHPbar(){
+        let HBar = $('.health-bar1');
+        let Hhit = HBar.find('.hit');
+        Hhit.css('width',(1-this.state.playerhp/this.state.maxhp)*100+'%');
+        HBar.data('value',this.state.playerhp);
+    }
     Stateupdate(){
         this.setState({
             enemy: this.enemy,
@@ -74,7 +85,9 @@ class Dungeon extends React.Component{
             playerhp: this.props.player.hp,
             gold: this.props.player.gold,
             ehp: this.enemy.hp,
-        })
+        });
+        this.updateEHPbar();
+        this.updateHHPbar();
     }
     createGame() {
         this.props.player.hp = this.props.player.maxhp;
@@ -87,21 +100,16 @@ class Dungeon extends React.Component{
     }
     render(){
         return(
-            <div id={'gameArea'} className={"bg2"}>
-                <div className={'statsArea'}>
-                    <div>Kills: {this.state.kills}</div>
-                    <div>Round: {this.state.rdnum}</div>
-                    <div>gold: {this.state.gold}</div>
-                    <div>Enemy hp: {this.state.ehp}</div>
-                    <div>Enemy av: {this.state.eav}</div>
-                </div>
-                <div className={'enemyArea'}>
-                    <div className={"health-bar1"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
-                        <div className={"Ebar"}>
-                            <div className={"Ehit"}/>
+            <div id={'gameArea'}>
+                <div className={'bg2'}>
+                    <div className={'enemyArea'}>
+                        <div className={"health-bar1 enemyHealthBar"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
+                            <div id={'EBar'} className={"Ebar"}>
+                                <div id={'EHit'} className={"Ehit"}/>
+                            </div>
                         </div>
+                        <img src={'../Game Assets/Enemys/enemy'+this.state.kills+'.png'} className={"enemyPhoto"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
                     </div>
-                    <img src={"../Images/pipo-enemy001.png"} id={"enemyPhoto"} alt={"enemyimage"} onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}/>
                 </div>
                 <div className={'PlayerArea'}>
                     <img className={'PlayerPhoto'} src={"../Images/pipo-enemy018.png"}/>
@@ -110,21 +118,14 @@ class Dungeon extends React.Component{
                             <div className={"hit"}/>
                         </div>
                     </div>
+                    <div className={'PlayerStats'}>
+                        Kills: {this.state.kills}  {'\u00A0 \u00A0 \u00A0'}
+                        Round: {this.state.rdnum}  {'\u00A0 \u00A0 \u00A0'}
+                        gold: {this.state.gold}
+                    </div>
                 </div>
                 <div id={'messageArea'}/>
             </div>
-            /*
-            <div id={'gameArea'}>
-                <h1>Player Area</h1>
-                <div>health: {this.state.playerhp+'/'+this.state.maxhp}</div>
-                <div>gold: {this.state.gold}</div>
-                <h1>Enemy Area</h1>
-                <div>Enemy hp: {this.state.ehp}</div>
-                <div>Enemy av: {this.state.eav}</div>
-                <div>Round Number: {this.state.rdnum}</div>
-                <button onClick={this.props.player.attack.bind(this.props.player,this.state.enemy)}>ATTACK!</button>
-            <div id={'messageArea'}/>
-            </div>*/
         )
     }
 }
@@ -150,16 +151,16 @@ class Village extends React.Component{
                         <a className="nav-item1 btn btn-danger btn-rounded btn-lg" onClick={this.props.changeDungeon.bind(this)}>Play</a>
                     </div>
                     <div>
-                        <button type="button" className="nav-item1 btn btn-danger btn-rounded btn-lg">Graveyard</button>
+                        <a className="nav-item1 btn btn-danger btn-rounded btn-lg">Graveyard</a>
                     </div>
                     <div>
-                        <button className="btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onClick={this.openPlayerShop.bind(this)}>Smithy</button>
+                        <a className="nav-item1 btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onClick={this.openPlayerShop.bind(this)}>Smithy</a>
                     </div>
                     <div>
-                        <button className="btn btn-danger btn-rounded btn-lg" id="btn-upgrade3">Leaderboard</button>
+                        <a className="nav-item1 btn btn-danger btn-rounded btn-lg" id="btn-upgrade3">Leaderboard</a>
                     </div>
                     <div>
-                        <button className="btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onClick={this.openFollowerShop.bind(this)}>Tavern</button>
+                        <a className="nav-item1 btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onClick={this.openFollowerShop.bind(this)}>Tavern</a>
                     </div>
                 </div>
             </div>
@@ -169,7 +170,6 @@ class Village extends React.Component{
 
 class EscapeMessage extends React.Component{
     removeMessage(){
-        this.props.player.SavePlayerState();
         ReactDOM.unmountComponentAtNode(document.getElementById("popupArea"));
     }
     render(){
@@ -370,11 +370,13 @@ class ContinueScreen extends React.Component{
         this.props.Container.enemy.hp = (this.props.Container.enemy.maxhp+=10);
         this.props.Container.enemy.startinterval(this.props.Container.props.player);
         this.props.Container.Stateupdate();
-        this.removeMessage()
+        this.removeMessage();
     }
     escape(){
         this.removeMessage();
-        this.props.ChangeVillage(this)
+        this.props.Container.props.player.hp = this.props.Container.props.player.maxhp;
+        this.props.Container.props.player.SavePlayerState();
+        this.props.ChangeVillage(this);
         ReactDOM.render(<EscapeMessage player={this.props.Container.player}/>,ReactDOM.findDOMNode(document.getElementById("popupArea")));
     }
     render(){

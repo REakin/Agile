@@ -150,7 +150,7 @@ app.get('/game',(req,res)=>{
 //Ajax call
 app.get('/getState',(req,res)=>{
     let db = mydb.getDb();
-    db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
+    db.collection('Scores').find({name:"debug"}).toArray((err,result)=>{
       if (err) throw err;
       res.send(result,undefined,2)
     })
@@ -161,7 +161,7 @@ app.post('/saveState',(req,res)=>{
     let db = mydb.getDb();
     let data = {$set:req.body};
 
-    db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
+    db.collection('Scores').updateOne({name:'debug'},data,function (err,res) {
         if(err) throw err;
     })
 });

@@ -18,39 +18,37 @@ body{
 
 .bg2 {
     background-image: url("../Game Assets/backgrounds/Meadow.png");
-    height: 750px;
+    height: 80%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
-}
-.statsArea{
-    position: absolute;
-    top:0px;
-    left:0px;
-    background: rgba(7, 8, 7, 0.34);
-    float: left;
-    width: 20%;
-    height: 80%;
+    width: 100%;
 }
 .enemyArea{
     position: absolute;
     top:0;
-    left:20%;
+    left:0;
     background: rgba(20, 30, 7, 0.50);
     float: right;
-    width: 80%;
+    width: 100%;
     height: 80%;
 }
 .PlayerArea{
+    background-color: black;
     position: absolute;
     top: 80%;
     height: 20%;
     width:100%;
-    background: rgba(50, 30, 100, 0.70);
+}
+.PlayerStats{
+    position: absolute;
+    font-size: 28px;
+    color: gold;
+    top: 50%;
+    left: 30%;
 }
 .PlayerPhoto{
     position: absolute;
@@ -59,53 +57,20 @@ body{
     height: 150px;
     width: 150px;
 }
+.enemyPhoto{
+    position: absolute;
+    top: 5%;
+    left: 17%;
+}
 .playerHealthBar{
     position: absolute;
-    top:10%;
+    top:5%;
     left:25%;
 }
-.nav-item {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-}
-
-.nav-item1 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-}
-
-.nav-item2 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-}
-
-.nav-item3 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-}
-
-.nav-item4 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-}
-
-a {
-    font-size: 50px;
-    color: 	white;
-    font-family: 'VT323', monospace;
-    margin-right: 1000px;
-}
-
-p {
-    font-size: 70px;
-    color: 	#DA5350;
-    font-family: 'VT323', monospace;
-    text-align: left;
-}
-h1 {
-    text-align: center;
-    font-family: 'VT323', monospace;
-    color: 	white;
+.enemyHealthBar{
+    position: absolute;
+    top:2%;
+    left: 15%;
 }
 
 .health-bar {
@@ -127,6 +92,7 @@ h1 {
 .Ebar {
     position: relative;
     background: #c54;
+    border-radius: 5px;
     width: 100%;
     height: 30px;
     transition: width .5s linear;
@@ -143,9 +109,10 @@ h1 {
 }
 
 .bar {
-    position: relative;
+    position: absolute;
     background: #c54;
-    width: 100%;
+    border-radius: 5px;
+    width: 98%;
     height: 30px;
     transition: width .5s linear;
 }
@@ -166,12 +133,60 @@ h1 {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 500px;
-    height: 50px;
+    height: 40px;
     padding: 5px;
     background: #ddd;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+}
+.nav-item {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+    width: 30%;
+}
+
+.nav-item1 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+    width: 30%;
+}
+
+.nav-item2 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+    width: 30%;
+}
+
+.nav-item3 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+    width: 30%;
+}
+
+.nav-item4 {
+    padding: 20px;
+    font-family: 'VT323', monospace;
+    width: 30%;
+}
+
+a {
+    font-size: 50px;
+    color: 	white;
+    font-family: 'VT323', monospace;
+    margin-right: 1000px;
+}
+
+p {
+    font-size: 70px;
+    color: 	#DA5350;
+    font-family: 'VT323', monospace;
+    text-align: left;
+}
+h1 {
+    text-align: center;
+    font-family: 'VT323', monospace;
+    color: 	white;
 }
 
 .items {
@@ -251,7 +266,7 @@ h3 {
     font-weight: bold;
     cursor: pointer;
 }
-.hello {
+.value {
     color: white;
     font-family: 'VT323', monospace;
     font-size: 20px;
@@ -269,11 +284,27 @@ h3 {
     margin-right: 300px;
 }
 h5 {
+    position: fixed;
     color: white;
     font-size: 30px;
     font-family: 'VT323', monospace;
+    margin-top: -200px;
 }
 .bg-modal2 {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+.bg-modal1 {
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -329,15 +360,74 @@ table, td, th {
     transition: visibility 0s, opacity 0.5s;
 }
 h2 {
+    position: absolute;
     text-align: center;
     top: 0;
     color: white;
     font-size: 30px;
     font-family: 'VT323', monospace;
-    margin-bottom: 100px;
-    position: relative;
+    margin-top: 30px;
 }
-.user {
-    margin-right: 300px;
-    margin-bottom: 200px;
+.warrior {
+    float: left;
+    position: absolute;
+    margin-top: -120px;
+    margin-left: -200px;
+}
+.warrior-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    margin-top: -120px;
+    float: right;
+    margin-right: 50px;
+}
+.warrior-button {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 200px;
+}
+.cleric {
+    float: left;
+    position: absolute;
+    margin-left: -200px;
+}
+.cleric-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    float: right;
+    margin-right: 50px;
+}
+.cleric-button {
+    position: absolute;
+    margin-left: 200px;
+}
+.druid {
+    float: left;
+    position: absolute;
+    margin-left: -200px;
+    margin-top: 120px;
+}
+.druid-desc {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+    float: right;
+    margin-right: 50px;
+    margin-top: 120px;
+}
+.druid-button {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: 120px;
+}
+.graveyard {
+    font-size: 20px;
+    color: skyblue;
+    font-family: 'VT323', monospace;
+    margin-top: 150px;
 }
