@@ -447,6 +447,7 @@ class Leaderboard extends React.Component{
                 return (
                     <div id={'message'}>
                         <h1>Recent Runs</h1>
+                        <button onClick={this.changeGlobal.bind(this)}>Global</button>
                         <div id={'scorebox'}>
                             <table id={'scores'}>
                                 <tbody>
@@ -454,7 +455,6 @@ class Leaderboard extends React.Component{
                                 </tbody>
                             </table>
                         </div>
-                        <button onClick={this.changeGlobal.bind(this)}>Global</button>
                         <button onClick={this.removeMessage.bind(this)}>Close Window</button>
                     </div>
                 )

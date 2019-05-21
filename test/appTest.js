@@ -2,14 +2,14 @@ const assert = require('chai').assert;
 const clicker = require('../views/JS/Clicker');
 const Player = clicker.Player;
 const Enemy = clicker.Enemy;
-const Autochar = clicker.Autowarrior;
+const Autowarrior = clicker.AutoWarrior;
 
 // Testing Player class
 describe('Player', () => {
 
   // Testing the constructor
   describe('#constructor', () => {
-    let player = new Player('bang', 30, 15, 10);
+    let player = new Player('bang', 30, 15, 10,0,0,0,0);
 
     // Test username
     it('should save username as a string', () => {
@@ -70,13 +70,13 @@ describe('Player', () => {
   // });
 
   // Testing takedamage
-  describe('#takedamage', () => {
-
-    it('should reduce player hp from 30 to 5 ', () => {
-      let player = new Player('bang', 30, 15, 10);
-      player.takedamage(25);
-      assert.equal(player.hp, 5);
-    });
+  // describe('#takedamage', () => {
+  //
+  //   it('should reduce player hp from 30 to 5 ', () => {
+  //     let player = new Player('bang', 30, 15, 10,0,0,0,0);
+  //     player.takedamage(25);
+  //     assert.equal(player.hp, 5);
+  //   });
 
     // TODO - Add React testing to be able to test
     // player death
@@ -84,11 +84,11 @@ describe('Player', () => {
     //   let player = new Player('bang', 30, 15, 10);
     //   player.takedamage(30)
     // });
-  });
+  //});
 
   // Testing heal
   describe('#heal', () => {
-    let player = new Player('bang', 30, 15, 10);
+    let player = new Player('bang', 30, 15, 10,0,0,0,0);
     player.hp = 5;
 
     // Test healing
@@ -154,7 +154,7 @@ describe('Enemy', () => {
     // because it calls enemy.attack() which in turn uses
     // the player undeclared variable
 
-    // let enemy = new Enemy(20, 10, 5);
+    let enemy = new Enemy(20, 10, 5);
 
     // Test hp
     it('should save hp as a number', () => {
@@ -239,7 +239,7 @@ describe('Autowarrior', () => {
 
   // Testing the constructor
   describe('#constructor', () => {
-    let warrior = new Autowarrior('heman', 15, 5);
+    let autochar = new Autowarrior('heman', 15, 5);
 
     // Test name
     it('should save name as a string', () => {
@@ -291,10 +291,4 @@ describe('Autowarrior', () => {
         assert.typeOf(autochar.av, 'number');
       });
     });
-
   });
-
-
-
-
-});
