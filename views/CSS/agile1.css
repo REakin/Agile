@@ -350,55 +350,81 @@ h2 {
     font-size: 30px;
     font-family: 'VT323', monospace;
     margin-top: 30px;
-}
+}.AutoPhoto{
+     height:100px;
+     width:100px;
+ }
 .warrior {
-    float: left;
     position: absolute;
+    top: 15%;
+    left:5%;
 }
 .warrior-desc {
     position: absolute;
+    top:15%;
+    left:30%;
     font-size: 20px;
     color: white;
     font-family: 'VT323', monospace;
-    float: right;
 }
 .warrior-button {
     position: absolute;
+    top:18%;
+    left:75%;
 }
 .cleric {
-    float: left;
-    position: absolute;}
+    position: absolute;
+    top: 35%;
+    left:5%;
+}
 .cleric-desc {
     position: absolute;
+    top:35%;
+    left:30%;
     font-size: 20px;
     color: white;
     font-family: 'VT323', monospace;
-    float: right;
-    margin-right: 50px;
 }
 .cleric-button {
     position: absolute;
-    margin-left: 200px;
+    top:40%;
+    left:75%;
 }
 .druid {
-    float: left;
     position: absolute;
-    margin-left: -200px;
-    margin-top: 120px;
+    top: 55%;
+    left:5%;
 }
 .druid-desc {
     position: absolute;
+    top:58%;
+    left:30%;
     font-size: 20px;
     color: white;
     font-family: 'VT323', monospace;
-    float: right;
-    margin-right: 50px;
-    margin-top: 120px;
 }
 .druid-button {
     position: absolute;
-    margin-left: 200px;
-    margin-top: 120px;
+    top:59%;
+    left:75%;
+}
+.thief {
+    position: absolute;
+    top: 75%;
+    left:5%;
+}
+.thief-desc {
+    position: absolute;
+    top:75%;
+    left:30%;
+    font-size: 20px;
+    color: white;
+    font-family: 'VT323', monospace;
+}
+.thief-button {
+    position: absolute;
+    top:75%;
+    left:75%;
 }
 #scorebox{
     overflow: auto;
@@ -420,4 +446,19 @@ td{
 }
 table{
     border: none;
+}
+
+.itemDesc{
+    font-size: 25px;
+    color: white;
+    font-family: 'VT323', monospace;
+}
+
+.goldAmount{
+    position: absolute;
+    top:85%;
+    left:50%;
+    font-size: 40px;
+    color: white;
+    font-family: 'VT323', monospace;
 }

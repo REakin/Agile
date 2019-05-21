@@ -7,14 +7,12 @@ const nodemailer = require('nodemailer');
 const bcrypt = require('bcrypt');
 let saltedRounds = 10;
 
-
 //db instantiation
 const mydb = require('./views/JS/DButils');
 
 //session creation
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
-
 
 const port = process.env.PORT || 8080;
 
@@ -168,7 +166,7 @@ app.get('/PLeaderBoard',(req,res)=>{
     db.collection('Scores').find({name:player}).project({PastRun:1}).toArray((err,result)=>{
         if (err) throw err;
         let data = result[0].PastRun;
-        console.log(data);
+        //console.log(data);
         res.send(data)
     })
 });

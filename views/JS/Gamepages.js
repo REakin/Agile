@@ -225,7 +225,6 @@ class FollowerShop extends React.Component{
             console.log("can't have more then tree followers")
         }
     }
-
     fireFollower(name){
         delete this.props.player.followers[name];
         this.checkhired()
@@ -236,7 +235,6 @@ class FollowerShop extends React.Component{
             this.setState({[type]:lvl+1})
         }
     }
-
     checkhired(){
         if('Warrior' in this.props.player.followers){
             this.setState({'warrior':true});
@@ -289,35 +287,49 @@ class FollowerShop extends React.Component{
             <div id={'message'}>
             <h1>Recruit</h1><span className={"modal-close button"} onClick={this.removeMessage.bind(this)}>X</span>
             <div className={"warrior-desc"}>
-            Job:Warrior<br/>
-            Description: Swords
+                Job:Warrior<br/>
+                Deals Damage to the enemy<br/>
+                Lvl: {this.state.wlvl};
             </div>
             <div className={"warrior-button"}>
                 {this.buttonW}
             </div>
             <div className={"warrior"}>
-                <img src={"../Images/pipo-enemy018a.png"} alt={"warrior"}/>
+                <img className={'AutoPhoto'} src={"../Images/AutoWarrior.png"} alt={"warrior"}/>
             </div>
             <div className={"cleric-desc"}>
                 Job: Cleric<br/>
-                Description: Clerics
+                Slows Enemy Attack rate<br/>
+                Lvl: {this.state.clvl};
             </div>
         <div className={"cleric-button"}>
             {this.buttonC}
         </div>
         <div className={"cleric"}>
-            <img src={"../Images/AutoChar1.png"} alt={"cleric"}/>
+            <img className={"AutoPhoto"} src={"../Images/AutoChar1.png"} alt={"cleric"}/>
         </div>
         <div className={"druid-desc"}>
             Job: Druid<br/>
-            Description: Druids
+            Heals Player per second<br/>
+            Lvl: {this.state.dlvl};
         </div>
         <div className={"druid-button"}>
             {this.buttonD}
         </div>
         <div className={"druid"}>
-            <img src={"../Images/AutoDruid.png"} alt={"cleric"}/>
+            <img className={"AutoPhoto"} src={"../Images/AutoDruid.png"} alt={"cleric"}/>
         </div>
+                <div className={"thief-desc"}>
+                    Job: Thief<br/>
+                    Earns gold per second<br/>
+                    Lvl: {this.state.tlvl};
+                </div>
+                <div className={"thief-button"}>
+                    {this.buttonT}
+                </div>
+                <div className={"thief"}>
+                    <img className={"AutoPhoto"} src={"../Images/AutoThief.png"} alt={"cleric"}/>
+                </div>
             </div>
         )
     }
@@ -364,30 +376,16 @@ class PlayerShop extends React.Component{
                 <div className="upgradeweapons">
                     <h1>Upgrade Weapons and Armour</h1>
                 </div>
+                <br/>
                 <div className="value">
                     <img src="../Images/5071.jpg" alt="sword" onClick={this.avupgrade.bind(this)}/>
-                    +20 ATT, {this.state.avcost} coins
-                    <br/>
+                    <div className={'itemDesc'}>+5 ATT<br/>Cost: {this.state.avcost} coins</div>
                     <br/>
                     <img src="../Images/5073.jpg" alt="armor" onClick={this.hpupgrade.bind(this)}/>
-                    +100 HP, {this.state.hpcost} coins
-                    <div>Your Gold: {this.state.gold}</div>
+                    <div className={'itemDesc'}>+10 HP <br/>Cost: {this.state.hpcost} coins</div>
                 </div>
+                <div className={'goldAmount'}>Your Gold: {this.state.gold}</div>
                 <span className="modal-close button" onClick={this.removeMessage.bind(this)}>X</span>
-
-
-
-                {/*<div>Welcome to the player Shop</div>
-                <div>Your Gold: {this.state.gold}</div>
-                <div>upgrade weapon</div>
-                <div>Your current Av: {this.state.playerav}</div>
-                <div>cost to upgrade av: {this.state.avcost}</div>
-                <button onClick={this.avupgrade.bind(this)}>Upgrade</button>
-                <div>upgrade Armour</div>
-                <div>Your current MaxHp: {this.state.playermaxhp}</div>
-                <div>cost to upgrade: {this.state.hpcost}</div>
-                <button onClick={this.hpupgrade.bind(this)}>upgrade</button>
-                <button onClick={this.removeMessage.bind(this)}>Close Window</button>*/}
             </div>
         );
     }
