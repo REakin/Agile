@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const clicker = require('../views/JS/Clicker');
 const Player = clicker.Player;
 const Enemy = clicker.Enemy;
-const Autochar = clicker.Autochar;
+const Autochar = clicker.Autowarrior;
 
 // Testing Player class
 describe('Player', () => {
@@ -84,6 +84,19 @@ describe('Player', () => {
     //   let player = new Player('bang', 30, 15, 10);
     //   player.takedamage(30)
     // });
+  });
+
+  // Testing heal
+  describe('#heal', () => {
+    let player = new Player('bang', 30, 15, 10);
+    player.hp = 5;
+
+    // Test healing
+    it('should increase hp to 15 from 5', () => {
+      player.heal(10);
+      assert.equal(player.hp, 15);
+    });
+
   });
 
   // TODO - Figure out testing time outs
@@ -222,19 +235,19 @@ describe('Enemy', () => {
 });
 
 // Testing Player class
-describe('Autochar', () => {
+describe('Autowarrior', () => {
 
   // Testing the constructor
   describe('#constructor', () => {
-    let autochar = new Autochar('slime felcher', 8, 3);
+    let warrior = new Autowarrior('heman', 15, 5);
 
     // Test name
     it('should save name as a string', () => {
       assert.typeOf(autochar.name, 'string');
     });
 
-    it('should save name as \'slime felcher\'', () => {
-      assert.equal(autochar.name, 'slime felcher');
+    it('should save name as \'heman\'', () => {
+      assert.equal(autochar.name, 'heman');
     });
 
     // Test attack value (av)
@@ -242,8 +255,8 @@ describe('Autochar', () => {
       assert.typeOf(autochar.av, 'number');
     });
 
-    it('should save av as 8', () => {
-      assert.equal(autochar.av, 8);
+    it('should save av as 15', () => {
+      assert.equal(autochar.av, 15);
     });
 
     // this is failing for some reason...
@@ -255,8 +268,29 @@ describe('Autochar', () => {
     // it('should save i as 3', () => {
     //   assert.equal(autochar.i, 3);
     // });
+  });
 
-    // None of the other parts of autochar can be tested yet
+    //   TODO - Testing attack
+    // We cannot test this until the code is refactored
+    // to not rely on window variables
+    // describe('#attack', () => {
+    //   it('should reduce player hp from 30 to 20 ', () => {
+    //     let enemy = new Enemy(20, 10, 5);
+    //     let player = new Player('bang', 30, 15, 10);
+    //     enemy.attack();
+    //     assert.equal(player.hp, 20);
+    //   });
+    // });
+
+    // Testing the constructor
+    describe('#action', () => {
+      let warrior = new Autowarrior('heman', 15, 5);
+
+      // Test attack value (av)
+      it('should save av as a number', () => {
+        assert.typeOf(autochar.av, 'number');
+      });
+    });
 
   });
 

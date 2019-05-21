@@ -101,6 +101,7 @@ class Registerform extends React.Component{
         let uemail = document.getElementById('remail').value;
         let uname = document.getElementById('rusername').value;
         let upassword = document.getElementById('rpassword').value;
+        console.log(uemail + uname + upassword)
         let data ={
             email: uemail,
             name:uname
@@ -132,10 +133,10 @@ class Registerform extends React.Component{
                 <h1>CLICK DUNGEON</h1>
                 <h2>Sign Up</h2>
                 <div id={"register_form"}>
-                    <form action={"/login-user"} method={"POST"} onSubmit={this.sendRegister.bind(this)}>
-                        <input id={'remail'} name={'Email'} type={'email'} placeholder={'Email'} required={"required"}/>
-                        <input id={'rusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
-                        <input id={'rpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
+                    <form action={"/register"} method={"POST"} onSubmit={this.sendRegister.bind(this)}>
+                        <input id={'remail'} name={'remail'} type={'email'} placeholder={'Email'} required={"required"}/>
+                        <input id={'rusername'} name={"rusername"} type={"text"} placeholder={"Username"} required={"required"}/>
+                        <input id={'rpassword'} name={"rpassword"} type={"password"} placeholder={"Password"} required={"required"}/>
                         <br/>Password MUST contain an Upper case letter, Lower case letter,
                         a number, a special character and must be larger then 8 characters
                         <input type={'submit'} id={'loginBtn'} value={"Register"}/>
