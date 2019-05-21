@@ -162,6 +162,11 @@ class Village extends React.Component{
                     <div>
                         <a className="nav-item1 btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onClick={this.openFollowerShop.bind(this)}>Tavern</a>
                     </div>
+                    <div>
+                        <form action="/logOut" method="post">
+                            <button type="submit" className="nav-item1 btn btn-danger btn-rounded btn-lg">Log Out</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         )

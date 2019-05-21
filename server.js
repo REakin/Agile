@@ -20,26 +20,27 @@ const port = process.env.PORT || 8080;
 
 const app = express();
 
-// const store = new MongoDBStore({
-//     uri: 'mongodb+srv://RJEakin:xgk6viue@node-cluster-sriig.mongodb.net/test?retryWrites=true',
-//     collection: 'mySessions'
-//   },
-//   function(error) {
-//     console.log('error in db')
-//   });
+const store = new MongoDBStore({
+    uri: 'mongodb+srv://RJEakin:xgk6viue@node-cluster-sriig.mongodb.net/test?retryWrites=true',
+    databaseName: 'Clicker',
+    collection: 'mySessions'
+  });
 
-// // Catch errors
-// store.on('error', function(error) {
-//     console.log(error);
-//   });
+// Catch errors
+store.on('error', function(error) {
+    console.log(error);
+  });
 
 app.use(session({
     key: 'session_id',
     secret: 'dabOnEm',
-    // store: store,
+    store: store,
     resave: false,
     saveUninitialized: true,
-    cookie:{httpOnly: false}
+    cookie:{
+        httpOnly: false,
+        maxAge: 60 * 60 * 1000 // 1 hour
+    }
 }));
 
 app.use(bodyParser.json());
@@ -51,28 +52,32 @@ app.use(express.static(__dirname+'/views/public'));
 app.use(express.static(__dirname+'/views'));
 
 // check for existing cookies that are not logged in 
-// app.use((req, res, next) => {
-//     if (req.cookies.session_id && !req.session.user) {
-//         res.clearCookie('session_id');        
-//     }
-//     next();
-// });
+app.use((req, res, next) => {
+    console.log(req.session)
+    // console.log(req.session.user)
+    console.log(req);
+    if (req.sessionID && !req.session.user) {
+        res.clearCookie('session_id');        
+    }
+    next();
+});
 
 
 // check for logged-in users
-// var sessionChecker = (req, res, next) => {
-//     if (req.session.user && req.cookies.session_id) {
-//         res.redirect('/game');
-//     } else {
-//         next();
-//     }    
-// };
+var sessionChecker = (req, res, next) => {
+    console.log(req.session.user)
+    if (req.session.user) {
+        res.redirect('/game');
+    } else {
+        next();
+    }    
+};
 
 
-app.get('/',(request,response)=>{
-    console.log(request.headers.cookie);
-    response.render('login.hbs');
-});
+app.route('/')
+    .get(sessionChecker, (req, res) => {
+        res.render('login.hbs');
+    });
 
 app.post('/register', async function (req,res){
     let db = mydb.getDb();
@@ -112,19 +117,34 @@ app.post('/checkreg',(req,res)=>{
 });
 
 app.post('/login',(req,res)=>{
+    console.log('_SESSION ZONE_')
+    console.log(req.session.user)
     res.redirect('/game');
+});
+
+app.post('/logOut',(req,res)=>{
+    let db = mydb.getDb();
+    db.collection('mySessions').remove(
+    {
+        '_id':{
+            $eq: req.sessionID
+        }
+    },{
+        justOne: true
+    });
+    console.log('_SESSION ZONE_')
+    console.log(req.session.user)
+    res.redirect('/');
 });
 
 app.post('/logincheck',(req,res)=>{
     let db = mydb.getDb();
-    console.log(req.body);
     let username = req.body.username;
     let password = req.body.password;
-    console.log(username);
     db.collection('Users').find({'username':username}).toArray((err,result)=>{
         if (err) throw err;
         if (result.length !== 0){
-            console.log(result);
+            // console.log(result);
             let hashedPass = result[0].password;
             bcrypt.compare(password, hashedPass, function(error, result){
                 if (error) {throw error;}
@@ -132,6 +152,8 @@ app.post('/logincheck',(req,res)=>{
                     console.log('Password bad');
                     res.send({'auth':false})}
                 else if (result === true) {
+                    console.log(username)
+                    req.session.user = username;
                     res.send({'auth':true})
                 }
             })
@@ -143,7 +165,11 @@ app.post('/logincheck',(req,res)=>{
 });
 
 app.get('/game',(req,res)=>{
+    if (!req.session.user) {
+        res.redirect('/');
+    } else {
     res.render('game.hbs');
+    };
     //console.log(req.session.gay)
 });
 
