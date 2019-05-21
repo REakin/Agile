@@ -22,8 +22,6 @@ body {
 h1 {
     position: relative;
     text-align: center;
-    top: 25px;
-
     font-family:'VT323', monospace;
     font-size: 75px;
     font-weight: bold;
@@ -33,8 +31,7 @@ h1 {
 h2 {
     position: relative;
     text-align: center;
-    top: 35px;
-    /*left: 48px;*/
+    top: -30px;
     margin: 25px 40px;
     font-family:'VT323', monospace;
     font-size: 45px;
@@ -44,7 +41,7 @@ h2 {
 #login_form {
     position: relative;
     text-align: center;
-    top: 10px;
+    top: -30px;
     margin: 10px 80px;
     display: inline-block;
 }
@@ -52,7 +49,7 @@ h2 {
 #register_form{
     position: relative;
     text-align: center;
-    top: 5px;
+    top: -30px;
     margin: 10px 80px;
     display: inline-block;
 }
@@ -60,7 +57,7 @@ h2 {
 #forgot_form {
     position: relative;
     text-align: center;
-    top: 10px;
+    top: -30px;
     margin: -10px 80px;
     display: block;
 }
@@ -70,7 +67,7 @@ input {
     text-align: center;
     background-color: #cacaca;
     padding: 2px;
-    margin: 12px auto;
+    margin: 8px auto;
     width: 260px;
     height: 40px;
     box-shadow: none;
@@ -96,11 +93,28 @@ input {
     background-color: red;
 }
 
+#registerBtn {
+    position: relative;
+    background-color: #a099a83d;
+    text-align: center;
+    width: 264px;
+    height: 40px;
+    top: 0;
+    color: rgb(250, 250, 250);
+    font-family:'VT323', monospace;
+    font-size: 18px;
+    font-size: 25px;
+}
+
+#registerBtn:hover{
+    background-color: red;
+}
+
 #forgot_note {
     position: relative;
     text-align: center;
     height: 50px;
-    top: -8px;
+    top: -42px;
     line-height: 48px;
     color: #e1e1e1;
     border-radius: 20px 20px 20px 20px;
@@ -115,17 +129,15 @@ input {
     position: relative;
     text-align: center;
     height: 50px;
-    top: 5px;
+    top: 15px;
     line-height: 48px;
     color: #e1e1e1;
     border-radius: 20px 20px 20px 20px;
     font-size: 16px;
     margin: -20px;
-    /*left: 100px;*/
     font-family:'VT323', monospace;
     font-size: 20px;
 }
-
 
 #current{
     position: relative;
@@ -134,5 +146,5 @@ input {
     font-family:'VT323', monospace;
     font-size: 25px;
     font-weight: bold;
-    color: red;
+    color: rgb(76, 0, 255);
 }

@@ -139,7 +139,7 @@ class Registerform extends React.Component {
                         <input id={'rpassword'} name={"rpassword"} type={"password"} placeholder={"Password"} required={"required"}/>
                         <br/>Password MUST contain an Upper case letter, Lower case letter,
                         a number, a special character and must be larger then 8 characters
-                        <input type={'submit'} id={'loginBtn'} value={"Register"}/>
+                        <input type={'submit'} id={'registerBtn'} value={"Register"}/>
                     </form>
                     <a onClick={this.props.changeLogin}>Return to login</a>
                 </div>
