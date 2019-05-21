@@ -76,10 +76,6 @@ app.get('/',(request,response)=>{
 
 app.post('/register', async function (req,res){
     let db = mydb.getDb();
-    console.log(req.body.remail);
-    console.log(req.body.rusername);
-    console.log(req.body.rpassword);
-
     let username = req.body.rusername;
     let password = req.body.rpassword;
     let email = req.body.remail;
@@ -96,7 +92,6 @@ app.post('/register', async function (req,res){
 
     res.redirect('/');
 });
-
 app.post('/checkreg',(req,res)=>{
     let db = mydb.getDb();
     let servercheck = {};
@@ -110,11 +105,9 @@ app.post('/checkreg',(req,res)=>{
         })
     });
 });
-
 app.post('/login',(req,res)=>{
     res.redirect('/game');
 });
-
 app.post('/logincheck',(req,res)=>{
     let db = mydb.getDb();
     console.log(req.body);
@@ -141,7 +134,6 @@ app.post('/logincheck',(req,res)=>{
         }
     });
 });
-
 app.get('/game',(req,res)=>{
     res.render('game.hbs');
     //console.log(req.session.gay)
@@ -150,22 +142,50 @@ app.get('/game',(req,res)=>{
 //Ajax call
 app.get('/getState',(req,res)=>{
     let db = mydb.getDb();
-    db.collection('Scores').find({name:"debug"}).toArray((err,result)=>{
+    db.collection('Scores').find({name:"debug"}).project({PastRun:0}).toArray((err,result)=>{
       if (err) throw err;
       res.send(result,undefined,2)
     })
 });
-
 app.post('/saveState',(req,res)=>{
-    console.log(req.body);
+    //console.log(req.body);
+    let PastRun=req.body.PastRun;
+    delete req.body['PastRun'];
     let db = mydb.getDb();
-    let data = {$set:req.body};
-
+    if(PastRun !== undefined){
+        data = {$set:req.body, $push:{PastRun:PastRun}};
+    }else{
+        data = {$set:req.body}
+    }
     db.collection('Scores').updateOne({name:'debug'},data,function (err,res) {
         if(err) throw err;
     })
 });
 
+app.get('/PLeaderBoard',(req,res)=>{
+    player = req.query.name;
+    let db= mydb.getDb();
+    db.collection('Scores').find({name:player}).project({PastRun:1}).toArray((err,result)=>{
+        if (err) throw err;
+        let data = result[0].PastRun;
+        console.log(data);
+        res.send(data)
+    })
+});
+app.get('/GLeaderBoard',(req,res)=>{
+    let db= mydb.getDb();
+    db.collection('Scores').find({}).project({_id:0,PastRun:1}).toArray((err,result)=>{
+        if (err) throw err;
+        let data = [];
+        result.forEach(function (player) {
+            player.PastRun.forEach(function (run) {
+                data.push(run)
+            })
+        });
+        data.sort(function (a,b) {return b[0] - a[0]});
+        res.send(data)
+    })
+});
 
 app.listen(port,() =>{
     console.log((`server is up and listing on port ${port}`));

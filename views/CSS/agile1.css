@@ -152,23 +152,6 @@ body{
     width: 30%;
 }
 
-.nav-item2 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-    width: 30%;
-}
-
-.nav-item3 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-    width: 30%;
-}
-
-.nav-item4 {
-    padding: 20px;
-    font-family: 'VT323', monospace;
-    width: 30%;
-}
 
 a {
     font-size: 50px;
@@ -371,28 +354,20 @@ h2 {
 .warrior {
     float: left;
     position: absolute;
-    margin-top: -120px;
-    margin-left: -200px;
 }
 .warrior-desc {
     position: absolute;
     font-size: 20px;
     color: white;
     font-family: 'VT323', monospace;
-    margin-top: -120px;
     float: right;
-    margin-right: 50px;
 }
 .warrior-button {
     position: absolute;
-    margin-top: -120px;
-    margin-left: 200px;
 }
 .cleric {
     float: left;
-    position: absolute;
-    margin-left: -200px;
-}
+    position: absolute;}
 .cleric-desc {
     position: absolute;
     font-size: 20px;
@@ -425,9 +400,24 @@ h2 {
     margin-left: 200px;
     margin-top: 120px;
 }
-.graveyard {
-    font-size: 20px;
-    color: skyblue;
-    font-family: 'VT323', monospace;
-    margin-top: 150px;
+#scorebox{
+    overflow: auto;
+    position: absolute;
+    left: 15%;
+    top:20%;
+}
+#scores{
+    height: 100%;
+    margin: auto;
+}
+tbody{
+    height: 100%;
+}
+td{
+    width: 100px;
+    border: none;
+    border-bottom: 1px wheat solid;
+}
+table{
+    border: none;
 }

@@ -12,6 +12,24 @@ class Player {
         this.Clvl=Clvl;
         this.followers = {};
     }
+    SavePlayerStateAndRun(run){
+        let Save= new XMLHttpRequest();
+        Save.open('post',`/saveState`);
+        Save.setRequestHeader('Content-Type','application/json');
+        let data =
+            {
+                php:this.hp,
+                pav:this.av,
+                pgold:this.gold,
+                name:this.name,
+                Wlvl:this.Wlvl,
+                Dlvl:this.Dlvl,
+                Tlvl:this.Tlvl,
+                Clvl:this.Clvl,
+                PastRun:run
+            };
+        Save.send(JSON.stringify(data));
+    }
     SavePlayerState(){
         let Save= new XMLHttpRequest();
         Save.open('post',`/saveState`);
@@ -69,10 +87,10 @@ class Player {
             this.followers[follower].teardown()
         }
         enemy.container.props.changeVillage();
-        ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")))
+        ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")));
         this.gold = 0;
         this.hp = this.maxhp;
-        this.SavePlayerState()
+        this.SavePlayerStateAndRun([enemy.container.state.kills,enemy.container.state.rdnum,this.maxhp,this.av,this.name,'Died'])
     }
 }
 
