@@ -119,7 +119,8 @@ class Enemy {
         }
     }
     die(player) {
-        this.container.setState({kills:this.container.state.kills+1});
+        let enemyphoto = Math.floor(Math.random()*14)+1;
+        this.container.setState({kills:this.container.state.kills+1, enemyPhoto: enemyphoto});
         player.gold += this.container.state.rdnum;
         clearInterval(this.attackint);
         this.container.Stateupdate();
@@ -127,10 +128,13 @@ class Enemy {
             for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
-            this.container.setState({rdnum:this.container.state.rdnum+1});
+            if(this.container.state.difficulty<3){
+                this.container.setState({rdnum:this.container.state.rdnum+1, difficulty:this.container.state.difficulty+1 });
+            }else{
+                this.container.setState({rdnum:this.container.state.rdnum+1});
+            }
             ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
-
             this.hp = (this.maxhp+=10);
             this.startinterval(player);
             this.container.Stateupdate();
