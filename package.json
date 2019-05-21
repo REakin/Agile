@@ -11,19 +11,16 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react-app": "^3.1.2",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
-    "cookie-parser": "^1.4.4",
+    "connect-mongo": "^2.0.3",
+    "connect-mongodb-session": "^2.1.1",
     "express": "^4.16.4",
+    "express-session": "^1.16.1",
     "hbs": "^4.0.4",
     "mocha": "^6.1.4",
     "mongodb": "^3.2.2",
-    "mongoose": "^5.4.19",
-    "nodemailer": "^6.1.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
-    "redux": "^4.0.1",
-    "uuid": "^3.3.2"
+    "nodemailer": "^6.1.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",

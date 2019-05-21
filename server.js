@@ -1,47 +1,45 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
-const MongoClient = require('mongodb').MongoClient;
 const bodyParser = require('body-parser'); //use it the forms for retrieving the data
-const uuid = require('uuid/v1'); //creates unique ID's
 const nodemailer = require('nodemailer');
 
+// bcrypt stuff
+const bcrypt = require('bcrypt');
+let saltedRounds = 10;
+
+//db instantiation
 const mydb = require('./views/JS/DButils');
+
+//session creation
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
 
 const port = process.env.PORT || 8080;
 
-var app = express();
+const app = express();
 
-///using a mail server to direct emails to a user...
+// const store = new MongoDBStore({
+//     uri: 'mongodb+srv://RJEakin:xgk6viue@node-cluster-sriig.mongodb.net/test?retryWrites=true',
+//     collection: 'mySessions'
+//   },
+//   function(error) {
+//     console.log('error in db')
+//   });
 
-/*var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'DClicker.no.reply@gmail.com',
-        pass: 'Clicker123'
-    }
-});
+// // Catch errors
+// store.on('error', function(error) {
+//     console.log(error);
+//   });
 
-var mailOptions = {
-    from: 'DClicker.no.reply@gmail.com',
-    to: 'tjpriestley@gmail.com',
-    subject: 'Flair',
-    text: 'Surprising enough?'
-};
-*/
+app.use(session({
+    key: 'session_id',
+    secret: 'dabOnEm',
+    // store: store,
+    resave: false,
+    saveUninitialized: true,
+    cookie:{httpOnly: false}
+}));
 
-/*
-transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-});*/
-
-//secret is used for signing cookies. Its used to parse and match cookie sessions
-
-app.use(cookieParser('hjlk2dasfd3qw1wdd'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended : true }));
 hbs.registerPartials(__dirname+'/views/partials');
@@ -50,19 +48,48 @@ app.set('view engine','hbs');
 app.use(express.static(__dirname+'/views/public'));
 app.use(express.static(__dirname+'/views'));
 
-//added follow
+// check for existing cookies that are not logged in 
+// app.use((req, res, next) => {
+//     if (req.cookies.session_id && !req.session.user) {
+//         res.clearCookie('session_id');        
+//     }
+//     next();
+// });
+
+
+// check for logged-in users
+// var sessionChecker = (req, res, next) => {
+//     if (req.session.user && req.cookies.session_id) {
+//         res.redirect('/game');
+//     } else {
+//         next();
+//     }    
+// };
+
 
 app.get('/',(request,response)=>{
+    console.log(request.headers.cookie);
     response.render('login.hbs');
 });
 
-app.post('/register',(req,res)=>{
-    console.log(req.query.email);
-    console.log(req.query.username);
-    console.log(req.query.password);
-    res.send({'body':req.query.email})
-});
+app.post('/register', async function (req,res){
+    let db = mydb.getDb();
+    let username = req.body.rusername;
+    let password = req.body.rpassword;
+    let email = req.body.remail;
 
+    let hashedPass = await bcrypt.hash(password, saltedRounds);
+
+    db.collection('Users').insertOne({
+        username: username,
+        password: hashedPass,
+        email: email
+    }, (error) => {
+        if (error) throw error;
+    });
+
+    res.redirect('/');
+});
 app.post('/checkreg',(req,res)=>{
     let db = mydb.getDb();
     let servercheck = {};
@@ -72,54 +99,91 @@ app.post('/checkreg',(req,res)=>{
         db.collection('Users').find({'username':req.body.name}).toArray((err,result)=>{
             if (err) throw err
             servercheck['username'] = result.length !== 0;
-            res.send(servercheck)
+            res.send(servercheck);
         })
     });
-
 });
-
 app.post('/login',(req,res)=>{
-    res.redirect('/game')
+    res.redirect('/game');
 });
-
 app.post('/logincheck',(req,res)=>{
     let db = mydb.getDb();
     console.log(req.body);
     let username = req.body.username;
     let password = req.body.password;
     console.log(username);
-    db.collection('Users').find({'username':username,'password':password}).toArray((err,result)=>{
+    db.collection('Users').find({'username':username}).toArray((err,result)=>{
         if (err) throw err;
         if (result.length !== 0){
-            res.send({'auth':true})
+            console.log(result);
+            let hashedPass = result[0].password;
+            bcrypt.compare(password, hashedPass, function(error, result){
+                if (error) {throw error;}
+                else if (result === false) {
+                    console.log('Password bad');
+                    res.send({'auth':false})}
+                else if (result === true) {
+                    res.send({'auth':true})
+                }
+            })
         }
         else{
             res.send({'auth':false})
         }
     });
 });
-
 app.get('/game',(req,res)=>{
-    res.render('game.hbs')
+    res.render('game.hbs');
+    //console.log(req.session.gay)
 });
 
 //Ajax call
 app.get('/getState',(req,res)=>{
     let db = mydb.getDb();
-    db.collection('Scores').find({name:"Test"}).toArray((err,result)=>{
+    db.collection('Scores').find({name:"debug"}).project({PastRun:0}).toArray((err,result)=>{
       if (err) throw err;
       res.send(result,undefined,2)
     })
 });
-
 app.post('/saveState',(req,res)=>{
+    //console.log(req.body);
+    let PastRun=req.body.PastRun;
+    delete req.body['PastRun'];
     let db = mydb.getDb();
-    let data = {$set:req.body};
-    db.collection('Scores').updateOne({name:'Test'},data,function (err,res) {
-        if(err) throw err
+    if(PastRun !== undefined){
+        data = {$set:req.body, $push:{PastRun:PastRun}};
+    }else{
+        data = {$set:req.body}
+    }
+    db.collection('Scores').updateOne({name:'debug'},data,function (err,res) {
+        if(err) throw err;
     })
 });
 
+app.get('/PLeaderBoard',(req,res)=>{
+    player = req.query.name;
+    let db= mydb.getDb();
+    db.collection('Scores').find({name:player}).project({PastRun:1}).toArray((err,result)=>{
+        if (err) throw err;
+        let data = result[0].PastRun;
+        //console.log(data);
+        res.send(data)
+    })
+});
+app.get('/GLeaderBoard',(req,res)=>{
+    let db= mydb.getDb();
+    db.collection('Scores').find({}).project({_id:0,PastRun:1}).toArray((err,result)=>{
+        if (err) throw err;
+        let data = [];
+        result.forEach(function (player) {
+            player.PastRun.forEach(function (run) {
+                data.push(run)
+            })
+        });
+        data.sort(function (a,b) {return b[0] - a[0]});
+        res.send(data)
+    })
+});
 
 app.listen(port,() =>{
     console.log((`server is up and listing on port ${port}`));

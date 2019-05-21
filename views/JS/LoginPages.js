@@ -28,15 +28,15 @@ class loginpage extends React.Component {
             forgot: true
         })
     }
-    render() {
-        if (this.state.login == true) {
-            return (<Loginform changeRegister={this.changeRegister.bind(this)} changeForgot={this.changeForgot.bind(this)} />)
+    render(){
+        if (this.state.login == true){
+            return(<Loginform changeRegister={this.changeRegister.bind(this)} changeForgot={this.changeForgot.bind(this)}/>)
         }
-        else if (this.state.register == true) {
-            return (<Registerform changeLogin={this.changeLogin.bind(this)} />)
+        else if (this.state.register== true){
+            return(<Registerform changeLogin={this.changeLogin.bind(this)}/>)
         }
-        else if (this.state.forgot == true) {
-            return (<Forgotform changeLogin={this.changeLogin.bind(this)} />)
+        else if(this.state.forgot == true){
+            return(<Forgotform changeLogin={this.changeLogin.bind(this)}/>)
         }
     }
 }
@@ -65,21 +65,21 @@ class Loginform extends React.Component {
 
     }
 
-    render() {
-        return (
+    render(){
+        return(
             <div id={'content'}>
                 <h1>CLICK DUNGEON</h1>
                 <h2>Sign in</h2>
                 <div id={"login_form"}>
                     <form method={"POST"}>
-                        <input id={'lusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"} />
-                        <input id={'lpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"} />
+                        <input id={'lusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
+                            <input id={'lpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
                     </form>
                 </div>
                 <p id={"forgot_note"}><a onClick={this.props.changeForgot}>Forgot password</a></p>
                 <div id={"login_form"}>
                     <form action={"/login"} method={"POST"} onSubmit={this.sendlogin.bind(this)}>
-                        <input type={'submit'} id={'loginBtn'} value={"Login"} />
+                        <input type={'submit'} id={'loginBtn'} value={"Login"}/>
                     </form>
                 </div>
 
@@ -101,7 +101,8 @@ class Registerform extends React.Component {
         let uemail = document.getElementById('remail').value;
         let uname = document.getElementById('rusername').value;
         let upassword = document.getElementById('rpassword').value;
-        let data = {
+        console.log(uemail + uname + upassword)
+        let data ={
             email: uemail,
             name: uname
         };
@@ -126,19 +127,19 @@ class Registerform extends React.Component {
         }
     }
 
-    render() {
-        return (
+    render(){
+        return(
             <div id={'content'}>
                 <h1>CLICK DUNGEON</h1>
                 <h2>Sign Up</h2>
                 <div id={"register_form"}>
-                    <form action={"/login-user"} method={"POST"} onSubmit={this.sendRegister.bind(this)}>
-                        <input id={'remail'} name={'Email'} type={'email'} placeholder={'Email'} required={"required"} />
-                        <input id={'rusername'} name={"username"} type={"text"} placeholder={"Username"} required={"required"} />
-                        <input id={'rpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"} />
-                        <br />Password MUST contain an Upper case letter, Lower case letter,
+                    <form action={"/register"} method={"POST"} onSubmit={this.sendRegister.bind(this)}>
+                        <input id={'remail'} name={'remail'} type={'email'} placeholder={'Email'} required={"required"}/>
+                        <input id={'rusername'} name={"rusername"} type={"text"} placeholder={"Username"} required={"required"}/>
+                        <input id={'rpassword'} name={"rpassword"} type={"password"} placeholder={"Password"} required={"required"}/>
+                        <br/>Password MUST contain an Upper case letter, Lower case letter,
                         a number, a special character and must be larger then 8 characters
-                        <input type={'submit'} id={'loginBtn'} value={"Register"} />
+                        <input type={'submit'} id={'loginBtn'} value={"Register"}/>
                     </form>
                     <a onClick={this.props.changeLogin}>Return to login</a>
                 </div>
@@ -146,7 +147,6 @@ class Registerform extends React.Component {
         )
     }
 }
-
 
 class Forgotform extends React.Component {
     constructor(props) {
