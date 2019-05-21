@@ -2,14 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Images/AutoChar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Images/AutoDruid.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/views/Images/AutoThief.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Images/AutoWarrior.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/Images/PlayerPhoto.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/appTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/appTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/Clicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/Clicker.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/CSS/NavbarStyle.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/CSS/agile1.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/agile1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Images/AutoChar1.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Images/AutoChar1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Images/AutoDruid.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Images/AutoDruid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Images/AutoWarrior.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Images/AutoWarrior.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy009b.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Game Assets/Enemys/enemy0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy042a.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Game Assets/Enemys/enemy2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy042b.png" beforeDir="false" afterPath="$PROJECT_DIR$/views/Game Assets/Enemys/enemy1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/HTML/agile.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/HTML/agile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/HTML/agile.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/HTML/agile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/HTML/login2.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/HTML/login2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy002.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy005.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy006.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy011.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy012.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy014a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy015a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy016b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy018.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy018a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy019.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy020a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy021a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy022.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy023.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy024b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy025.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Images/pipo-enemy026b.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/DButils.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/DButils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Leaderboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/LoginPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/LoginPages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login_background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/views/Images/login_background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/Navbar.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pass_reset.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/profile.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register_succeed.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reset.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reset_result.hbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/simple_response.hbs" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,16 +115,34 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="716406347">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="8" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="8" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="160" column="3" lean-forward="true" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
+            <state relative-caret-position="3520">
+              <caret line="160" column="3" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
               <folding>
-                <element signature="e#1775#1853#0" />
                 <element signature="e#4832#5239#0" />
               </folding>
             </state>
@@ -88,8 +152,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="331" column="22" lean-forward="true" selection-start-line="331" selection-start-column="22" selection-end-line="332" selection-end-column="18" />
+            <state relative-caret-position="1474">
+              <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="332" selection-end-column="18" />
               <folding>
                 <element signature="n#Game#0" />
                 <element signature="n#!!block;n#constructor#0;n#Game#0" />
@@ -134,11 +198,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
+            <state relative-caret-position="660">
               <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
               <folding>
                 <element signature="n#!!block;n#constructor#0;n#Player#0" />
-                <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
                 <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
                 <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
                 <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
@@ -159,8 +222,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/CSS/agile1.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="395" column="12" lean-forward="true" selection-start-line="395" selection-start-column="12" selection-end-line="395" selection-end-column="12" />
+            <state relative-caret-position="449">
+              <caret line="114" column="15" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="114" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -168,8 +231,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/CSS/Clicker.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="396">
+              <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -259,9 +322,9 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1017" />
-    <option name="width" value="910" />
-    <option name="height" value="1047" />
+    <option name="x" value="988" />
+    <option name="width" value="2006" />
+    <option name="height" value="2092" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -298,7 +361,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/eakin/OneDrive/Documents/GitHub/FinalProject/Node_finalproject/views/leaderboard.hbs" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="11.6.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ACIT 2520 Node.JS/Herokupost" />
+    <property name="last_opened_file_path" value="$USER_HOME$/ACIT 2520 Node.JS/Herokupost" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -394,6 +457,7 @@
       <workItem from="1558066411301" duration="4480000" />
       <workItem from="1558107456190" duration="26161000" />
       <workItem from="1558384185577" duration="21433000" />
+      <workItem from="1558460446224" duration="549000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -602,7 +666,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260150000" />
+    <option name="totallyTimeSpent" value="260699000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,12 +678,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1017" y="0" width="910" height="1047" extended-state="0" />
+    <frame x="494" y="0" width="1003" height="1046" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.26261467" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.11375388" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31034482" />
@@ -765,9 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -786,21 +847,13 @@
     <entry file="file://$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy022a.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy026b.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy026b.png" />
     <entry file="file://$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy023.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy021a.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy015a.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy012.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy021a.png" />
+    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy015a.png" />
+    <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy012.png" />
     <entry file="file://$PROJECT_DIR$/views/Images/Lava2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -832,12 +885,8 @@
     <entry file="file://$PROJECT_DIR$/views/Images/5071.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/pass_reset.hbs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/reset.hbs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pass_reset.hbs" />
+    <entry file="file://$PROJECT_DIR$/views/reset.hbs" />
     <entry file="file://$PROJECT_DIR$/views/JS/DButils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -864,37 +913,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#6;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Leaderboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="160" column="3" lean-forward="true" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
-          <folding>
-            <element signature="e#1775#1853#0" />
-            <element signature="e#4832#5239#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Leaderboard.js" />
     <entry file="file://$PROJECT_DIR$/views/Images/AutoDruid.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Images/AutoWarrior.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/Images/AutoChar1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Images/AutoThief.png">
@@ -903,40 +929,20 @@
     <entry file="file://$PROJECT_DIR$/views/Images/AutoChar1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/CSS/Clicker.css">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="18" column="15" lean-forward="true" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+        <state relative-caret-position="3520">
+          <caret line="160" column="3" selection-start-line="160" selection-start-column="3" selection-end-line="160" selection-end-column="3" />
           <folding>
-            <element signature="n#!!block;n#constructor#0;n#Player#0" />
-            <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
-            <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
-            <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
-            <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
-            <element signature="n#!!block;n#attack#0;n#Player#0" />
-            <element signature="n#!!block;n#takedamage#0;n#Player#0" />
-            <element signature="n#!!block;n#heal#0;n#Player#0" />
-            <element signature="n#!!block;n#die#0;n#Player#0" />
-            <element signature="n#Enemy#0" />
-            <element signature="n#AutoWarrior#0" />
-            <element signature="n#AutoDruid#0" />
-            <element signature="n#AutoThief#0" />
-            <element signature="n#AutoCleric#0" />
+            <element signature="e#4832#5239#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="331" column="22" lean-forward="true" selection-start-line="331" selection-start-column="22" selection-end-line="332" selection-end-column="18" />
+        <state relative-caret-position="1474">
+          <caret line="331" column="22" selection-start-line="331" selection-start-column="22" selection-end-line="332" selection-end-column="18" />
           <folding>
             <element signature="n#Game#0" />
             <element signature="n#!!block;n#constructor#0;n#Game#0" />
@@ -977,10 +983,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="96" column="12" selection-start-line="96" selection-start-column="12" selection-end-line="96" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Player#0" />
+            <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
+            <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
+            <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
+            <element signature="n#!!block;n#attack#0;n#Player#0" />
+            <element signature="n#!!block;n#takedamage#0;n#Player#0" />
+            <element signature="n#!!block;n#heal#0;n#Player#0" />
+            <element signature="n#!!block;n#die#0;n#Player#0" />
+            <element signature="n#Enemy#0" />
+            <element signature="n#AutoWarrior#0" />
+            <element signature="n#AutoDruid#0" />
+            <element signature="n#AutoThief#0" />
+            <element signature="n#AutoCleric#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/CSS/Clicker.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="15" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/CSS/agile1.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="395" column="12" lean-forward="true" selection-start-line="395" selection-start-column="12" selection-end-line="395" selection-end-column="12" />
+        <state relative-caret-position="449">
+          <caret line="114" column="15" lean-forward="true" selection-start-line="114" selection-start-column="15" selection-end-line="114" selection-end-column="15" />
         </state>
       </provider>
     </entry>
