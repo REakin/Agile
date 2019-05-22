@@ -27,11 +27,11 @@ class Game extends React.Component{
         return new Player(playername,hp,gold,av,wlvl,dlvl,tlvl,clvl)
     }
     ChangeVillage(){
-        console.log('change to village');
+        //console.log('change to village');
         this.setState({village:true,dungeon:false})
     }
     ChangeDungeon(){
-        console.log('change to dungeon');
+        //console.log('change to dungeon');
         this.setState({village:false,dungeon:true})
     }
     updatePlayer(newplayer){
@@ -221,7 +221,7 @@ class DeathMessage extends React.Component{
 class FollowerShop extends React.Component{
     constructor(props){
         super(props);
-        console.log(this.props.player);
+        //console.log(this.props.player);
         this.state={
             warrior: false,
             Wlvl:this.props.player.Wlvl,
@@ -240,7 +240,7 @@ class FollowerShop extends React.Component{
             this.props.player.followers[name] = follower;
             this.checkhired()
         }else{
-            console.log("can't have more then tree followers")
+            alert("can't have more then tree followers")
         }
     }
     fireFollower(name){
@@ -249,7 +249,6 @@ class FollowerShop extends React.Component{
     }
     upgradeFollower(type){
         if (this.props.player.gold>= 20*this.state[type]){
-            console.log('got here');
             this.props.player.gold -= 20*this.state[type];
             this.setState({[type]:this.state[type]+1});
             this.props.player[type] += 1;
@@ -488,7 +487,7 @@ class Leaderboard extends React.Component{
             else{
                 return(
                     <div className={'wrapper'}>
-                    <div id={'message'}>
+                    <div id={'shop'}>
                         <h1>Global LeaderBoard</h1>
                         <button onClick={this.changePersonal.bind(this)}> Personal</button>
                         <div id={'scorebox'}>
