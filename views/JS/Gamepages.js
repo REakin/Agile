@@ -4,7 +4,6 @@ const e = React.createElement;
 class Game extends React.Component{
     constructor(props){
         super(props);
-        let playerState = this.GetPlayerState();
         this.state={
             village:true,
             dungeon: false,
@@ -41,7 +40,7 @@ class Game extends React.Component{
     render(){
         if (this.state.village==true){
         return(
-            <Village player={this.state.player} changeDungeon={this.ChangeDungeon.bind(this)}/>
+            <Village updatePlayer={this.updatePlayer.bind(this)} player={this.state.player} changeDungeon={this.ChangeDungeon.bind(this)}/>
             )
         }
         if(this.state.dungeon==true){
@@ -65,8 +64,8 @@ class Dungeon extends React.Component{
             kills: 0,
             rdnum: 0,
             difficulty:1,
-            bg:"path",
-            enemyPhoto:"url"
+            bg:0,
+            enemyPhoto:7
         };
     }
     updateEHPbar(){
@@ -96,15 +95,26 @@ class Dungeon extends React.Component{
         this.props.player.hp = this.props.player.maxhp;
         this.enemy = new Enemy(50, 5, 1000, this);
         for (let follower in this.props.player.followers) {
-            this.props.player.followers[follower].action()
+            this.props.player.followers[follower].action(this.enemy)
         }
         this.enemy.startinterval(this.props.player);
         return this.enemy
     }
     render(){
+        let style ={
+            backgroundImage:`url("../Game Assets/backgrounds/bg${this.state.bg}.png")`,
+            height: "80%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            display: "block",
+            marginLeft: "auto",
+            marginRight: "auto",
+            width: "100%"
+        };
         return(
             <div id={'gameArea'}>
-                <div className={'bg2'}>
+                <div style={style}>
                     <div className={'enemyArea'}>
                         <div className={"health-bar1 enemyHealthBar"} data-total={this.state.enemy.maxhp} data-value={this.state.ehp}>
                             <div id={'EBar'} className={"Ebar"}>
@@ -143,7 +153,7 @@ class Village extends React.Component{
         ReactDOM.render(<FollowerShop updatePlayer={this.props.updatePlayer} player={this.props.player}/>,document.getElementById("popupArea"))
     }
     openPlayerShop(){
-        ReactDOM.render(<PlayerShop updatePlayer={this.props.updatePlayer} player={this.props.player}/>,document.getElementById("popupArea"))
+        ReactDOM.render(<PlayerShop player={this.props.player}/>,document.getElementById("popupArea"))
     }
     openLeaderboard(){
         ReactDOM.render(<Leaderboard player={this.props.player}/>,document.getElementById("popupArea"))
@@ -165,9 +175,9 @@ class Village extends React.Component{
                     <div>
                         <a className="nav-item1 btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onClick={this.openFollowerShop.bind(this)}>Tavern</a>
                     </div>
-                    <div>
+                    <div className={"logoutbtn"}>
                         <form action="/logOut" method="post">
-                            <button type="submit" className="nav-item1 btn btn-danger btn-rounded btn-lg">Log Out</button>
+                            <button type="submit" className="btn btn-danger btn-rounded btn-lg">Log Out</button>
                         </form>
                     </div>
                 </div>
@@ -213,20 +223,20 @@ class FollowerShop extends React.Component{
         super(props);
         console.log(this.props.player);
         this.state={
-            'warrior': false,
-            'wlvl':1,
-            'druid': false,
-            'dlvl':1,
-            'thief': false,
-            'tlvl':1,
-            'cleric': false,
-            'clvl':1
+            warrior: false,
+            Wlvl:this.props.player.Wlvl,
+            druid: false,
+            Dlvl:this.props.player.Dlvl,
+            thief: false,
+            Tlvl:this.props.player.Tlvl,
+            cleric: false,
+            Clvl:this.props.player.Clvl
         };
         this.checkhired()
     }
-    hirefollower(type, name, lvl, interaval){
+    hirefollower(type, name, interaval,lvl){
         if(Object.keys(this.props.player.followers).length < 3){
-            let follower = new type(name,lvl,interaval);
+            let follower = new type(name,lvl,interaval,this.props.player);
             this.props.player.followers[name] = follower;
             this.checkhired()
         }else{
@@ -237,10 +247,12 @@ class FollowerShop extends React.Component{
         delete this.props.player.followers[name];
         this.checkhired()
     }
-    upgradeFollower(type,lvl){
-        if (this.props.player.gold>= 20*lvl){
-            this.props.player.gold -= 20*lvl;
-            this.setState({[type]:lvl+1})
+    upgradeFollower(type){
+        if (this.props.player.gold>= 20*this.state[type]){
+            console.log('got here');
+            this.props.player.gold -= 20*this.state[type];
+            this.setState({[type]:this.state[type]+1});
+            this.props.player[type] += 1;
         }
     }
     checkhired(){
@@ -251,8 +263,8 @@ class FollowerShop extends React.Component{
         else{
             this.setState({'warrior': false});
             this.buttonW = <div>
-                    <button id={'upgradefollowerW'} onClick={this.upgradeFollower.bind(this,'wlvl',this.state.wlvl)}>Upgrade Warrior</button>
-                    <button id={'followerbuttonW'} onClick={this.hirefollower.bind(this,AutoWarrior,'Warrior',this.state.wlvl,1000)}>HIRE</button>
+                    <button id={'upgradefollowerW'} onClick={this.upgradeFollower.bind(this,'Wlvl')}>Upgrade Warrior</button>
+                    <button id={'followerbuttonW'} onClick={this.hirefollower.bind(this,AutoWarrior,'Warrior',1000,this.state.Wlvl)}>HIRE</button>
                 </div>
         }
         if('Druid' in this.props.player.followers){
@@ -261,8 +273,8 @@ class FollowerShop extends React.Component{
         }else {
             this.setState({'druid': false});
             this.buttonD = <div>
-                <button id={'upgradefollowerD'} onClick={this.upgradeFollower.bind(this, 'dlvl', this.state.dlvl)}>Upgrade Druid</button>
-                <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this, AutoDruid, 'Druid', this.state.dlvl, 1500)}>HIRE</button>
+                <button id={'upgradefollowerD'} onClick={this.upgradeFollower.bind(this, 'Dlvl')}>Upgrade Druid</button>
+                <button id={'followerbuttonD'} onClick={this.hirefollower.bind(this, AutoDruid, 'Druid', 1500,this.state.Dlvl)}>HIRE</button>
             </div>;
         }
         if('Thief' in this.props.player.followers){
@@ -271,8 +283,8 @@ class FollowerShop extends React.Component{
         }else {
             this.setState({'thief': false});
             this.buttonT = <div>
-                <button id={'upgradefollowerT'} onClick={this.upgradeFollower.bind(this,'tlvl',this.state.tlvl)}>Upgrade Thief</button>
-                <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',this.state.tlvl,1000)}>HIRE</button>
+                <button id={'upgradefollowerT'} onClick={this.upgradeFollower.bind(this,'Tlvl')}>Upgrade Thief</button>
+                <button id={'followerbuttonT'} onClick={this.hirefollower.bind(this,AutoThief,'Thief',1000,this.state.Tlvl)}>HIRE</button>
             </div>
         }
         if('Cleric' in this.props.player.followers){
@@ -281,8 +293,8 @@ class FollowerShop extends React.Component{
         }else {
             this.setState({'cleric': false});
             this.buttonC = <div>
-                <button id={'upgradefollowerC'} onClick={this.upgradeFollower.bind(this,'clvl',this.state.clvl)}>Upgrade Cleric</button>
-                <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',this.state.clvl,1000)}>HIRE</button>
+                <button id={'upgradefollowerC'} onClick={this.upgradeFollower.bind(this,'Clvl')}>Upgrade Cleric</button>
+                <button id={'followerbuttonC'} onClick={this.hirefollower.bind(this,AutoCleric,'Cleric',1000,this.state.Clvl)}>HIRE</button>
             </div>
         }
     }
@@ -297,7 +309,7 @@ class FollowerShop extends React.Component{
             <div className={"warrior-desc"}>
                 Job:Warrior<br/>
                 Deals Damage to the enemy<br/>
-                Lvl: {this.state.wlvl};
+                Lvl: {this.state.Wlvl};
             </div>
             <div className={"warrior-button"}>
                 {this.buttonW}
@@ -308,7 +320,7 @@ class FollowerShop extends React.Component{
             <div className={"cleric-desc"}>
                 Job: Cleric<br/>
                 Slows Enemy Attack rate<br/>
-                Lvl: {this.state.clvl};
+                Lvl: {this.state.Clvl};
             </div>
         <div className={"cleric-button"}>
             {this.buttonC}
@@ -319,7 +331,7 @@ class FollowerShop extends React.Component{
         <div className={"druid-desc"}>
             Job: Druid<br/>
             Heals Player per second<br/>
-            Lvl: {this.state.dlvl};
+            Lvl: {this.state.Dlvl};
         </div>
         <div className={"druid-button"}>
             {this.buttonD}
@@ -330,7 +342,7 @@ class FollowerShop extends React.Component{
                 <div className={"thief-desc"}>
                     Job: Thief<br/>
                     Earns gold per second<br/>
-                    Lvl: {this.state.tlvl};
+                    Lvl: {this.state.Tlvl};
                 </div>
                 <div className={"thief-button"}>
                     {this.buttonT}
@@ -471,6 +483,7 @@ class Leaderboard extends React.Component{
                 return(
                     <div id={'message'}>
                         <h1>Global LeaderBoard</h1>
+                        <button onClick={this.changePersonal.bind(this)}> Personal</button>
                         <div id={'scorebox'}>
                             <table id={'scores'}>
                                 <tbody>
@@ -478,7 +491,6 @@ class Leaderboard extends React.Component{
                                 </tbody>
                             </table>
                         </div>
-                        <button onClick={this.changePersonal.bind(this)}> Personal</button>
                         <button onClick={this.removeMessage.bind(this)}>Close Window</button>
                     </div>
                 )

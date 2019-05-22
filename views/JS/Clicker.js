@@ -101,22 +101,22 @@ class Enemy {
         this.av = parseInt(av);
         this.interval = parseInt(i);
         this.container = container}
-
     startinterval(player){
         this.attackint = setInterval(this.attack.bind(this,player), this.interval)
     }
-
     attack(target) {
         target.takedamage(this.av,this);
         this.container.Stateupdate()
     }
-
     takedamage(damage,player) {
         this.hp -= damage;
         this.container.Stateupdate();
         if (this.hp <= 0) {
             this.die(player)
         }
+    }
+    updatebg(){
+        this.container.setState({bg:this.container.state.bg+1})
     }
     die(player) {
         let enemyphoto = Math.floor(Math.random()*14)+1;
@@ -125,13 +125,10 @@ class Enemy {
         clearInterval(this.attackint);
         this.container.Stateupdate();
         if (this.container.state.kills % 5 === 0 && this.container.state.kills !== 0) {
+            this.container.setState({rdnum: this.container.state.rdnum+1});
+            this.updatebg();
             for (let follower in player.followers){
                 player.followers[follower].teardown()
-            }
-            if(this.container.state.difficulty<3){
-                this.container.setState({rdnum:this.container.state.rdnum+1, difficulty:this.container.state.difficulty+1 });
-            }else{
-                this.container.setState({rdnum:this.container.state.rdnum+1});
             }
             ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
@@ -143,18 +140,19 @@ class Enemy {
 }
 
 class AutoWarrior {
-    constructor(name, lvl, interval,) {
+    constructor(name, lvl, interval,player) {
+        this.player = player;
         this.name = name;
         this.interval =interval;
         this.lvl = lvl
     }
-    attack() {
-        if (player.hp > 0) {
-            enemy.takedamage(this.lvl);
+    attack(enemy) {
+        if (this.player.hp > 0) {
+            enemy.takedamage(this.lvl,this.player);
         }
     }
-    action() {
-        this.actiontime = setInterval(this.attack.bind(this), this.interval)
+    action(enemy) {
+        this.actiontime = setInterval(this.attack.bind(this,enemy), this.interval)
     }
     teardown(){
         clearInterval(this.actiontime)
@@ -162,13 +160,14 @@ class AutoWarrior {
 }
 
 class AutoDruid{
-    constructor(name, lvl, interval) {
+    constructor(name, lvl, interval,player) {
+        this.player=player;
         this.name = name;
         this.interval =interval;
         this.lvl = lvl
     }
     healplayer(){
-        player.heal(this.lvl)
+        this.player.heal(this.lvl)
     }
     action(){
         this.actiontime = setInterval(this.healplayer.bind(this), this.interval)
@@ -179,13 +178,14 @@ class AutoDruid{
 }
 
 class AutoThief{
-    constructor(name, lvl, interval) {
+    constructor(name, lvl, interval,player) {
+        this.player=player;
         this.name = name;
         this.interval =interval;
         this.lvl = lvl;
     }
     findgold(){
-        player.gold += this.lvl
+        this.player.gold += this.lvl
     }
     action() {
        this.actiontime = setInterval(this.findgold.bind(this), this.interval)
@@ -200,8 +200,8 @@ class AutoCleric{
         this.name = name;
         this.lvl = lvl
     }
-    action() {
-        enemy.interval += this.lvl*1000
+    action(enemy) {
+        enemy.interval += this.lvl*500
     }
     teardown(){
         //pass

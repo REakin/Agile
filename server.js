@@ -51,9 +51,9 @@ app.use(express.static(__dirname+'/views'));
 
 // check for existing cookies that are not logged in 
 app.use((req, res, next) => {
-    console.log(req.session)
+    //console.log(req.session)
     // console.log(req.session.user)
-    console.log(req);
+    //console.log(req);
     if (req.sessionID && !req.session.user) {
         res.clearCookie('session_id');        
     }
@@ -92,6 +92,18 @@ app.post('/register', async function (req,res){
     }, (error) => {
         if (error) throw error;
     });
+    db.collection('Scores').insertOne({
+        php:50,
+        pav:5,
+        pgold:0,
+        name:username,
+        Wlvl:0,
+        Dlvl:0,
+        Tlvl:0,
+        Clvl:0,
+        PastRun:[]
+    });
+
 
     res.redirect('/');
 });
@@ -166,14 +178,15 @@ app.get('/game',(req,res)=>{
 
 //Ajax call
 app.get('/getState',(req,res)=>{
+    let user = req.session.user;
     let db = mydb.getDb();
-    db.collection('Scores').find({name:"debug"}).project({PastRun:0}).toArray((err,result)=>{
+    db.collection('Scores').find({name:user}).project({PastRun:0}).toArray((err,result)=>{
       if (err) throw err;
       res.send(result,undefined,2)
     })
 });
 app.post('/saveState',(req,res)=>{
-    //console.log(req.body);
+    let user = req.session.user;
     let PastRun=req.body.PastRun;
     delete req.body['PastRun'];
     let db = mydb.getDb();
@@ -182,7 +195,7 @@ app.post('/saveState',(req,res)=>{
     }else{
         data = {$set:req.body}
     }
-    db.collection('Scores').updateOne({name:'debug'},data,function (err,res) {
+    db.collection('Scores').updateOne({name:user},data,function (err,res) {
         if(err) throw err;
     })
 });
