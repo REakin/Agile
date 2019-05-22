@@ -189,7 +189,7 @@ app.post('/saveState',(req,res)=>{
     delete req.body['PastRun'];
     let db = mydb.getDb();
     if(PastRun !== undefined){
-        data = {$set:req.body, $push:{PastRun:PastRun}};
+        data = {$set:req.body, $push:{PastRun:{$each:[PastRun],$slice:-10}}};
     }else{
         data = {$set:req.body}
     }
