@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +24,7 @@
           <entry key="hbs" value="16" />
           <entry key="html" value="9" />
           <entry key="jpg" value="6" />
-          <entry key="js" value="37" />
+          <entry key="js" value="39" />
           <entry key="json" value="6" />
           <entry key="mocha" value="1" />
           <entry key="png" value="47" />
@@ -37,7 +38,7 @@
           <entry key="Handlebars/Mustache" value="16" />
           <entry key="Image" value="54" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="38" />
+          <entry key="JavaScript" value="40" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -46,7 +47,7 @@
           <entry key="css" value="980" />
           <entry key="hbs" value="58" />
           <entry key="html" value="3" />
-          <entry key="js" value="12454" />
+          <entry key="js" value="12461" />
           <entry key="yml" value="23" />
         </counts>
       </usages-collector>
@@ -55,7 +56,7 @@
           <entry key="CSS" value="980" />
           <entry key="HTML" value="3" />
           <entry key="Handlebars/Mustache" value="58" />
-          <entry key="JavaScript" value="12454" />
+          <entry key="JavaScript" value="12461" />
           <entry key="YAML" value="23" />
         </counts>
       </usages-collector>
@@ -67,37 +68,90 @@
           <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.48" value="1" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="167">
-              <caret line="189" column="26" lean-forward="true" selection-start-line="189" selection-start-column="26" selection-end-line="189" selection-end-column="26" />
+              <caret line="189" column="26" selection-start-line="189" selection-start-column="26" selection-end-line="189" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+              <folding>
+                <element signature="n#Game#0" />
+                <element signature="n#!!block;n#GetPlayerState#0;n#Game#0" />
+                <element signature="n#!!block;n#ChangeVillage#0;n#Game#0" />
+                <element signature="n#!!block;n#ChangeDungeon#0;n#Game#0" />
+                <element signature="n#!!block;n#updateEHPbar#0;n#Dungeon#0" />
+                <element signature="n#!!block;n#updateHHPbar#0;n#Dungeon#0" />
+                <element signature="n#!!block;n#Stateupdate#0;n#Dungeon#0" />
+                <element signature="n#Village#0" />
+                <element signature="n#!!block;n#render#0;n#Village#0" />
+                <element signature="n#EscapeMessage#0" />
+                <element signature="n#DeathMessage#0" />
+                <element signature="n#FollowerShop#0" />
+                <element signature="n#!!block;n#hirefollower#0;n#FollowerShop#0" />
+                <element signature="n#!!block;n#fireFollower#0;n#FollowerShop#0" />
+                <element signature="n#!!block;n#upgradeFollower#0;n#FollowerShop#0" />
+                <element signature="n#!!block;n#checkhired#0;n#FollowerShop#0" />
+                <element signature="n#!!block;n#removeMessage#0;n#FollowerShop#0" />
+                <element signature="n#!!block;n#constructor#0;n#PlayerShop#0" />
+                <element signature="n#!!block;n#removeMessage#0;n#PlayerShop#0" />
+                <element signature="n#!!block;n#avupgrade#0;n#PlayerShop#0" />
+                <element signature="n#!!block;n#hpupgrade#0;n#PlayerShop#0" />
+                <element signature="n#!!block;n#render#0;n#PlayerShop#0" />
+                <element signature="n#Leaderboard#0" />
+                <element signature="n#!!block;n#constructor#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#playerScores#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#globalScores#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#removeMessage#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#renderScores#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#changeGlobal#0;n#Leaderboard#0" />
+                <element signature="n#!!block;n#changePersonal#0;n#Leaderboard#0" />
+                <element signature="n#ContinueScreen#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
+        <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+            <state relative-caret-position="46">
+              <caret line="96" selection-start-line="96" selection-end-line="96" />
               <folding>
-                <element signature="n#!!block;n#constructor#0;n#loginpage#0" />
-                <element signature="n#!!block;n#changeLogin#0;n#loginpage#0" />
-                <element signature="n#!!block;n#changeRegister#0;n#loginpage#0" />
-                <element signature="n#!!block;n#changeForgot#0;n#loginpage#0" />
-                <element signature="n#!!block;n#sendlogin#0;n#Loginform#0" />
-                <element signature="n#Registerform#0" />
-                <element signature="n#Forgotform#0" />
+                <element signature="n#Player#0" />
+                <element signature="n#!!block;n#SavePlayerStateAndRun#0;n#Player#0" />
+                <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
+                <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
+                <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
+                <element signature="n#!!block;n#attack#0;n#Player#0" />
+                <element signature="n#!!block;n#takedamage#0;n#Player#0" />
+                <element signature="n#!!block;n#heal#0;n#Player#0" />
+                <element signature="n#Enemy#0" />
+                <element signature="n#!!block;n#constructor#0;n#Enemy#0" />
+                <element signature="n#!!block;n#startinterval#0;n#Enemy#0" />
+                <element signature="n#!!block;n#attack#0;n#Enemy#0" />
+                <element signature="n#!!block;n#takedamage#0;n#Enemy#0" />
+                <element signature="n#AutoWarrior#0" />
+                <element signature="n#AutoDruid#0" />
+                <element signature="n#AutoThief#0" />
+                <element signature="n#AutoCleric#0" />
               </folding>
             </state>
           </provider>
@@ -171,17 +225,17 @@
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
         <option value="$PROJECT_DIR$/views/CSS/agile1.css" />
         <option value="$PROJECT_DIR$/views/CSS/Clicker.css" />
-        <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/views/JS/Test-Clicker.js" />
         <option value="$PROJECT_DIR$/test/appTest.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/views/game.hbs" />
         <option value="$PROJECT_DIR$/views/login.hbs" />
-        <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/views/JS/Clicker.js" />
+        <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
       </list>
     </option>
   </component>
@@ -202,7 +256,7 @@
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="953" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -223,6 +277,12 @@
               <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
               <item name="Agile" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Agile" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -338,6 +398,7 @@
       <workItem from="1558473299953" duration="3434000" />
       <workItem from="1558499083479" duration="5720000" />
       <workItem from="1558537555401" duration="4003000" />
+      <workItem from="1558556659338" duration="216000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -546,7 +607,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289220000" />
+    <option name="totallyTimeSpent" value="289436000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,6 +620,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -754,31 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="119" column="5" lean-forward="true" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
-          <folding>
-            <element signature="n#Player#0" />
-            <element signature="n#!!block;n#SavePlayerStateAndRun#0;n#Player#0" />
-            <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
-            <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
-            <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
-            <element signature="n#!!block;n#attack#0;n#Player#0" />
-            <element signature="n#!!block;n#takedamage#0;n#Player#0" />
-            <element signature="n#!!block;n#heal#0;n#Player#0" />
-            <element signature="n#!!block;n#constructor#0;n#Enemy#0" />
-            <element signature="n#!!block;n#startinterval#0;n#Enemy#0" />
-            <element signature="n#!!block;n#attack#0;n#Enemy#0" />
-            <element signature="n#!!block;n#takedamage#0;n#Enemy#0" />
-            <element signature="n#AutoWarrior#0" />
-            <element signature="n#AutoDruid#0" />
-            <element signature="n#AutoThief#0" />
-            <element signature="n#AutoCleric#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/Test-Clicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -836,44 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
-          <folding>
-            <element signature="n#Game#0" />
-            <element signature="n#!!block;n#GetPlayerState#0;n#Game#0" />
-            <element signature="n#!!block;n#ChangeVillage#0;n#Game#0" />
-            <element signature="n#!!block;n#ChangeDungeon#0;n#Game#0" />
-            <element signature="n#Dungeon#0" />
-            <element signature="n#!!block;n#updateEHPbar#0;n#Dungeon#0" />
-            <element signature="n#!!block;n#updateHHPbar#0;n#Dungeon#0" />
-            <element signature="n#!!block;n#Stateupdate#0;n#Dungeon#0" />
-            <element signature="n#Village#0" />
-            <element signature="n#!!block;n#render#0;n#Village#0" />
-            <element signature="n#EscapeMessage#0" />
-            <element signature="n#DeathMessage#0" />
-            <element signature="n#!!block;n#hirefollower#0;n#FollowerShop#0" />
-            <element signature="n#!!block;n#fireFollower#0;n#FollowerShop#0" />
-            <element signature="n#!!block;n#upgradeFollower#0;n#FollowerShop#0" />
-            <element signature="n#!!block;n#checkhired#0;n#FollowerShop#0" />
-            <element signature="n#!!block;n#removeMessage#0;n#FollowerShop#0" />
-            <element signature="n#!!block;n#constructor#0;n#PlayerShop#0" />
-            <element signature="n#!!block;n#removeMessage#0;n#PlayerShop#0" />
-            <element signature="n#!!block;n#avupgrade#0;n#PlayerShop#0" />
-            <element signature="n#!!block;n#hpupgrade#0;n#PlayerShop#0" />
-            <element signature="n#!!block;n#constructor#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#playerScores#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#globalScores#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#removeMessage#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#renderScores#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#changeGlobal#0;n#Leaderboard#0" />
-            <element signature="n#!!block;n#changePersonal#0;n#Leaderboard#0" />
-            <element signature="n#ContinueScreen#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -883,8 +882,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+        <state relative-caret-position="787">
+          <caret line="166" selection-start-line="166" selection-end-line="166" />
           <folding>
             <element signature="n#!!block;n#constructor#0;n#loginpage#0" />
             <element signature="n#!!block;n#changeLogin#0;n#loginpage#0" />
@@ -900,7 +899,73 @@
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
-          <caret line="189" column="26" lean-forward="true" selection-start-line="189" selection-start-column="26" selection-end-line="189" selection-end-column="26" />
+          <caret line="189" column="26" selection-start-line="189" selection-start-column="26" selection-end-line="189" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Clicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+          <folding>
+            <element signature="n#Player#0" />
+            <element signature="n#!!block;n#SavePlayerStateAndRun#0;n#Player#0" />
+            <element signature="n#!!block;n#SavePlayerState#0;n#Player#0" />
+            <element signature="n#!!block;n#upgradeAV#0;n#Player#0" />
+            <element signature="n#!!block;n#upgradeHP#0;n#Player#0" />
+            <element signature="n#!!block;n#attack#0;n#Player#0" />
+            <element signature="n#!!block;n#takedamage#0;n#Player#0" />
+            <element signature="n#!!block;n#heal#0;n#Player#0" />
+            <element signature="n#Enemy#0" />
+            <element signature="n#!!block;n#constructor#0;n#Enemy#0" />
+            <element signature="n#!!block;n#startinterval#0;n#Enemy#0" />
+            <element signature="n#!!block;n#attack#0;n#Enemy#0" />
+            <element signature="n#!!block;n#takedamage#0;n#Enemy#0" />
+            <element signature="n#AutoWarrior#0" />
+            <element signature="n#AutoDruid#0" />
+            <element signature="n#AutoThief#0" />
+            <element signature="n#AutoCleric#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="95" column="16" lean-forward="true" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+          <folding>
+            <element signature="n#Game#0" />
+            <element signature="n#!!block;n#GetPlayerState#0;n#Game#0" />
+            <element signature="n#!!block;n#ChangeVillage#0;n#Game#0" />
+            <element signature="n#!!block;n#ChangeDungeon#0;n#Game#0" />
+            <element signature="n#!!block;n#updateEHPbar#0;n#Dungeon#0" />
+            <element signature="n#!!block;n#updateHHPbar#0;n#Dungeon#0" />
+            <element signature="n#!!block;n#Stateupdate#0;n#Dungeon#0" />
+            <element signature="n#Village#0" />
+            <element signature="n#!!block;n#render#0;n#Village#0" />
+            <element signature="n#EscapeMessage#0" />
+            <element signature="n#DeathMessage#0" />
+            <element signature="n#FollowerShop#0" />
+            <element signature="n#!!block;n#hirefollower#0;n#FollowerShop#0" />
+            <element signature="n#!!block;n#fireFollower#0;n#FollowerShop#0" />
+            <element signature="n#!!block;n#upgradeFollower#0;n#FollowerShop#0" />
+            <element signature="n#!!block;n#checkhired#0;n#FollowerShop#0" />
+            <element signature="n#!!block;n#removeMessage#0;n#FollowerShop#0" />
+            <element signature="n#!!block;n#constructor#0;n#PlayerShop#0" />
+            <element signature="n#!!block;n#removeMessage#0;n#PlayerShop#0" />
+            <element signature="n#!!block;n#avupgrade#0;n#PlayerShop#0" />
+            <element signature="n#!!block;n#hpupgrade#0;n#PlayerShop#0" />
+            <element signature="n#!!block;n#render#0;n#PlayerShop#0" />
+            <element signature="n#Leaderboard#0" />
+            <element signature="n#!!block;n#constructor#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#playerScores#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#globalScores#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#removeMessage#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#renderScores#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#changeGlobal#0;n#Leaderboard#0" />
+            <element signature="n#!!block;n#changePersonal#0;n#Leaderboard#0" />
+            <element signature="n#ContinueScreen#0" />
+          </folding>
         </state>
       </provider>
     </entry>

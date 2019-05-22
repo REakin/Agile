@@ -48,16 +48,16 @@ class Player {
         Save.send(JSON.stringify(data));
     }
     upgradeAV(){
-        if(this.gold>=10+(this.av*2)){
-            this.gold -= 10+(this.av*2);
-            this.av += 5;
+        if(this.gold>=5+(this.av*2)){
+            this.gold -= 5+(this.av*2);
+            this.av += 2;
             console.log('upgraded')
         }
     }
     upgradeHP(){
-        if(this.gold>=20+this.maxhp){
-            this.gold -= 20+this.maxhp;
-            this.maxhp += 10;
+        if(this.gold>=this.maxhp){
+            this.gold -= this.maxhp;
+            this.maxhp += 20;
             console.log('upgraded')
         }
     }

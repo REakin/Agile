@@ -93,7 +93,7 @@ class Dungeon extends React.Component{
     }
     createGame() {
         this.props.player.hp = this.props.player.maxhp;
-        this.enemy = new Enemy(50, 5, 1000, this);
+        this.enemy = new Enemy(30, 5, 1000, this);
         for (let follower in this.props.player.followers) {
             this.props.player.followers[follower].action(this.enemy)
         }
