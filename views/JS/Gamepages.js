@@ -210,8 +210,8 @@ class DeathMessage extends React.Component{
     render(){
         return(
             <div id={'message'}>
-                <div>You died in the dungeon</div>
-                <div>you lost {this.props.player.gold} gold</div>
+                <h1>You died in the dungeon</h1>
+                <h1>you lost {this.props.player.gold} gold</h1>
                 <button onClick={this.removeMessage}>Close message</button>
             </div>
         )
@@ -304,7 +304,8 @@ class FollowerShop extends React.Component{
     }
     render(){
         return(
-            <div id={'message'}>
+            <div className={'wrapper'}>
+            <div id={'shop'}>
             <h1>Recruit</h1><span className={"modal-close button"} onClick={this.removeMessage.bind(this)}>X</span>
             <div className={"warrior-desc"}>
                 Job:Warrior<br/>
@@ -351,6 +352,7 @@ class FollowerShop extends React.Component{
                     <img className={"AutoPhoto"} src={"../Images/AutoThief.png"} alt={"cleric"}/>
                 </div>
             </div>
+            </div>
         )
     }
 }
@@ -392,20 +394,22 @@ class PlayerShop extends React.Component{
     }
     render() {
         return (
-            <div id={'message'}>
+            <div className={'wrapper'}>
+                <div id={'shop'}>
                 <div className="upgradeweapons">
                     <h1>Upgrade Weapons and Armour</h1>
                 </div>
                 <br/>
                 <div className="value">
                     <img src="../Images/5071.jpg" alt="sword" onClick={this.avupgrade.bind(this)}/>
-                    <div className={'itemDesc'}>+5 ATT<br/>Cost: {this.state.avcost} coins</div>
+                    <div className={'itemDesc'}>+5 ATT<br/>Current:{this.state.playerav}<br/>Cost: {this.state.avcost} coins</div>
                     <br/>
                     <img src="../Images/5073.jpg" alt="armor" onClick={this.hpupgrade.bind(this)}/>
-                    <div className={'itemDesc'}>+10 HP <br/>Cost: {this.state.hpcost} coins</div>
+                    <div className={'itemDesc'}>+10 HP<br/>Current: {this.state.playermaxhp} <br/>Cost: {this.state.hpcost} coins</div>
                 </div>
                 <div className={'goldAmount'}>Your Gold: {this.state.gold}</div>
                 <span className="modal-close button" onClick={this.removeMessage.bind(this)}>X</span>
+                </div>
             </div>
         );
     }
@@ -465,7 +469,8 @@ class Leaderboard extends React.Component{
     render() {
             if(this.state.global === false) {
                 return (
-                    <div id={'message'}>
+                    <div className={'wrapper'}>
+                    <div id={'shop'}>
                         <h1>Recent Runs</h1>
                         <button onClick={this.changeGlobal.bind(this)}>Global</button>
                         <div id={'scorebox'}>
@@ -475,12 +480,14 @@ class Leaderboard extends React.Component{
                                 </tbody>
                             </table>
                         </div>
-                        <button onClick={this.removeMessage.bind(this)}>Close Window</button>
+                        <span className="modal-close button" onClick={this.removeMessage.bind(this)}>X</span>
+                    </div>
                     </div>
                 )
             }
             else{
                 return(
+                    <div className={'wrapper'}>
                     <div id={'message'}>
                         <h1>Global LeaderBoard</h1>
                         <button onClick={this.changePersonal.bind(this)}> Personal</button>
@@ -491,7 +498,8 @@ class Leaderboard extends React.Component{
                                 </tbody>
                             </table>
                         </div>
-                        <button onClick={this.removeMessage.bind(this)}>Close Window</button>
+                        <span className="modal-close button" onClick={this.removeMessage.bind(this)}>X</span>
+                    </div>
                     </div>
                 )
             }
@@ -516,18 +524,18 @@ class ContinueScreen extends React.Component{
         this.removeMessage();
         this.props.Container.props.player.hp = this.props.Container.props.player.maxhp;
         this.props.Container.props.player.SavePlayerStateAndRun([this.props.Container.state.kills,this.props.Container.state.rdnum,this.props.Container.props.player.maxhp,this.props.Container.props.player.av,this.props.Container.props.player.name,'Escaped']);
-
         this.props.ChangeVillage(this);
-        ReactDOM.render(<EscapeMessage player={this.props.Container.player}/>,ReactDOM.findDOMNode(document.getElementById("popupArea")));
-    }
+        }
     render(){
         return(
-            <div id={'message'}>
-                <br/>
-                <div>would you like to continue?</div>
-                <div>WARNING <br/> If you die then you lose all of your gold!</div>
-                <button onClick={this.escape.bind(this)}>No</button>
-                <button onClick={this.continue.bind(this)}>Yes</button>
+            <div className={'wrapper'}>
+                <div id={'message'}>
+                    <br/>
+                    <h1>Would you like to continue?</h1>
+                    <h1>WARNING <br/> If you die then you lose all of your gold!</h1>
+                    <button onClick={this.escape.bind(this)}>Escape</button>
+                    <button onClick={this.continue.bind(this)}>Continue</button>
+                </div>
             </div>
         )
     }

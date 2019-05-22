@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const clicker = require('../views/JS/Clicker');
+const clicker = require('../views/JS/Test-Clicker');
 const Player = clicker.Player;
 const Enemy = clicker.Enemy;
 const Autowarrior = clicker.AutoWarrior;
@@ -146,15 +146,13 @@ describe('Player', () => {
 
 // Testing Enemy class
 describe('Enemy', () => {
-
+    let enemy = new Enemy(20, 10, 5);
   // Testing the constructor
   describe('#constructor', () => {
     // TODO - allow testing the constructor
     // this.attackint prevents constructor from being tested
     // because it calls enemy.attack() which in turn uses
     // the player undeclared variable
-
-    let enemy = new Enemy(20, 10, 5);
 
     // Test hp
     it('should save hp as a number', () => {
@@ -185,11 +183,11 @@ describe('Enemy', () => {
 
     // Test interval (i)
     it('should save av as a number', () => {
-      assert.typeOf(enemy.i, 'number');
+      assert.typeOf(enemy.av, 'number');
     });
 
-    it('should save i as 5', () => {
-      assert.equal(enemy.i, 5);
+    it('should save av as 10', () => {
+      assert.equal(enemy.av, 10);
     });
 
     // TODO - test attack interval (attackint)
@@ -239,24 +237,25 @@ describe('Autowarrior', () => {
 
   // Testing the constructor
   describe('#constructor', () => {
-    let autochar = new Autowarrior('heman', 15, 5);
+      let player = new Player('bang', 30, 15, 10,0,0,0,0);
+      let autochar = new Autowarrior('heman', 15, 5,player);
 
-    // Test name
-    it('should save name as a string', () => {
-      assert.typeOf(autochar.name, 'string');
-    });
+      // Test name
+      it('should save name as a string', () => {
+          assert.typeOf(autochar.name, 'string');
+      });
 
     it('should save name as \'heman\'', () => {
       assert.equal(autochar.name, 'heman');
     });
 
     // Test attack value (av)
-    it('should save av as a number', () => {
-      assert.typeOf(autochar.av, 'number');
+    it('should save lvl as a number', () => {
+      assert.typeOf(autochar.lvl, 'number');
     });
 
-    it('should save av as 15', () => {
-      assert.equal(autochar.av, 15);
+    it('should save lvl as 1', () => {
+      assert.equal(autochar.lvl, 15);
     });
 
     // this is failing for some reason...
@@ -282,13 +281,4 @@ describe('Autowarrior', () => {
     //   });
     // });
 
-    // Testing the constructor
-    describe('#action', () => {
-      let warrior = new Autowarrior('heman', 15, 5);
-
-      // Test attack value (av)
-      it('should save av as a number', () => {
-        assert.typeOf(autochar.av, 'number');
-      });
-    });
   });

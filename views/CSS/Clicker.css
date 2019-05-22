@@ -16,10 +16,21 @@
 #message{
     border: black 2px solid;
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 20%;
+    left: 20%;
     color: black;
-    height: 550px;
+    height: 300px;
+    width: 450px;
+    background: #464646;
+}
+
+#shop{
+    border: black 2px solid;
+    position: absolute;
+    top: 5%;
+    left: 14%;
+    color: black;
+    height: 600px;
     width: 550px;
     background: #464646;
 }
@@ -35,4 +46,13 @@
 }
 #followertext{
     float: left;
+}
+.wrapper{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background: rgba(7, 8, 7, 0.34);
 }

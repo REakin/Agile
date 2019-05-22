@@ -87,7 +87,7 @@ class Player {
             this.followers[follower].teardown()
         }
         enemy.container.props.changeVillage();
-        ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")));
+        //ReactDOM.render(<DeathMessage player={this}/>, ReactDOM.findDOMNode(document.getElementById("popupArea")));
         this.gold = 0;
         this.hp = this.maxhp;
         this.SavePlayerStateAndRun([enemy.container.state.kills,enemy.container.state.rdnum,this.maxhp,this.av,this.name,'Died'])
@@ -106,17 +106,17 @@ class Enemy {
     }
     attack(target) {
         target.takedamage(this.av,this);
-        this.container.Stateupdate()
+        //this.container.Stateupdate()
     }
     takedamage(damage,player) {
         this.hp -= damage;
-        this.container.Stateupdate();
+        //this.container.Stateupdate();
         if (this.hp <= 0) {
             this.die(player)
         }
     }
     updatebg(){
-        this.container.setState({bg:this.container.state.bg+1})
+        //this.container.setState({bg:this.container.state.bg+1})
     }
     die(player) {
         let enemyphoto = Math.floor(Math.random()*14)+1;
@@ -130,7 +130,7 @@ class Enemy {
             for (let follower in player.followers){
                 player.followers[follower].teardown()
             }
-            ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
+            //ReactDOM.render(<ContinueScreen Container={this.container} ChangeVillage={this.container.props.changeVillage.bind(this.container)}/>, ReactDOM.findDOMNode(document.getElementById('messageArea')));
         } else {
             this.hp = (this.maxhp+=10);
             this.startinterval(player);
@@ -209,7 +209,7 @@ class AutoCleric{
 }
 
 
-/*This is for unit testing
+//This is for unit testing
 
 module.exports = {
     Player,
@@ -218,4 +218,4 @@ module.exports = {
     AutoDruid,
     AutoCleric,
     AutoThief
-};*/
+};
