@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/JS/Test-Clicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/appTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/appTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/CSS/Clicker.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/Clicker.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/CSS/agile1.css" beforeDir="false" afterPath="$PROJECT_DIR$/views/CSS/agile1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/JS/AJAX.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/JS/Clicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Clicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/JS/Gamepages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/Gamepages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Photos/Background pattern.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Photos/SoccerBanner.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Photos/Soccerball.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/Photos/soccer-ball.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/game.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/game.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/testing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,7 +24,7 @@
           <entry key="jpg" value="6" />
           <entry key="js" value="31" />
           <entry key="png" value="47" />
-          <entry key="yml" value="1" />
+          <entry key="yml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -48,7 +34,7 @@
           <entry key="Handlebars/Mustache" value="14" />
           <entry key="Image" value="54" />
           <entry key="JavaScript" value="31" />
-          <entry key="YAML" value="1" />
+          <entry key="YAML" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -106,11 +92,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/appTest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="380">
               <caret line="278" column="26" lean-forward="true" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -181,7 +176,6 @@
         <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
         <option value="$PROJECT_DIR$/views/HTML/agile.html" />
         <option value="$PROJECT_DIR$/views/reset.hbs" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/views/CSS/agile1.css" />
@@ -192,6 +186,7 @@
         <option value="$PROJECT_DIR$/views/register.html" />
         <option value="$PROJECT_DIR$/views/JS/Test-Clicker.js" />
         <option value="$PROJECT_DIR$/test/appTest.js" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -346,7 +341,7 @@
       <workItem from="1558107456190" duration="26161000" />
       <workItem from="1558384185577" duration="28502000" />
       <workItem from="1558473299953" duration="3434000" />
-      <workItem from="1558499083479" duration="2605000" />
+      <workItem from="1558499083479" duration="2784000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -555,7 +550,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="282102000" />
+    <option name="totallyTimeSpent" value="282281000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,10 +563,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.21901709" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.21901709" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2458287" />
@@ -581,7 +577,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32925472" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.2057842" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.29922137" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.29922137" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -747,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/11.6.0/core-modules/vm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -885,6 +874,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="278" column="26" lean-forward="true" selection-start-line="278" selection-start-column="26" selection-end-line="278" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
