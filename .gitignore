@@ -1,3 +1,4 @@
 node_modules/
 /.idea/
 ./idea/workplace.xml
+package-lock.json
