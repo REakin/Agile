@@ -1,8 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
 const bodyParser = require('body-parser'); //use it the forms for retrieving the data
-const nodemailer = require('nodemailer');
-
 // bcrypt stuff
 const bcrypt = require('bcryptjs');
 let saltedRounds = 10;

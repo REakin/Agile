@@ -40,8 +40,6 @@ class loginpage extends React.Component{
         }
     }
 }
-
-
 class Loginform extends React.Component{
     constructor(props){
         super(props)
@@ -76,7 +74,6 @@ class Loginform extends React.Component{
                             <input id={'lpassword'} name={"password"} type={"password"} placeholder={"Password"} required={"required"}/>
                     </form>
                 </div>
-                <p id={"forgot_note"}><a onClick={this.props.changeForgot}>Forgot password</a></p>
                 <div id={"login_form"}>
                     <form action={"/login"} method={"POST"} onSubmit={this.sendlogin.bind(this)}>
                         <input type={'submit'} id={'loginBtn'} value={"Login"}/>
@@ -90,7 +87,6 @@ class Loginform extends React.Component{
         )
     }
 }
-
 class Registerform extends React.Component{
     constructor(props){
         super(props)
@@ -147,8 +143,6 @@ class Registerform extends React.Component{
         )
     }
 }
-
-
 class Forgotform extends React.Component{
     constructor(props) {
         super(props);
@@ -159,13 +153,11 @@ class Forgotform extends React.Component{
                 <h1>CLICK DUNGEON</h1>
                 <h2>Forgot Your Password</h2>
                 <div id={"login_form"}>
-                    <form method={"POST"}>
-                        <input name={"username"} type={"text"} placeholder={"Username"} required={"required"}/>
+                    <form action={"/forgot"} method={"POST"} onSubmit={'sendlogin'}>
+                        <input name={"email"} type={"email"} placeholder={"Email"} required={"required"}/>
+                        <input type={'submit'} id={'loginBtn'} value={"Submit"}/>
                     </form>
                 </div>
-                <form action={"/login"} method={"POST"} onSubmit={'sendlogin'}>
-                    <input type={'submit'} id={'loginBtn'} value={"Submit"}/>
-                </form>
                 <a onClick={this.props.changeLogin}>Return to login</a>
             </div>
         )

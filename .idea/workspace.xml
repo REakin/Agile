@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6203ba9d-42af-4f46-9b88-6973adbdfc7d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/JS/LoginPages.js" beforeDir="false" afterPath="$PROJECT_DIR$/views/JS/LoginPages.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +23,7 @@
           <entry key="hbs" value="16" />
           <entry key="html" value="9" />
           <entry key="jpg" value="6" />
-          <entry key="js" value="36" />
+          <entry key="js" value="37" />
           <entry key="json" value="6" />
           <entry key="mocha" value="1" />
           <entry key="png" value="47" />
@@ -37,7 +37,7 @@
           <entry key="Handlebars/Mustache" value="16" />
           <entry key="Image" value="54" />
           <entry key="JSON" value="6" />
-          <entry key="JavaScript" value="37" />
+          <entry key="JavaScript" value="38" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -46,7 +46,7 @@
           <entry key="css" value="980" />
           <entry key="hbs" value="58" />
           <entry key="html" value="3" />
-          <entry key="js" value="12011" />
+          <entry key="js" value="12413" />
           <entry key="yml" value="23" />
         </counts>
       </usages-collector>
@@ -55,7 +55,7 @@
           <entry key="CSS" value="980" />
           <entry key="HTML" value="3" />
           <entry key="Handlebars/Mustache" value="58" />
-          <entry key="JavaScript" value="12011" />
+          <entry key="JavaScript" value="12413" />
           <entry key="YAML" value="23" />
         </counts>
       </usages-collector>
@@ -76,78 +76,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="2214">
+              <caret line="243" column="108" selection-start-line="243" selection-start-column="108" selection-end-line="243" selection-end-column="108" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/JS/Gamepages.js">
+        <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="396" column="33" selection-start-line="396" selection-start-column="33" selection-end-line="396" selection-end-column="33" />
+            <state relative-caret-position="190">
+              <caret line="159" column="27" lean-forward="true" selection-start-line="159" selection-start-column="27" selection-end-line="159" selection-end-column="27" />
               <folding>
-                <element signature="n#Game#0" />
-                <element signature="n#!!block;n#GetPlayerState#0;n#Game#0" />
-                <element signature="n#!!block;n#ChangeVillage#0;n#Game#0" />
-                <element signature="n#!!block;n#ChangeDungeon#0;n#Game#0" />
-                <element signature="n#Dungeon#0" />
-                <element signature="n#!!block;n#updateEHPbar#0;n#Dungeon#0" />
-                <element signature="n#!!block;n#updateHHPbar#0;n#Dungeon#0" />
-                <element signature="n#!!block;n#Stateupdate#0;n#Dungeon#0" />
-                <element signature="n#Village#0" />
-                <element signature="n#!!block;n#render#0;n#Village#0" />
-                <element signature="n#EscapeMessage#0" />
-                <element signature="n#DeathMessage#0" />
-                <element signature="n#!!block;n#hirefollower#0;n#FollowerShop#0" />
-                <element signature="n#!!block;n#fireFollower#0;n#FollowerShop#0" />
-                <element signature="n#!!block;n#upgradeFollower#0;n#FollowerShop#0" />
-                <element signature="n#!!block;n#checkhired#0;n#FollowerShop#0" />
-                <element signature="n#!!block;n#removeMessage#0;n#FollowerShop#0" />
-                <element signature="n#!!block;n#constructor#0;n#PlayerShop#0" />
-                <element signature="n#!!block;n#removeMessage#0;n#PlayerShop#0" />
-                <element signature="n#!!block;n#avupgrade#0;n#PlayerShop#0" />
-                <element signature="n#!!block;n#hpupgrade#0;n#PlayerShop#0" />
-                <element signature="n#!!block;n#constructor#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#playerScores#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#globalScores#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#removeMessage#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#renderScores#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#changeGlobal#0;n#Leaderboard#0" />
-                <element signature="n#!!block;n#changePersonal#0;n#Leaderboard#0" />
-                <element signature="n#ContinueScreen#0" />
+                <element signature="n#!!block;n#constructor#0;n#loginpage#0" />
+                <element signature="n#!!block;n#changeLogin#0;n#loginpage#0" />
+                <element signature="n#!!block;n#changeRegister#0;n#loginpage#0" />
+                <element signature="n#!!block;n#changeForgot#0;n#loginpage#0" />
+                <element signature="n#!!block;n#sendlogin#0;n#Loginform#0" />
+                <element signature="n#Registerform#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/game.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.hbs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -215,7 +165,6 @@
         <option value="$PROJECT_DIR$/views/JS/AJAX.js" />
         <option value="$PROJECT_DIR$/views/CSS/Login.css" />
         <option value="$PROJECT_DIR$/views/JS/Login.js" />
-        <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
         <option value="$PROJECT_DIR$/views/HTML/agile.html" />
         <option value="$PROJECT_DIR$/views/reset.hbs" />
         <option value="$PROJECT_DIR$/views/Clicker.hbs" />
@@ -226,11 +175,12 @@
         <option value="$PROJECT_DIR$/views/JS/Test-Clicker.js" />
         <option value="$PROJECT_DIR$/test/appTest.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/views/game.hbs" />
         <option value="$PROJECT_DIR$/views/login.hbs" />
         <option value="$PROJECT_DIR$/views/JS/Gamepages.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/views/JS/LoginPages.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -252,8 +202,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1047" />
-    <option name="width" value="880" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -272,12 +222,6 @@
               <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
               <item name="Agile" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Agile" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Agile" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="JS" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -392,7 +336,7 @@
       <workItem from="1558384185577" duration="28502000" />
       <workItem from="1558473299953" duration="3434000" />
       <workItem from="1558499083479" duration="5720000" />
-      <workItem from="1558537555401" duration="26000" />
+      <workItem from="1558537555401" duration="1531000" />
     </task>
     <task id="LOCAL-00001" summary="Removed fatty comment">
       <created>1553710772611</created>
@@ -601,7 +545,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285243000" />
+    <option name="totallyTimeSpent" value="286748000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -613,15 +557,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1047" y="0" width="880" height="1047" extended-state="0" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.24346793" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.21901709" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31590655" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31590655" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3986637" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -715,7 +659,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Fixed AJAX hopefully..." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy022a.png" />
     <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy026b.png" />
     <entry file="file://$PROJECT_DIR$/views/Game Assets/Enemys/pipo-enemy023.png" />
     <entry file="file://$PROJECT_DIR$/views/Images/pipo-enemy021a.png" />
@@ -879,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/game.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -942,6 +878,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/JS/LoginPages.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="159" column="27" lean-forward="true" selection-start-line="159" selection-start-column="27" selection-end-line="159" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#loginpage#0" />
+            <element signature="n#!!block;n#changeLogin#0;n#loginpage#0" />
+            <element signature="n#!!block;n#changeRegister#0;n#loginpage#0" />
+            <element signature="n#!!block;n#changeForgot#0;n#loginpage#0" />
+            <element signature="n#!!block;n#sendlogin#0;n#Loginform#0" />
+            <element signature="n#Registerform#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2214">
+          <caret line="243" column="108" selection-start-line="243" selection-start-column="108" selection-end-line="243" selection-end-column="108" />
         </state>
       </provider>
     </entry>
