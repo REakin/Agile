@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="agile.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/agile1.css">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+<body>
+<div class="bg">
+    <p>
+        Village
+    </p>
+    <div class="nav-item">
+        <a class="btn btn-danger btn-rounded btn-lg" href="agile2.html">Play</a>
+    </div>
+    <div class="nav-item1">
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade1" onclick="upgrade1()">Graveyard</button>
+    </div>
+    <div class="bg-modal1">
+        <div class="modal-content">
+                <h5>Graveyyard</h5>
+            <div class="graveyard">
+                Username: <input type="text" name="usrname">
+                <input type="submit" value="Submit">
+            </div>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+        </div>
+    </div>
+    <div class="nav-item2">
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade" onclick="upgrade()">Upgrade</button>
+    </div>
+    <div class="bg-modal">
+        <div class="modal-content">
+            <div class="upgradeweapons">
+                <h1>Upgrade Weapons</h1>
+            </div>
+            <div class="value">
+                <img src="../Images/5071.jpg" alt="sword">
+                +20 ATT, 300 coins
+                <img src="../Images/5072.jpg" alt="armor">
+                +40 ATT, 500 coins
+                <br>
+                <br>
+                <img src="../Images/5073.jpg" alt="armor">
+                +100 HP, 300 coins
+                <img src="../Images/5074.jpg" alt="armor">
+                +200 HP, 500 coins
+            </div>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+            <a href="" class="button"><h3>Purchase</h3></a>
+            <div class = 'points'>
+                Points:
+            </div>
+            <label class="texty">
+                <input type="text" value="500" size="4">
+            </label>
+        </div>
+    </div>
+    <div class="nav-item3">
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade3" onclick="upgrade2()">Leaderboard</button>
+    </div>
+    <div class="bg-modal2">
+        <div class="modal-content">
+                <h4>Leaderboard</h4>
+            <table>
+                <tr>
+                    <th>Ranking</th>
+                    <th>Username</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Peter</td>
+                    <td>20000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lois</td>
+                    <td>18000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Andy</td>
+                    <td>14500</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Andrew</td>
+                    <td>12000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Chris</td>
+                    <td>11000</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Kris</td>
+                    <td>9000</td>
+                </tr>
+            </table>
+            <a class="x" href=""><span class="modal-close button">X</span></a>
+        </div>
+    </div>
+    <div class="nav-item4">
+        <button class="btn btn-danger btn-rounded btn-lg" id="btn-upgrade4" onclick="upgrade3()">Recruit</button>
+    </div>
+    <div class="bg-modal3">
+        <div class="modal-content">
+            <h2>Recruit</h2><a class="x" href=""><span class="modal-close button">X</span></a>
+            <div class="warrior-desc">
+                Job: Warrior<br>
+                Description: Swords
+            </div>
+            <div class="warrior-button">
+                <button type="button" onclick="alert('Warrior Hired!')">Hire!</button>
+            </div>
+            <div class="warrior">
+                <img src="../Images/pipo-enemy018a.png" alt="warrior">
+            </div>
+            <div class="cleric-desc">
+                Job: Cleric<br>
+                Description: Clerics
+            </div>
+            <div class="cleric-button">
+                <button type="button" onclick="alert('Cleric Hired!')">Hire!</button>
+            </div>
+            <div class="cleric">
+                <img src="../Images/kisspng-bloodborne-skeletor-pathfinder-roleplaying-game-du-rpg-5abee557685de4.5654561315224599914275.png" alt="cleric">
+            </div>
+            <div class="druid-desc">
+                Job: Druid<br>
+                Description: Druids
+            </div>
+            <div class="druid-button">
+                <button type="button" onclick="alert('Druid Hired!')">Hire!</button>
+            </div>
+            <div class="druid">
+                <img src="../Images/kisspng-druid-pathfinder-roleplaying-game-dungeons-drago-druid-5b3ac413da9ae3.8089144315305779398954.png" alt="cleric">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</html>
